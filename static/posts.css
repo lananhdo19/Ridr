@@ -1,0 +1,19 @@
+.posts-pg {
+    height: 100vh;
+}
+.posts div {
+    display: inline-block;
+    padding: 25px;
+}
+.posts-pg-left-container {
+    width: 20%;
+    height: 100%;
+    min-width: 250px;
+    float: left;
+    border-right: 1px solid black;
+}
+.posts-pg-right-container {
+    width: 80%;
+    height: 100%;
+    float: right;
+}

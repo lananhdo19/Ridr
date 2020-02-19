@@ -3,8 +3,9 @@ body {
 }
 a:any-link {
     text-decoration: none;
+    color: inherit;
 }
-.nav a:link, a:visited, a:active, a:hover {
+.navbar a:link, a:visited, a:active, a:hover {
     color: white;
 }
 .navbar {
