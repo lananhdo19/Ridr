@@ -1,0 +1,25 @@
+.header {
+    font-size: 20px;
+}
+.subheader {
+    font-size: 15px;
+}
+@media only screen and (max-width: 900px) {
+    .header {
+        font-size: 17px;
+    }
+    .subheader {
+        font-size: 13px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .navbar {
+        padding: 5px 10px;
+    }
+    .header {
+        font-size: 15px;
+    }
+    .subheader {
+        font-size: 14px;
+    }
+}

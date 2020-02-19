@@ -11,10 +11,9 @@ a:any-link {
 .navbar {
     background-color: black;
     text-align: center;
-    padding: 15px 20px;
+    padding: 15px 40px;
 }
 .navbar div {
-    font-size: 25px;
     display: inline-block;
 }
 .left_nav {
@@ -28,23 +27,10 @@ a:any-link {
 }
 .main {
     min-height: 90vh;
-}
-/* #footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 2.5rem;
-} */
-@media only screen and (max-width: 800px) {
-    .navbar div {
-        font-size: 20px;
-    }
+    padding: 15px 40px;
 }
 @media only screen and (max-width: 600px) {
     .navbar {
         padding: 5px 10px;
-    }
-    .navbar div {
-        font-size: 15px;
     }
 }

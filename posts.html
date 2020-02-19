@@ -13,12 +13,15 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway:300,400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="static/base.css" />
+  <link rel="stylesheet" href="static/features.css" />
+  <link rel="stylesheet" href="static/fonts.css" />
   <link rel="stylesheet" href="static/posts.css" />
+  <link rel="stylesheet" href="static/div-formatting.css" />
 </head>
 
 <body>  
     <header>
-		<nav class="navbar" id="navbar">
+		<nav class="navbar header" id="navbar">
 			<div class="left_nav">
 				<a class="ridr-logo" href="#">
                     <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" onerror="this.style.display='none'" 
@@ -37,12 +40,35 @@
     </header>
 
     <div class="main">
-		<div class="posts-pg">
-			<div class="posts-pg-left-container">
+		<div class="posts-pg flex-container-stretch">
+			<div class="filters-div" style="flex-grow: 1">
 				<!-- filters go here -->
 			</div>
-			<div class="posts-pg-right-container">
+			<div class="posts-div" style="flex-grow: 5">
+				<div class="posts-right-top">
 
+					<div class="driver-rider-dropdown subheader">
+						<p class="header">I'm looking for a</p>
+						<select class="dropdown">
+							<option value="driver">driver</option>
+							<option value="rider">rider</option>
+						  </select>
+					</div>
+					<div class="create-post-button-div">
+						<button type="button" class="main_button header">Create post</button>
+					</div>
+
+					<div class="flex-container-wrap full-width">
+						<div class="post-listings">
+							<div class="panel panel-default">
+								<div class="panel-body">A Basic Panel</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-body">A Basic Panel</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
     </div>

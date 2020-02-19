@@ -1,0 +1,13 @@
+.main_button {
+    background-color: #66CCCC;
+    border: none;
+    color: white;
+    padding: 0 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+.dropdown {
+    margin: 0 25px;
+    padding: 5px 7px;
+}
