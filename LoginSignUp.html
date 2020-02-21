@@ -11,19 +11,76 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway:300,400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="static/base.css" />
-    <link rel="stylesheet" href="static/features.css" />
-    <link rel="stylesheet" href="static/fonts.css" />
-    <link rel="stylesheet" href="static/div-formatting.css" />
-
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+   <!-- <link rel="stylesheet" href="static/div-formatting.css" /> -->
+    <link rel="stylesheet" href="static/loginSignUp.css" />
+   <!-- <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css"> -->
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+    <script src="static/switchingTabs.js"></script>
 </head>
 <body>
-    <div class="container">
-        <ul class="tabs">
-            <li class="loginTab">Login</li>
-            <li class="signUpTab">Sign Up</li>
-        </ul>
+
+<!--
+<div class="d-md-flex h-md-100 align-items-center">
+    <div class="description col-md-6 h-md-100 container"></div></div></div>
+</div>
+
+
+</div>
+
+-->
+
+<div class="totalPage d-md-flex h-md-100 align-items-center">
+
+    <!-- Logo with Description Half -->
+    <div class="logoarea col-md-6 p-0">
+        <div class=" align-items-center h-100 text-center justify-content-center">
+          <img src="static/images/logoBlack.png">
+            <div class="pt-5 pb-5">
+                Get rides home from other students at an affordable price. <br> Make money driving home.
+            </div>
+        </div>
     </div>
+
+    <!-- Form Half -->
+    <div class="col-md-6 p-0 h-md-100 loginarea">
+        <div class="d-md-flex align-items-center h-md-100 p-5 justify-content-center">
+
+            <div class="containerLoginSignUp">
+                <div class="signUpTab">Sign Up</div>
+                <div class="loginTab">Login</div>
+
+                <div class="signup-form">
+                    <h3>Create an Account</h3>
+                    <div class="row">
+                        <div class="col-6">
+                            <input type="text" placeholder="First Name" class="inputP" id="firstNameInput"><br />
+                        </div>
+                        <div class="col-6">
+                            <input type="text" placeholder="Last Name" class="inputP" id="lastNameInput"><br />
+                        </div>
+                    </div>
+                    <input type="text" placeholder="Name" class="inputP" id="nameInput"><br />
+                    <input type="text" placeholder="Email" class="inputP" id="emailInput"><br />
+                    <input type="password" placeholder="Password" class="inputP" id="passwordInput"><br />
+                    <div class="btn-red" id="signUpButton" >Sign Up</div>
+                </div>
+
+
+                <div class="login-form">
+                    <h3>Login</h3>
+                    <input type="text" placeholder="Email" class="inputP" id="emailInput"><br />
+                    <input type="password" placeholder="Password" class="inputP" id="passwordInput"><br />
+                    <div class="btn-red" id="loginButton">Submit</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
 </body>
 </html>
