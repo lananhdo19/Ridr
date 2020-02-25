@@ -25,9 +25,14 @@
 }
 .panel-body {
     text-align: -webkit-left;
-    padding: 25px;
+    padding: 30px;
     margin-bottom: 40px;
     border: black solid 1px;
+}
+.panel-p {
+    line-height: normal;
+    font-size: 15px;
+    margin-bottom: 0;
 }
 
 @media only screen and (max-width: 900px) {
