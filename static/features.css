@@ -1,11 +1,23 @@
-.main_button {
-    background-color: #66CCCC;
+.main_button, .request_button, .offer_button {
     border: none;
-    color: white;
-    padding: 0 25px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    line-height: normal;
+    height: fit-content;
+}
+.main_button {
+    background-color: #66CCCC;
+    color: white;
+    padding: 20px;
+}
+.request_button {
+    background-color: #F98686;
+    padding: 15px;
+}
+.offer_button {
+    background-color: #FCAF69;
+    padding: 15px;
 }
 .dropdown {
     margin: 0 25px;

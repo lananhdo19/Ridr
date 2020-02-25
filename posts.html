@@ -59,7 +59,7 @@
 						  </select>
 					</div>
 					<div class="create-post-button-div">
-						<button type="button" class="main_button header">Create post</button>
+						<button type="button" class="main_button header" id="create-post-button">Create post</button>
 					</div>
 				</div>
 
@@ -67,20 +67,29 @@
 					<div class="post-listings">
 						<div class="panel panel-default">
 							<div class="panel-body">
-                                <!-- img -->
+                                <img src="static/images/aesthetic-user-profile-img.png" href="#" class="profile-pic">
                                 <p class="panel-p">
                                     {{Destination}}<br/>
                                     {{Date}}<br/>
                                     {{Time}}<br/>
                                     {{Comments}}
                                 </p>
-                                <!-- message button -->
+                                <button type="button" class="request_button subheader right-div-button">Request</button>
                             </div>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Modal -->
+        <div id="create-post-modal-container" class="modal">
+            <!-- Modal content -->
+            <div class="create-post-modal-content">
+                <span class="close">&times;</span>
+                <p>Some text in the Modal..</p>
+            </div>
+        </div>
     </div>
 
 
@@ -90,7 +99,6 @@
     </footer>
     
         
-
 
 <!-- CDN for JS bootstrap -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -107,8 +115,32 @@ var logo = document.getElementById("ridr-logo");
 logo.onerror = function () { 
     this.style.display = "none";
 }  
+
+
+// Create post modal / popup
+// Get the modal
+var modal = document.getElementById("create-post-modal-container");
+var btn = document.getElementById("create-post-button");
+var span = document.getElementsByClassName("close")[0]; // <span> element closes the modal
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
 </script>
-  
 
 </body>
 </html>
