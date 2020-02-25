@@ -4,6 +4,9 @@
 .subheader {
     font-size: 15px;
 }
+.mega-header {
+    font-size: 40px;
+}
 @media only screen and (max-width: 900px) {
     .header {
         font-size: 17px;
