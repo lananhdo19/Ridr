@@ -1,0 +1,76 @@
+body{
+}
+
+div.row{
+    height: 100vh;
+    width: inherit;
+}
+
+.profilePic{
+    width: 100px;
+    height: 100px;
+    margin-top: 140px;
+    margin-bottom: 30px;
+}
+.personalInfo {
+    align-items: center !important;
+    text-align: center;
+}
+
+.history{
+}
+
+.post-listings{
+    margin-top: 70px;
+}
+
+.expandedPost{
+    max-height: 500px !important;
+    height: 50%;
+    border: black solid 1px;
+    margin-right: 40px;
+}
+
+.expandedPostInfo{
+    height: 100% !important;
+    margin-top: 140px;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media only screen and (max-width: 768px) {
+    div.row {
+        display: block;
+    }
+    .col-3{
+        max-width: inherit !important;
+        position: center !important;
+        padding: 0px 0px 0px 0px;
+    }
+
+    .col-6{
+        max-width: inherit !important;
+        position: center !important;
+        padding: 0px 0px 0px 0px;
+    }
+    .expandedPostInfo{
+        margin-top: 0px;
+    }
+
+    .expandedPost{
+        margin-right: 0px;
+    }
+
+    .history{
+        margin-bottom: 0px;
+    }
+}
+
+@media only screen and (min-width: 1313px){
+    .mainPost{
+        max-width: 80% !important;
+    }
+}
