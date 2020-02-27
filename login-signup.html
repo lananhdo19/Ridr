@@ -11,26 +11,9 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway:300,400,700&display=swap" rel="stylesheet">
-   <!-- <link rel="stylesheet" href="static/div-formatting.css" /> -->
-    <link rel="stylesheet" href="static/loginSignUp.css" />
-   <!-- <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css"> -->
-    <script
-            src="https://code.jquery.com/jquery-3.4.1.js"
-            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-            crossorigin="anonymous"></script>
-    <script src="static/switchingTabs.js"></script>
+    <link rel="stylesheet" href="static/login-signup.css" />
 </head>
 <body>
-
-<!--
-<div class="d-md-flex h-md-100 align-items-center">
-    <div class="description col-md-6 h-md-100 container"></div></div></div>
-</div>
-
-
-</div>
-
--->
 
 <div class="totalPage d-md-flex h-md-100 align-items-center">
 
@@ -54,26 +37,31 @@
 
                 <div class="signup-form">
                     <h3>Create an Account</h3>
+
+                    <span id="name-msg" class="error"></span>
                     <div class="row">
                         <div class="col-6">
-                            <input type="text" placeholder="First Name" class="inputP" id="firstNameInput"><br />
+                            <input type="text" placeholder="First Name" class="inputP" id="firstName" autofocus required><br />
                         </div>
                         <div class="col-6">
-                            <input type="text" placeholder="Last Name" class="inputP" id="lastNameInput"><br />
+                            <input type="text" placeholder="Last Name" class="inputP" id="lastName" required><br />
                         </div>
                     </div>
-                    <input type="text" placeholder="Name" class="inputP" id="nameInput"><br />
-                    <input type="text" placeholder="Email" class="inputP" id="emailInput"><br />
-                    <input type="password" placeholder="Password" class="inputP" id="passwordInput"><br />
-                    <div class="btn-red" id="signUpButton" >Sign Up</div>
+                    <span id="email-msg" class="error"></span>
+                    <input type="text" placeholder="Email" class="inputP" id="emailSign" required><br />
+                    <span id="password-msg" class="error"></span>
+                    <input type="password" placeholder="Password" class="inputP" id="passwordSign" required><br />
+                    <button class="btn-red" id="signUpButton" >Sign Up</button>
                 </div>
 
 
                 <div class="login-form">
                     <h3>Login</h3>
-                    <input type="text" placeholder="Email" class="inputP" id="emailInput"><br />
-                    <input type="password" placeholder="Password" class="inputP" id="passwordInput"><br />
-                    <div class="btn-red" id="loginButton">Submit</div>
+                    <span id="email-msg-login" class="error"></span>
+                    <input type="text" placeholder="Email" class="inputP" id="emailLogin" autofocus required><br />
+                    <span id="pass-msg-login" class="error"></span>
+                    <input type="password" placeholder="Password" class="inputP" id="passwordLogin" required><br />
+                    <button class="btn-red" id="loginButton">Submit</button>
                 </div>
 
             </div>
@@ -83,4 +71,12 @@
 </div>
 
 </body>
+
+<script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous">
+
+</script>
+<script src="static/login-signup.js"></script>
 </html>

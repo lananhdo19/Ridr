@@ -1,7 +1,6 @@
 
 body{
     font-family: roboto;
-    user-select: none;
     background-image: url("images/BlackCar.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -67,6 +66,11 @@ h3{
     color: white;
     font-weight: bold;
     letter-spacing: 1px;
+}
+
+.error{
+    color: #F06565;
+    padding-left: 3px;
 }
 
 
