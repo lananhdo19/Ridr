@@ -1,0 +1,45 @@
+label#date {
+    border-bottom: 1px solid black;
+    padding-bottom: 8px;
+}
+
+#calendar-container {
+    margin-top: 45px;
+    color: #A8A8A8;
+    margin-bottom: 30px;
+}
+
+#calendar-header {
+    font-size: 13px;
+    text-align: center;
+}
+
+#calendar-container>div {
+    padding: 0;
+    margin-bottom: 5px;
+}
+
+#calendar-month-year{
+    margin: 5px;
+}
+
+#btnPrevMonth {
+    text-decoration: none;
+    font-size: 11px;
+    color: #A8A8A8;
+}
+
+#btnNextMonth {
+    text-decoration: none;
+    font-size: 11px;
+    color: #A8A8A8;
+}
+
+#calendar-dates>table>tr>td {
+    padding: 10px;
+}
+
+.today {
+    color: #FF0000 !important;
+}
+
