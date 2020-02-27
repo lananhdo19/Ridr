@@ -13,21 +13,45 @@ window.onload = function(){
     var days = new Date(year, month+1, 0).getDate();    //29
     //Tue Feb 29 2020 (last day of current month)
     var calendar = get_calendar(day_no, days);
-    document.getElementById("calendar-month-year").innerHTML = month_name[month]+" "+year;
+    document.getElementById("calendar-month-year").innerHTML = month_name[month] + " " + year;
     document.getElementById("calendar-dates").appendChild(calendar);
+
+    //previous month
+    document.getElementById("btnPrevMonth").onclick = function() {
+        var curr_month = month; 
+        var curr_year = year;
+        if (month == 0) {
+            curr_month = 11;
+            curr_month--;
+            curr_year--;        
+        } else {
+            curr_month--;
+        }
+      
+        document.getElementById("calendar-month-year").innerHTML = month_name[curr_month] + " " + curr_year;
+        document.getElementById("calendar-dates").appendChild(calendar);
+        month = curr_month;
+        year = curr_year;
+    };
+
+    //next month
+    document.getElementById("btnNextMonth").onclick = function() {
+        var curr_month = month; 
+        var curr_year = year;
+        if (month == 11) {
+            curr_month = 0;
+            curr_month++;
+            curr_year++;
+        } else {
+            curr_month++;
+        }
+        document.getElementById("calendar-month-year").innerHTML = month_name[curr_month] + " " + curr_year;
+        document.getElementById("calendar-dates").appendChild(calendar);
+        month = curr_month;
+        year = curr_year;
+    };
 }
 
-function nextMonth() {
-    if (this.CurrentMonth == 11) {
-        this.CurrentMonth = 0;
-        this.CurrentYear++;
-    } else {
-        console.log("this.CurrentMonth == ", this.CurrentMonth);
-        this.CurrentMonth++;
-    }
-    document.getElementById("calendar-month-year").innerHTML = month_name[month]+" "+year;
-    document.getElementById("calendar-dates").appendChild(calendar);
-}
 
 function get_calendar(day_no, days){
     var table = document.createElement('table');

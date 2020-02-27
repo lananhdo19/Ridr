@@ -1,11 +1,11 @@
 div {
-    font-size: 11px;
+    font-size: 10px;
     font-family: 'Raleway', sans-serif;
 }
 
 input[type=range] {
   -webkit-appearance: none;
-  width:70%;
+  width:75%;
   margin-bottom:10px;
   outline: none;
 }
