@@ -26,7 +26,7 @@ $(document).ready(function() {
 });
 
 
-
+//Important page elements
 
 //first name signup
 let firstName = document.getElementById("firstName");
@@ -72,13 +72,14 @@ pass_login.addEventListener('focus',function(){
 },false);
 
 
+//login button
 let login_btn = document.getElementById("loginButton");
 login_btn.addEventListener('click', function(){
     checkEmailLogin();
     checkPassLogin();
 }, false)
 
-
+//signup button
 let signup_btn = document.getElementById("signUpButton");
 signup_btn.addEventListener('click', function(){
    checkName();
@@ -86,7 +87,10 @@ signup_btn.addEventListener('click', function(){
    checkEmailSign();
 }, false)
 
-//check functions
+
+
+
+//check input functions
 function checkName(){
     let name_msg  = document.getElementById("name-msg");
     if (firstName.value.length <= 0 || lastName.value.length <= 0 ) name_msg.textContent = "Enter a Full Name";
