@@ -1,0 +1,30 @@
+div {
+    font-size: 11px;
+    font-family: 'Raleway', sans-serif;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  width:70%;
+  margin-bottom:10px;
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  position: relative;
+  height: 1.5px;
+  border-radius: 5px;
+  background-color: #000000;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  position: relative;
+  top: -4px;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #000000;
+  -webkit-appearance: none;
+  background-color: #000000;
+  border-radius: 100%;
+  cursor: pointer;
+}
