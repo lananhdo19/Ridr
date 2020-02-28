@@ -1,21 +1,29 @@
 label {
   float:left;
   width:100%;
-  margin-bottom:15px;
+  margin-top: 50px;
+  margin-bottom:10px;
 }
 
 input {
-  width:40%;
+  width:35%;
   position: relative;
-  text-align:center;
-  margin-bottom:55px;
+  text-align: center;
 }
 
 .sidebar {
+  float: left;
+  width: 20%;
+  margin: 10px;
   height: 100%;
   padding: 25px 25px 25px 25px;
-  border-right: 1px solid #000000;
+  border-right: 0.75px solid #000000ce;
   position: relative;
-  z-index: 1;
-  width: 20%;
+  overflow: hidden;
+}
+
+#zipcode {
+  /*WHY ISN'T THIS A TEXTBOX IT WAS ONE IN MY HTML!!!*/
+  height: 5px;
+  width: 35%;
 }

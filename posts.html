@@ -49,11 +49,11 @@
     <!-- FILTERS -->
     <div class="sidebar" id="filters">
         <!-- Date (calendar) -->
-        <label class="header" id="date">Date</label><br>
+        <label style="margin-top: 20px" class="header" id="date">Date</label><br>
         <div id="calendar-container">
             <div id="calendar-header">
-                <a id="btnPrevMonth" href="#"><span> < </span></a>
                 <span id="calendar-month-year"></span>
+                <a id="btnPrevMonth" href="#"><span> < </span></a>
                  <a id="btnNextMonth" href="#"><span> > </span></a>
              </div>
             <div id="calendar-dates">
@@ -71,7 +71,7 @@
          <!-- Destination -->
          <label class="header">Destination</label><br>
          <div id="destination-container">
-             <input type="text" id="destination" maxlength="5" pattern="[0-9]{5}" placeholder="zip code">
+             <input type="text" id="zipcode" maxlength="5" pattern="[0-9]{5}" placeholder="zip code">
          </div>
 
          <!-- Distance -->
@@ -82,7 +82,7 @@
          </form>
 
          <!-- Apply -->
-         <input type="submit" class="main_button" id="submit" value="Apply">
+         <input style="margin-top: 50px" type="submit" class="main_button header" id="submit" value="Apply">
 
     </div>
 
