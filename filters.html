@@ -6,19 +6,18 @@
 
         <meta name="author" content="Lan Anh Do, Rebekah Kang, Zaeda Meherin">
         <meta name="description" content="Ridr - a rideshare website for college students">  
-        
-        <link href="static/sidebar-formatting.css" type="text/css" rel="stylesheet"/>
+
         <link href="static/features.css" type="text/css" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> 
         <link href="static/fonts.css" type="text/css" rel="stylesheet"/>
+        <link href="static/sidebar-formatting.css" type="text/css" rel="stylesheet"/>
         <link href="static/range-slider.css" type="text/css" rel="stylesheet"/>
         <link href="static/calendar.css" type="text/css" rel="stylesheet"/>
     </head>
 
     <body>
         <!-- SIDEBAR FILTER -->
-        <div class="sidebar" id="filters">
-            
+        <div class="sidebar" id="filters">  
             <!-- Date (calendar) -->
             <label class="header" id="date">Date</label><br>
             <div id="calendar-container">
@@ -53,11 +52,11 @@
             </form>
 
             <!-- Apply -->
-
-            
-                 
+            <div class="main_button" id="submit">
+                <!-- <button class="btn active" onclick="filterSelection()">Submit</button> -->
+                <input type="submit" name="submit" value="Submit">
+            </div>   
         </div>
-
 
         <!-- --------------------------------------------------------------------------- -->
 
@@ -69,6 +68,7 @@
         </script>
         <script src="distance.js"></script> 
         <script src="calendar.js"></script>
+        <script src="filter-selection.js"></script>
 
 
     </body>
