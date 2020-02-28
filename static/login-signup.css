@@ -1,6 +1,4 @@
-
 body{
-    font-family: roboto;
     background-image: url("images/BlackCar.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -8,7 +6,6 @@ body{
 }
 
 .containerLoginSignUp{
-    font-family: roboto;
     width: 55%;
     margin: 30px auto;
     vertical-align: middle;

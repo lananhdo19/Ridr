@@ -1,5 +1,4 @@
 window.onload = function(){
-
     var d = new Date();
     var month_name = ['January','February','March','April','May','June','July','August','September','October','November','December'];
     var month = d.getMonth();   //0-11
@@ -7,22 +6,21 @@ window.onload = function(){
     var first_date = month_name[month] + " " + 1 + " " + year;
     //February 1 2020
     var tmp = new Date(first_date).toDateString();
-    //Sat Feb 01 2020 
+    //Sat Feb 01 2020 (first day of current month))
     var first_day = tmp.substring(0, 3);    //Sat
     var day_name = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
     var day_no = day_name.indexOf(first_day);   //1
     var days = new Date(year, month+1, 0).getDate();    //29
-    //Tue Feb 29 2020 
+    //Tue Feb 29 2020 (last day of current month)
     var calendar = get_calendar(day_no, days, month, year);
     document.getElementById("calendar-month-year").innerHTML = month_name[month] + " " + year;
-    var display = document.getElementById("calendar-dates").appendChild(calendar);    
+    document.getElementById("calendar-dates").appendChild(calendar);
 
     //previous month
     document.getElementById("btnPrevMonth").onclick = function() {
         var curr_month = month; 
         var curr_year = year;
-        var cnt = 0;
-        if(month == 0) {
+        if (month == 0) {
             curr_month = 11;
             curr_year--;        
         } else {
@@ -33,22 +31,23 @@ window.onload = function(){
         month = curr_month;
         year = curr_year;
 
-        first_date = month_name[month] + " " + 1 + " " + year;
-        tmp = new Date(first_date).toDateString();
-        first_day = tmp.substring(0, 3);
-        day_no = day_name.indexOf(first_day); 
-        days = new Date(year, month+1, 0).getDate();      
-        calendar = get_calendar(day_no, days, month, year);
+        var first_date = month_name[month] + " " + 1 + " " + year;
+        var tmp = new Date(first_date).toDateString();
+        var first_day = tmp.substring(0, 3);    //Sat
+        var day_no = day_name.indexOf(first_day);   //1
+        var days = new Date(year, month+1, 0).getDate();    //29
+        var calendar = get_calendar(day_no, days, month, year);
         var prev = document.getElementById("calendar-dates").appendChild(calendar);
-        prev.previousSibling.remove();
-      
+        //prev.remove(prev.previousSibling);
+        prev.parentElement(prev.previousSibling);
+
     };
 
     //next month
     document.getElementById("btnNextMonth").onclick = function() {
         var curr_month = month; 
         var curr_year = year;
-        if(month == 11) {
+        if (month == 11) {
             curr_month = 0;
             curr_year++;
         } else {
@@ -57,14 +56,6 @@ window.onload = function(){
         document.getElementById("calendar-month-year").innerHTML = month_name[curr_month] + " " + curr_year;
         month = curr_month;
         year = curr_year;
-        first_date = month_name[month] + " " + 1 + " " + year;
-        tmp = new Date(first_date).toDateString();
-        first_day = tmp.substring(0, 3);
-        day_no = day_name.indexOf(first_day); 
-        days = new Date(year, month+1, 0).getDate(); 
-        calendar = get_calendar(day_no, days, month, year);
-        var next = document.getElementById("calendar-dates").appendChild(calendar);
-        next.previousSibling.remove();
     };
 }
 
@@ -97,8 +88,9 @@ function get_calendar(day_no, days, month, year){
     var count = 1;
     for(; c<=6; c++){
         var td = document.createElement('td');
+        //added it
         if (count == todaysDate.getDate() && month == todaysDate.getMonth() && year == todaysDate.getFullYear()) {
-            td.className = "today";
+            td.className = 'today';
         }
         td.innerHTML = count;
         count++;
@@ -116,7 +108,7 @@ function get_calendar(day_no, days, month, year){
             }
             var td = document.createElement('td');
             if (count == todaysDate.getDate() && month == todaysDate.getMonth() && year == todaysDate.getFullYear()) {
-                td.className = "today";
+                td.className = 'today';
             }
             td.innerHTML = count;
             count++;
@@ -126,4 +118,3 @@ function get_calendar(day_no, days, month, year){
     }
 	return table;
 }
-
