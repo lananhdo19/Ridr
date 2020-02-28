@@ -17,6 +17,10 @@
   <link rel="stylesheet" href="static/fonts.css" />
   <link rel="stylesheet" href="static/posts.css" />
   <link rel="stylesheet" href="static/div-formatting.css" />
+
+  <link href="static/sidebar-formatting.css" type="text/css" rel="stylesheet"/>
+  <link href="static/range-slider.css" type="text/css" rel="stylesheet"/>
+  <link href="static/calendar.css" type="text/css" rel="stylesheet"/>
 </head>
 
 <body>  
@@ -42,13 +46,49 @@
 	</header>
 	
 
+    <!-- FILTERS -->
+    <div class="sidebar" id="filters">
+        <!-- Date (calendar) -->
+        <label class="header" id="date">Date</label><br>
+        <div id="calendar-container">
+            <div id="calendar-header">
+                <a id="btnPrevMonth" href="#"><span> < </span></a>
+                <span id="calendar-month-year"></span>
+                 <a id="btnNextMonth" href="#"><span> > </span></a>
+             </div>
+            <div id="calendar-dates">
+            </div>
+         </div>
+
+         <!-- Time -->
+         <label class="header">Time</label><br>
+         <div id="time-container">
+             <input type="time" id="time1" name="time" placeholder="hrs:mins" pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$">
+             to
+             <input type="time" id="time2" name="time" placeholder="hrs:mins" pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$">
+         </div>
+
+         <!-- Destination -->
+         <label class="header">Destination</label><br>
+         <div id="destination-container">
+             <input type="text" id="destination" maxlength="5" pattern="[0-9]{5}" placeholder="zip code">
+         </div>
+
+         <!-- Distance -->
+         <label class="header">Distance</label><br>
+         <form class="range-slider">  
+             0 mi <input type="range" id="inputRange" value="0"> 100 mi
+             <p>Value: <span id="sliderValue"></span></p>
+         </form>
+
+         <!-- Apply -->
+         <input type="submit" class="main_button" id="submit" value="Apply">
+
+    </div>
+
     <!-- BODY -->
     <div class="main">
-		<div class="posts-pg flex-container-stretch">
-			<div class="filters-div" style="flex-grow: 1">
-				<!-- filters go here -->
-			</div>
-
+        <div class="posts-pg flex-container-stretch">
 			<div class="posts-div" style="flex-grow: 5">
 				<div class="posts-right-top">
 					<div class="driver-rider-dropdown subheader">
@@ -81,7 +121,7 @@
                 </div>
             </div>
         </div>
-
+        <div class="main">
         <!-- The Modal -->
         <div id="create-post-modal-container" class="modal">
             <!-- Modal content -->
@@ -149,6 +189,15 @@ window.onclick = function(event) {
 }
 
 </script>
+
+<!-- filter JS -->
+<script>
+    function myFunction() {
+        document.getElementById("filters").style.overflow = "scroll";
+    }
+</script>
+<script src="distance.js"></script>
+<script src="calendar.js"></script>
 
 </body>
 </html>

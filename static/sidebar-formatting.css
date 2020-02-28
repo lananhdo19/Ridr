@@ -12,12 +12,10 @@ input {
 }
 
 .sidebar {
+  height: 100%;
   padding: 25px 25px 25px 25px;
   border-right: 1px solid #000000;
-  height: 100%;
-  width: 17%;
-  position: fixed;
+  position: relative;
   z-index: 1;
-  background-color: #FFFFFF;
-  overflow-x: hidden;
+  width: 20%;
 }
