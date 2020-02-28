@@ -12,7 +12,11 @@ window.onload = function(){
     var day_no = day_name.indexOf(first_day);   //1
     var days = new Date(year, month+1, 0).getDate();    //29
     //Tue Feb 29 2020 (last day of current month)
+<<<<<<< HEAD
     var calendar = get_calendar(day_no, days, month, year);
+=======
+    var calendar = get_calendar(day_no, days);
+>>>>>>> bd8f7d29db74807b78dca4dcf49ea0767b5e0fdd
     document.getElementById("calendar-month-year").innerHTML = month_name[month] + " " + year;
     document.getElementById("calendar-dates").appendChild(calendar);
 
@@ -22,14 +26,17 @@ window.onload = function(){
         var curr_year = year;
         if (month == 0) {
             curr_month = 11;
+            curr_month--;
             curr_year--;        
         } else {
             curr_month--;
         }
       
         document.getElementById("calendar-month-year").innerHTML = month_name[curr_month] + " " + curr_year;
+        document.getElementById("calendar-dates").appendChild(calendar);
         month = curr_month;
         year = curr_year;
+<<<<<<< HEAD
 
         var first_date = month_name[month] + " " + 1 + " " + year;
         var tmp = new Date(first_date).toDateString();
@@ -41,6 +48,8 @@ window.onload = function(){
         //prev.remove(prev.previousSibling);
         prev.parentElement(prev.previousSibling);
 
+=======
+>>>>>>> bd8f7d29db74807b78dca4dcf49ea0767b5e0fdd
     };
 
     //next month
@@ -49,11 +58,13 @@ window.onload = function(){
         var curr_year = year;
         if (month == 11) {
             curr_month = 0;
+            curr_month++;
             curr_year++;
         } else {
             curr_month++;
         }
         document.getElementById("calendar-month-year").innerHTML = month_name[curr_month] + " " + curr_year;
+        document.getElementById("calendar-dates").appendChild(calendar);
         month = curr_month;
         year = curr_year;
     };
