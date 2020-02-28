@@ -37,8 +37,7 @@ window.onload = function(){
         var days = new Date(year, month+1, 0).getDate();    //29
         var calendar = get_calendar(day_no, days, month, year);
         var prev = document.getElementById("calendar-dates").appendChild(calendar);
-        //prev.remove(prev.previousSibling);
-        prev.removeChild(prev.previousSibling);
+        prev.previousSibling.remove();
 
     };
 
@@ -53,9 +52,17 @@ window.onload = function(){
             curr_month++;
         }
         document.getElementById("calendar-month-year").innerHTML = month_name[curr_month] + " " + curr_year;
-        document.getElementById("calendar-dates").appendChild(calendar);
         month = curr_month;
         year = curr_year;
+
+        var first_date = month_name[month] + " " + 1 + " " + year;
+        var tmp = new Date(first_date).toDateString();
+        var first_day = tmp.substring(0, 3);    //Sat
+        var day_no = day_name.indexOf(first_day);   //1
+        var days = new Date(year, month+1, 0).getDate();    //29
+        var calendar = get_calendar(day_no, days, month, year);
+        var next = document.getElementById("calendar-dates").appendChild(calendar);
+        next.previousSibling.remove();
     };
 }
 
