@@ -91,7 +91,7 @@
         <div class="posts-pg flex-container-stretch">
 			<div class="posts-div" style="flex-grow: 5">
 				<div class="posts-right-top">
-					<div class="driver-rider-dropdown subheader">
+					<div class="driver-rider-dropdown normal-text">
 						<p class="header">I'm looking for a</p>
 						<select class="dropdown">
 							<option value="driver">driver</option>
@@ -114,7 +114,7 @@
                                     {{Time}}<br/>
                                     {{Comments}}
                                 </p>
-                                <button type="button" class="request_button subheader right-div-button">Request</button>
+                                <button type="button" class="request_button normal-text right-div-button">Request</button>
                             </div>
 						</div>
 					</div>
@@ -130,11 +130,37 @@
                 <p class="mega-header create-post-p">Create Post</p>
 
                 <form class="subheader">
-                    <input type="text" id="Destination" placeholder="Destination">
-                    <input type="text" id="Date" placeholder="Date">
-                    <input type="text" id="Time" placeholder="Time">
-                    <input type="text" id="Comments" placeholder="Comments">
-                    <button type="submit" class="main_button header">Submit</button>
+                    <input type="text" class="gray" id="Destination" placeholder="Destination Area">
+                    <!-- https://codepen.io/kylelavery88/pen/adbzLQ to "time" placeholder -->
+                    <input type="date" id="Date" placeholder="Date" required="required" class="gray">
+                    <input type="time" id="Time" placeholder="Time" step="900" class="gray">
+                    <input type="text" id="Comments" placeholder='Comments (e.g. "asking for $15")' class="gray">
+                    <div class="flex-container-stretch">
+                        <div class="cp-dropdown subheader gray" style="flex-grow: 3">
+                            <input type="number" id="zip-code" placeholder="Zip code">
+                        </div>
+                        <div class="cp-dropdown subheader gray" style="flex-grow: 3">
+                            <select class="dropdown" id="cp-dropdown">
+                                <option value="driver">Driver</option>
+                                <option value="rider">Rider</option>
+                            </select>
+                        </div>
+                        <div class="cp-dropdown subheader gray" style="flex-grow: 3">
+                            <select class="dropdown" id="cp-dropdown">
+                                <option selected="true" disabled="disabled">Seats</option>    
+                                <option value="N/A">N/A</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="main_button header submit-button">Submit</button>
                 </form>
             </div>
         </div>

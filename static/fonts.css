@@ -1,17 +1,20 @@
+.mega-header {
+    font-size: 40px;
+}
 .header {
     font-size: 21px;
 }
 .subheader {
-    font-size: 15px;
+    font-size: 18px;
 }
-.mega-header {
-    font-size: 40px;
+.normal-text {
+    font-size: 15px;
 }
 @media only screen and (max-width: 900px) {
     .header {
         font-size: 17px;
     }
-    .subheader {
+    .normal-text {
         font-size: 13px;
     }
 }
@@ -22,7 +25,7 @@
     .header {
         font-size: 15px;
     }
-    .subheader {
+    .normal-text {
         font-size: 14px;
     }
 }
