@@ -85,6 +85,20 @@
 .create-post-p {
     text-align: center;
 }
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid gray;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    text-align: left;
+}
 
 @media only screen and (max-width: 900px) {
     .posts-right {
