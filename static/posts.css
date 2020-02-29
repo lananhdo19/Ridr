@@ -50,9 +50,9 @@
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    /* padding-top: 100px; Location of the box */
     left: 0;
-    top: 0;
+    /* top: 0; */
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
@@ -63,7 +63,7 @@
   /* Modal Content */
   .create-post-modal-content {
     background-color: #fefefe;
-    margin: auto;
+    margin: 10vh auto;
     padding: 50px 100px;
     width: 50%;
 }
