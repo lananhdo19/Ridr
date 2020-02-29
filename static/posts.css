@@ -86,20 +86,6 @@
     text-align: center;
 }
 
-input[type=text] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border-bottom: 1px solid black;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-    outline: none;
-}
-
 @media only screen and (max-width: 900px) {
     .posts-right {
         padding: 60px;
