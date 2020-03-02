@@ -6,7 +6,7 @@ div.row{
     width: inherit;
 }
 
-.profilePic{
+.profilePic-Dash{
     width: 100px;
     height: 100px;
     margin-top: 140px;
@@ -25,13 +25,21 @@ div.row{
 }
 
 .expandedPost{
-    max-height: 500px !important;
-    height: 50%;
+    height: fit-content;
+    min-height: 500px;
     border: black solid 1px;
     margin-right: 40px;
 }
 
-.expandedPostInfo{
+.expandedPost-Body{
+    text-align: center;
+}
+
+.expandedPostColumn{
+    height: fit-content;
+}
+
+.expandedPostContainer{
     height: 100% !important;
     margin-top: 140px;
 }
@@ -41,9 +49,21 @@ div.row{
     clear: both;
 }
 
+
+
+@media only screen and (max-width: 1069px){
+    .profile-pic{
+        max-width: 50% !important;
+    }
+    .personalInfo{
+        max-width: 20% !important;
+    }
+}
+
 @media only screen and (max-width: 768px) {
     div.row {
         display: block;
+        max-width: 100%;
     }
     .col-3{
         max-width: inherit !important;
@@ -55,9 +75,11 @@ div.row{
         max-width: inherit !important;
         position: center !important;
         padding: 0px 0px 0px 0px;
+        margin-left: 15px;
     }
-    .expandedPostInfo{
+    .expandedPostContainer{
         margin-top: 0px;
+        margin-left: 15px;
     }
 
     .expandedPost{
@@ -67,10 +89,8 @@ div.row{
     .history{
         margin-bottom: 0px;
     }
+
+
+
 }
 
-@media only screen and (min-width: 1313px){
-    .mainPost{
-        max-width: 80% !important;
-    }
-}

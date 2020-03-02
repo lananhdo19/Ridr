@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="static/base.css"/>
     <link rel="stylesheet" href="static/posts.css"/>
     <link rel="stylesheet" href="static/dashboard.css"/>
+    <link rel="stylesheet" href="static/features.css" />
 </head>
 <body>
 
@@ -22,17 +23,17 @@
 <header>
     <nav class="navbar header" id="navbar">
         <div class="left_nav">
-            <a class="ridr-logo" href="#">
+            <a class="ridr-logo" href="posts.html">
                 <img src="static/images/logoWhite.png" onerror="this.style.display='none'"
                      id="ridr-logo" width="70" height="40" class="d-inline-block align-top">
             </a>
         </div>
         <div class="right_nav">
             <div>
-                <a href="#" class="post_nav_item">Posts</a>
+                <a href="posts.html" class="post_nav_item">Posts</a>
             </div>
             <div>
-                <a href="#"><span>Hi name</span>
+                <a href="#"><span>Hi {name}</span>
                     <img src="static/images/profilepic.png" href="#" width="42" height="42">
                 </a>
             </div>
@@ -42,8 +43,8 @@
 
 <div class="row">
     <div class="personalInfo col-3 ">
-        <img class="profilePic" src="static/images/profilepic.png" href="#">
-        <h3 class="name-dash">Your name</h3>
+        <img class="profilePic-Dash" src="static/images/profilepic.png" href="#">
+        <h3 class="name-dash">{Your name}</h3>
     </div>
 
     <div class="history col-6">
@@ -52,28 +53,98 @@
             <h2>Requests & Offers</h2>
             <br>
             <div class="panel panel-default">
-                <div class="panel-body">A Basic Panel</div>
+                <div class="panel-body">
+                    <img src="static/images/aesthetic-user-profile-img.png" href="#" class="profile-pic">
+                    <p class="panel-p">
+                        {{Destination}}<br/>
+                        {{Date}}<br/>
+                        {{Time}}<br/>
+                        {{Comments}}
+                    </p>
+                    <button type="button" class="request_button normal-text right-div-button">Request</button>
+                </div>
             </div>
 
             <h2>Past Posts</h2>
-            <div class="panel panel-default">
-                <div class="panel-body">A Basic Panel</div>
-            </div>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <img src="static/images/aesthetic-user-profile-img.png" href="#" class="profile-pic">
+                            <p class="panel-p">
+                                {{Destination}}<br/>
+                                {{Date}}<br/>
+                                {{Time}}<br/>
+                                {{Comments}}
+                            </p>
+                            <button type="button" class="request_button normal-text right-div-button">Request</button>
+                        </div>
+                    </div>
         </div>
 
-        <!--
-        <div class="col-3 historyLabels">  </div>
-        <div class="col-3 historyPosts ">
-        <div class="row historyRow"></div>
-        -->
     </div>
     <div class="expandedPostColumn col-3">
-        <div class="expandedPostInfo">
-                <div class="expandedPost">A Basic Panel
+        <div class="expandedPostContainer">
+                <div class="expandedPost">
+                    <div class="expandedPost-Body">
+                    <h4>Information about Post</h4>
+                    <p>
+                        {{Destination}}<br/>
+                        {{Date}}<br/>
+                        {{Time}}<br/>
+                        {{Comments}}
+                    </p>
+                    </div>
+
                     <table class="expandedPostRiders">
                         <tbody>
                             <tr>
-                                <div class="panel-body">rider</div>
+                                <div class="riders-body">
+                                    <hr>
+                                    <p class="panel-p">
+                                        {{Rider Name}}<br/>
+                                        {{Rider Contact}}<br/>
+                                        {{Comments}}
+                                    </p>
+                                </div>
+                            </tr>
+                            <tr>
+                                <div class="riders-body">
+                                    <hr>
+                                    <p class="panel-p">
+                                        {{Rider Name}}<br/>
+                                        {{Rider Contact}}<br/>
+                                        {{Comments}}
+                                    </p>
+                                </div>
+                            </tr>
+                            <tr>
+                                <div class="riders-body">
+                                    <hr>
+                                    <p class="panel-p">
+                                        {{Rider Name}}<br/>
+                                        {{Rider Contact}}<br/>
+                                        {{Comments}}
+                                    </p>
+                                </div>
+                            </tr>
+                            <tr>
+                                <div class="riders-body">
+                                    <hr>
+                                    <p class="panel-p">
+                                        {{Rider Name}}<br/>
+                                        {{Rider Contact}}<br/>
+                                        {{Comments}}
+                                    </p>
+                                </div>
+                            </tr>
+                            <tr>
+                                <div class="riders-body">
+                                    <hr>
+                                    <p class="panel-p">
+                                        {{Rider Name}}<br/>
+                                        {{Rider Contact}}<br/>
+                                        {{Comments}}
+                                    </p>
+                                </div>
                             </tr>
                         </tbody>
                     </table>
@@ -87,4 +158,12 @@
 
 
 </body>
+
+<script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous">
+
+</script>
+<script src="dashboard.js"></script>
 </html>
