@@ -5,11 +5,8 @@ label {
   margin-bottom:10px;
 }
 
-input {
-  width:35%;
-  position: relative;
-  text-align: center;
-}
+.openbtn {display:none}
+.closebtn {display:none}
 
 .sidebar {
   float: left;
@@ -18,12 +15,49 @@ input {
   height: 100%;
   padding: 25px 25px 25px 25px;
   border-right: 0.75px solid #000000ce;
-  position: relative;
   overflow: hidden;
 }
+
+/*if screen size is 764px wide or smaller*/
+@media screen and (max-width: 850px) {
+  /*-webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;*/
+  .sidebar{
+    display: none;
+  }
+
+  .openbtn {
+    display:block;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+
+  .openbtn:hover {
+    background-color: #444;
+  }
+
+  .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+}
+
 
 #zipcode {
   /*WHY ISN'T THIS A TEXTBOX IT WAS ONE IN MY HTML!!!*/
   height: 5px;
   width: 35%;
+}
+
+#submit {
+  margin-top: 50px;
+  text-align: center;
 }

@@ -9,6 +9,9 @@
     
   <title></title> <!-- REMEMBER TO REPLACE -->
   
+  <!-- JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
   <!-- Bootstrap, Google Font, My CSS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -45,20 +48,20 @@
             </div>
 		</nav>
 	</header>
-	
 
     <!-- FILTERS -->
+    <button class="openbtn" onclick="openNav()">☰</button>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
     <div class="sidebar" id="filters">
         <!-- Date (calendar) -->
         <label style="margin-top: 20px" class="header" id="date">Date</label><br>
         <div id="calendar-container">
             <div id="calendar-header">
                 <span id="calendar-month-year"></span>
-                <a id="btnPrevMonth" href="#"><span> < </span></a>
-                 <a id="btnNextMonth" href="#"><span> > </span></a>
+                <a id="btnPrevMonth" href="javascript:void(0)"><span> < </span></a>
+                <a id="btnNextMonth" href="javascript:void(0)"><span> > </span></a>
              </div>
-            <div id="calendar-dates">
-            </div>
+            <div id="calendar-dates"></div>
          </div>
 
          <!-- Time -->
@@ -83,7 +86,7 @@
          </form>
 
          <!-- Apply -->
-         <input style="margin-top: 50px" type="submit" class="main_button header" id="submit" value="Apply">
+         <input type="submit" class="main_button header" id="submit" value="Apply">
 
     </div>
 
@@ -229,8 +232,8 @@ window.onclick = (event) => {
     modal.style.display = "none";
   }
 }
-
 </script>
+
 
 <!-- filter JS -->
 <script>
@@ -238,6 +241,7 @@ window.onclick = (event) => {
         document.getElementById("filters").style.overflow = "scroll";
     }
 </script>
+<script>src="sidebar-resizing.js"</script>
 <script src="distance.js"></script>
 <script src="calendar.js"></script>
 
