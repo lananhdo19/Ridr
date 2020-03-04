@@ -41,12 +41,17 @@
     </nav>
 </header>
 
+
+<!-- Row for Columns on Entire page -->
 <div class="row">
+
+    <!-- Personal Info Column displays your profile pic and name -->
     <div class="personalInfo col-3 ">
         <img class="profilePic-Dash" src="static/images/profilepic.png" href="#">
         <h3 class="name-dash">{Your name}</h3>
     </div>
 
+    <!-- Column for past posts and requests -->
     <div class="history col-6">
 
         <div class="post-listings mainPost">
@@ -79,8 +84,9 @@
                         </div>
                     </div>
         </div>
-
     </div>
+
+    <!-- Column for information on a specifc post listing the riders -->
     <div class="expandedPostColumn col-3">
         <div class="expandedPostContainer">
                 <div class="expandedPost">
@@ -94,6 +100,8 @@
                     </p>
                     </div>
 
+
+                    <!-- Table for riders listing returned from database and edited by DOM JS -->
                     <table class="expandedPostRiders">
                         <tbody>
                             <tr>
