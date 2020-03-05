@@ -10,7 +10,7 @@
   <title></title> <!-- REMEMBER TO REPLACE -->
   
   <!-- JQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
 
   <!-- Bootstrap, Google Font, My CSS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -50,8 +50,7 @@
 	</header>
 
     <!-- FILTERS -->
-    <button class="openbtn" onclick="openNav()">☰</button>
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <button class="openbtn" onclick="smallFilterSize()">Filters</button> <!-- ☰ -->
     <div class="sidebar" id="filters">
         <!-- Date (calendar) -->
         <label style="margin-top: 20px" class="header" id="date">Date</label><br>
@@ -60,9 +59,9 @@
                 <span id="calendar-month-year"></span>
                 <a id="btnPrevMonth" href="javascript:void(0)"><span> < </span></a>
                 <a id="btnNextMonth" href="javascript:void(0)"><span> > </span></a>
-             </div>
+            </div>
             <div id="calendar-dates"></div>
-         </div>
+        </div>
 
          <!-- Time -->
          <label class="header">Time</label><br>
@@ -86,8 +85,9 @@
          </form>
 
          <!-- Apply -->
-         <input type="submit" class="main_button header" id="submit" value="Apply">
-
+         <div id="apply">
+            <input type="submit" class="main_button header" id="submit" value="Apply">
+         </div>
     </div>
 
     <!-- BODY -->
@@ -241,7 +241,8 @@ window.onclick = (event) => {
         document.getElementById("filters").style.overflow = "scroll";
     }
 </script>
-<script>src="sidebar-resizing.js"</script>
+
+<script src="sidebar-resizing.js"></script>
 <script src="distance.js"></script>
 <script src="calendar.js"></script>
 
