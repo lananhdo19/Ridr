@@ -64,11 +64,11 @@
 
 
 <script>
-// NOT WORKING???
-var logo = document.getElementById("ridr-logo");
-logo.onerror = function () { 
-    this.style.display = "none";
-}  
+    // Remove default square img if logo doesn't load !!!
+    var logo = document.getElementById("ridr-logo");
+    logo.onerror = function () { 
+        this.style.display = "none";
+    }  
 </script>
   
 

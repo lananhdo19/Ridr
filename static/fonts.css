@@ -1,3 +1,4 @@
+/* Mega-header, Header, Subheader Fonts */
 .mega-header {
     font-size: 40px;
 }
@@ -10,6 +11,7 @@
 .normal-text {
     font-size: 15px;
 }
+/* Responsive */
 @media only screen and (max-width: 900px) {
     .header {
         font-size: 17px;

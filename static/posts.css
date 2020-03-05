@@ -1,3 +1,4 @@
+/* Dropdowns */
 .dropdown {
     margin: 0 20px;
 }
@@ -14,9 +15,11 @@
     display: inline-block;
     margin: auto 2vw auto auto;
 }
+/* Buttons */
 .create-post-button-div {
     float: right;
 }
+/* Posts Side */
 .posts-pg {
     height: 100vh;
     min-width: 720px;
@@ -27,6 +30,7 @@
     height: fit-content;
     font-size: 30px;
 }
+/* Ride Listings */
 .post-listings {
     margin: 0 auto;
     width: inherit;
@@ -61,7 +65,7 @@
 .right-div-button {
     margin: auto;
 }
-.panel-body img { /* ??? */
+.panel-body img {
     width: auto; /* to maintain aspect ratio. You can use 100% if you don't care about that */
     height: 100%;
 }

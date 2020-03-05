@@ -7,17 +7,18 @@
   <meta name="author" content="Lan Anh Do, Rebekah Kang, Zaeda Meherin">
   <meta name="description" content="Ridr - a rideshare website for college students">  
     
-  <title></title> <!-- REMEMBER TO REPLACE -->
+  <title>Posts</title>
   
-  <!-- JQuery, Bootstrap, Google Font, My CSS -->
+  <!-- JQuery, Bootstrap, Google Font -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway:300,400,700&display=swap" rel="stylesheet">
+  <!-- My CSS -->
   <link rel="stylesheet" href="static/base.css" />
   <link rel="stylesheet" href="static/div-formatting.css" />
   <link rel="stylesheet" href="static/features.css" />
   <link rel="stylesheet" href="static/fonts.css" />
-    <link rel="stylesheet" href="static/posts.css" />
+  <link rel="stylesheet" href="static/posts.css" />
 
   <link href="static/sidebar-formatting.css" type="text/css" rel="stylesheet"/>
   <link href="static/range-slider.css" type="text/css" rel="stylesheet"/>
@@ -30,12 +31,15 @@
     <!-- HEADER -->
     <header>
 		<nav class="navbar header" id="navbar">
+            <!-- Left Side: Logo -->
 			<div class="left_nav">
 				<a class="ridr-logo" href="#">
                     <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" onerror="this.style.display='none'" 
                     id="ridr-logo" width="30" height="30" class="d-inline-block align-top">
                 </a>
-            </div><div class="right_nav">
+            </div>
+            <!-- Right side: Posts, Login/Account -->
+            <div class="right_nav">
                 <div>
                     <a href="#" class="post_nav_item">Posts</a>
                 </div><div>
@@ -91,23 +95,27 @@
     <!-- BODY -->
     <div class="main">
         <div class="posts-pg flex-container-stretch">
-			<div class="posts-div" style="flex-grow: 5">
+            <div class="posts-div" style="flex-grow: 5">
+                <!-- Buttons-->
 				<div class="posts-right-top">
+                    <!-- I'm Looking For Driver/Rider BUTTON -->
 					<div class="driver-rider-dropdown normal-text">
 						<p class="header">I'm looking for a</p>
 						<select class="dropdown">
 							<option value="driver">driver</option>
 							<option value="rider">rider</option>
 						  </select>
-					</div>
+                    </div>
+                    <!-- Create Post Button -->
 					<div class="create-post-button-div">
 						<button type="button" class="main_button header" id="create-post-button">Create post</button>
 					</div>
 				</div>
-
 				<div class="flex-container-wrap panels">
+                    <!-- Ride Listings -->
 					<div class="post-listings" id="post-listings">
-						<div class="panel panel-default">
+                        <!-- Listing 1 -->
+                        <div class="panel panel-default">
 							<div class="panel-body">
                                 <img src="static/images/aesthetic-user-profile-img.png" href="#" class="profile-pic">
                                 <p class="panel-p" id="panel-p">
@@ -119,6 +127,7 @@
                                 <button type="button" class="request_button normal-text right-div-button">Request</button>
                             </div>
                         </div>
+                        <!-- Listing 2 -->
                         <div class="panel panel-default" onhover="createPostFunction()">
 							<div class="panel-body">
                                 <img src="static/images/aesthetic-user-profile-img.png" href="#" class="profile-pic">
@@ -142,8 +151,9 @@
             <!-- Modal content -->
             <div class="create-post-modal-content">
                 <span class="close">&times;</span>
+                <!-- Heading -->
                 <p class="mega-header create-post-p">Create Post</p>
-
+                <!-- Form Content -->
                 <form class="subheader">
                     <input type="text" class="gray" id="Destination" placeholder="Destination Area">
                     <!-- https://codepen.io/kylelavery88/pen/adbzLQ to "time" placeholder -->
@@ -199,16 +209,15 @@
 
 
 <script>
-// Remove default square img if logo doesn't load
-// NOT WORKING???
+// Remove default square img if logo doesn't load !!!
 var logo = document.getElementById("ridr-logo");
 logo.onerror = function () { 
     this.style.display = "none";
 }  
 </script>
 
-<script type="text/javascript" src="modal.js"></script>
-
+<!-- modal JS -->
+<script type="text/javascript" src="js/modal.js"></script>
 
 <!-- filter JS -->
 <script>
@@ -216,10 +225,9 @@ logo.onerror = function () {
         document.getElementById("filters").style.overflow = "scroll";
     }
 </script>
-
-<script src="sidebar-resizing.js"></script>
-<script src="distance.js"></script>
-<script src="calendar.js"></script>
+<script src="js/sidebar-resizing.js"></script>
+<script src="js/distance.js"></script>
+<script src="js/calendar.js"></script>
 
 </body>
 </html>
