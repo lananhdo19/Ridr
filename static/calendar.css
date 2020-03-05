@@ -7,6 +7,7 @@ label#date {
     color: rgb(156, 156, 156);
 }
 
+/*contains calendar-month-year*/
 #calendar-header {
     font-size: 13px;
     text-align: left;
@@ -17,6 +18,7 @@ label#date {
     margin-bottom: 5px;
 }
 
+/*February 2020*/
 #calendar-month-year{
     margin: 5px;
 }
@@ -35,10 +37,12 @@ label#date {
     text-align: right;
 }
 
+/*dates*/
 #calendar-dates>table>tr>td {
     padding: 11px;
 }
 
+/*today's date*/
 .today {
     border-radius: 50%;
     background-color: rgba(188, 215, 241, 0.692);

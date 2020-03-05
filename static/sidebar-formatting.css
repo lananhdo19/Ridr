@@ -5,6 +5,7 @@ label {
   margin-bottom:10px;
 }
 
+/*if screen is greater than 940px*/
 @media screen and (min-width: 940px) {
   .sidebar {
     float: left;
@@ -19,6 +20,7 @@ label {
   .openbtn {display:none}
 }
 
+/*if screen is less than 940px*/
 @media screen and (max-width: 940px) {
   .sidebar{
     display: none;
@@ -38,12 +40,6 @@ label {
     background-color: #444;
   }
 }
-
-/*
-#destination-container {
-  height: 5px;
-  width: 35%;
-}*/
 
 #apply {
   margin-top: 50px;
