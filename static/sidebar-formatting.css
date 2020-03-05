@@ -17,7 +17,10 @@ label {
     overflow: hidden;
   }
   
-  .openbtn {display:none}
+  .openbtn {
+    display:none
+    margin-top: 10px;
+  }
 }
 
 /*if screen is less than 940px*/
