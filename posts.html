@@ -9,7 +9,7 @@
     
   <title></title> <!-- REMEMBER TO REPLACE -->
   
-  <!-- Bootstrap, Google Font, My CSS -->
+  <!-- JQuery, Bootstrap, Google Font, My CSS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway:300,400,700&display=swap" rel="stylesheet">
@@ -46,21 +46,20 @@
             </div>
 		</nav>
 	</header>
-	
 
     <!-- FILTERS -->
+    <button class="openbtn" onclick="smallFilterSize()">Filters</button> <!-- ☰ -->
     <div class="sidebar" id="filters">
         <!-- Date (calendar) -->
         <label style="margin-top: 20px" class="header" id="date">Date</label><br>
         <div id="calendar-container">
             <div id="calendar-header">
                 <span id="calendar-month-year"></span>
-                <a id="btnPrevMonth" href="#"><span> < </span></a>
-                 <a id="btnNextMonth" href="#"><span> > </span></a>
-             </div>
-            <div id="calendar-dates">
+                <a id="btnPrevMonth" href="javascript:void(0)"><span> < </span></a>
+                <a id="btnNextMonth" href="javascript:void(0)"><span> > </span></a>
             </div>
-         </div>
+            <div id="calendar-dates"></div>
+        </div>
 
          <!-- Time -->
          <label class="header">Time</label><br>
@@ -84,8 +83,9 @@
          </form>
 
          <!-- Apply -->
-         <input style="margin-top: 50px" type="submit" class="main_button header" id="submit" value="Apply">
-
+         <div id="apply">
+            <input type="submit" class="main_button header" id="submit" value="Apply">
+         </div>
     </div>
 
     <!-- BODY -->
@@ -209,12 +209,15 @@ logo.onerror = function () {
 
 <script type="text/javascript" src="modal.js"></script>
 
+
 <!-- filter JS -->
 <script>
     function myFunction() {
         document.getElementById("filters").style.overflow = "scroll";
     }
 </script>
+
+<script src="sidebar-resizing.js"></script>
 <script src="distance.js"></script>
 <script src="calendar.js"></script>
 

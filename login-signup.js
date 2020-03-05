@@ -82,9 +82,9 @@ login_btn.addEventListener('click', function(){
 //signup button
 let signup_btn = document.getElementById("signUpButton");
 signup_btn.addEventListener('click', function(){
+   checkEmailSign();
    checkName();
    checkPassSign();
-   checkEmailSign();
 }, false)
 
 
@@ -107,7 +107,7 @@ function checkEmailSign(){
 
 function checkPassSign(){
     let pass_msg = document.getElementById("password-msg");
-    if (pass_sign.value.length <= 0 || pass_signs.value.length < 8 ) pass_msg.textContent = "Enter a Password of at Least 8 Characters";
+    if (pass_sign.value.length <= 0 || pass_sign.value.length < 8 ) pass_msg.textContent = "Enter a Password of at Least 8 Characters";
     else pass_msg.textContent = "";
 };
 
