@@ -22,7 +22,7 @@
 /* Posts Side */
 .posts-pg {
     height: 100vh;
-    min-width: 720px;
+    min-width: 650px;
     height: fit-content;
 }
 .posts-div {
