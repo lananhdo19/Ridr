@@ -1,27 +1,28 @@
 //JS function switching between sign up/login tabs
 $(document).ready(function() {
     $(".login-form").hide();
-    $(".signUpTab").css("background", "#F06565");
-    $(".signUpTab").css("color", "#FFF");
+    $(".loginTab").css("color", "white");
+    $(".signUpTab").css("background", "#FFF");
+    $(".signUpTab").css("color", "black");
 
     $(".loginTab").click(function(){
         $(".signup-form").hide();
         $(".login-form").show();
         $("#emailLogin").focus();
-        $(".signUpTab").css("background", "#FFF");
-        $(".signUpTab").css("color", "black");
-        $(".loginTab").css("background", "#F06565");
-        $(".loginTab").css("color", "#FFF");
+        $(".signUpTab").css("background", "#F06565");
+        $(".signUpTab").css("color", "white");
+        $(".loginTab").css("background", "#FFF");
+        $(".loginTab").css("color", "black");
     });
 
     $(".signUpTab").click(function(){
         $(".login-form").hide();
         $(".signup-form").show();
         $("#firstName").focus();
-        $(".loginTab").css("background", "#FFF");
-        $(".loginTab").css("color", "black");
-        $(".signUpTab").css("background", "#F06565");
-        $(".signUpTab").css("color", "#FFF");
+        $(".loginTab").css("background", "#F06565");
+        $(".loginTab").css("color", "white");
+        $(".signUpTab").css("background", "#FFF");
+        $(".signUpTab").css("color", "black");
     });
 });
 
