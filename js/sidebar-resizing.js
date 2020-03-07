@@ -1,10 +1,17 @@
-function smallFilterSize() {
-    var element = document.getElementById("filters");
-    element.classList.toggle("sidebar");
+window.onresize = function() {
+    var menu = document.getElementById("filters");
+    if(window.innerWidth >= 940) {
+        menu.style.display = "";
+    }
+};
 
-    element.style.width="20%";
-    /*var elem = element.style.querySelector(".sidebar");
-    var style = getComputedStyle(elem);
-    element.style = style;*/
+function toggleMenu() {
+    var menu = document.getElementById("filters");
 
- }
+    if(menu.style.display == 'block') {
+        menu.style.display = 'none';
+    }
+    else {
+        menu.style.display = 'block';
+    }
+}

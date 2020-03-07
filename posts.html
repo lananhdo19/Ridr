@@ -52,7 +52,7 @@
 	</header>
 
     <!-- FILTERS -->
-    <button class="openbtn" onclick="smallFilterSize()">Filters</button> <!-- ☰ -->
+    <button class="openbtn" onclick="toggleMenu()">Filters</button> <!-- ☰ -->
     <div class="sidebar" id="filters">
         <!-- Date (calendar) -->
         <label style="margin-top: 20px" class="header" id="date">Date</label><br>
@@ -220,11 +220,6 @@ logo.onerror = function () {
 <script type="text/javascript" src="js/modal.js"></script>
 
 <!-- filter JS -->
-<script>
-    function myFunction() {
-        document.getElementById("filters").style.overflow = "scroll";
-    }
-</script>
 <script src="js/sidebar-resizing.js"></script>
 <script src="js/distance.js"></script>
 <script src="js/calendar.js"></script>

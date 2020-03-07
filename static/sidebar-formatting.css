@@ -18,7 +18,7 @@ label {
   }
   
   .openbtn {
-    display:none
+    display:none;
     margin-top: 10px;
   }
 }
