@@ -98,7 +98,7 @@ function checkEmailSign(){
 
 function checkPassSign(){
     let pass_msg = document.getElementById("password-msg");
-    if (pass_sign.value.length <= 0 || pass_sign.value.length < 8 ) pass_msg.textContent = "Enter a Password of at Least 8 fgsfsadfsadfsadfsadfdsfsfdsCharacters";
+    if (pass_sign.value.length <= 0 || pass_sign.value.length < 8 ) pass_msg.textContent = "Enter a Password of at Least 8 Characters";
     else pass_msg.textContent = "";
 };
 
