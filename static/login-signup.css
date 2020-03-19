@@ -12,31 +12,23 @@ body{
     vertical-align: middle;
 }
 
+
+a{
+    color: #F06565 !important;
+    text-decoration: underline !important;
+}
+
+a:hover{
+    color: #e00000 !important;
+}
+
+p{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
 /*default styling for individual panels*/
-
-.signUpTab{
-    width: 50%;
-    background: white;
-    float: left;
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
-    cursor: pointer;
-    text-transform: uppercase;
-}
-
-
-.loginTab{
-    width: 50%;
-    background: #F06565;
-    float: left;
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
-    cursor: pointer;
-    text-transform: uppercase;
-}
-
 .signup-form,
 .login-form{
     background: #fff;

@@ -2,27 +2,17 @@
 $(document).ready(function() {
     $(".login-form").hide();
     $(".loginTab").css("color", "white");
-    $(".signUpTab").css("background", "#FFF");
-    $(".signUpTab").css("color", "black");
 
     $(".loginTab").click(function(){
         $(".signup-form").hide();
         $(".login-form").show();
         $("#emailLogin").focus();
-        $(".signUpTab").css("background", "#F06565");
-        $(".signUpTab").css("color", "white");
-        $(".loginTab").css("background", "#FFF");
-        $(".loginTab").css("color", "black");
     });
 
     $(".signUpTab").click(function(){
         $(".login-form").hide();
         $(".signup-form").show();
         $("#firstName").focus();
-        $(".loginTab").css("background", "#F06565");
-        $(".loginTab").css("color", "white");
-        $(".signUpTab").css("background", "#FFF");
-        $(".signUpTab").css("color", "black");
     });
 });
 
@@ -108,7 +98,7 @@ function checkEmailSign(){
 
 function checkPassSign(){
     let pass_msg = document.getElementById("password-msg");
-    if (pass_sign.value.length <= 0 || pass_sign.value.length < 8 ) pass_msg.textContent = "Enter a Password of at Least 8 Characters";
+    if (pass_sign.value.length <= 0 || pass_sign.value.length < 8 ) pass_msg.textContent = "Enter a Password of at Least 8 fgsfsadfsadfsadfsadfdsfsfdsCharacters";
     else pass_msg.textContent = "";
 };
 
