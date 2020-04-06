@@ -68,6 +68,7 @@ let login_btn = document.getElementById("loginButton");
 login_btn.addEventListener('click', function(){
     checkEmailLogin();
     checkPassLogin();
+    login();
 }, false)
 
 //signup button
@@ -77,6 +78,8 @@ signup_btn.addEventListener('click', function(){
    checkName();
    checkPassSign();
 }, false)
+
+
 
 
 
@@ -105,7 +108,7 @@ function checkPassSign(){
 
 function checkEmailLogin(){
     let email_msg = document.getElementById("email-msg-login");
-    if (email_login.textContent.length <= 0 || !email_login.textContent.match("\\w+\\@\\w+\\.\\w+")) email_msg.textContent = "Enter a Valid Email";
+    if (email_login.value.length <= 0 || !email_login.value.match("\\w+\\@\\w+\\.\\w+")) email_msg.textContent = "Enter a Valid Email";
     else email_msg.textContent = "";
 };
 
@@ -115,3 +118,21 @@ function checkPassLogin(){
     else pass_msg.textContent = "";
 };
 
+
+//login function AJAX with PHP
+function login(){
+    let xhrAccount = new XMLHttpRequest();
+    xhrAccount.onload = function() {
+        if (xhrAccount.status == 200) {
+            if (xhrAccount.responseText == "true") {
+                window.location.href = "posts.html";
+            } else {
+                document.getElementById("email-msg-login").innerHTML = xhrAccount.responseText;
+            }
+        }
+    }
+
+    xhrAccount.open('POST', 'login.php', true);
+    xhrAccount.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhrAccount.send("email=" + email_login.textContent + "&password=" + pass_login.value);
+}
