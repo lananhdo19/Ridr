@@ -156,16 +156,52 @@
                 <!-- Heading -->
                 <p class="mega-header create-post-p" style="margin-bottom: 2rem;">Create Post</p>
                 <!-- Form Content -->
-                <form class="subheader">
-                    <input type="text" id="Destination" placeholder="Destination (e.g. Vienna)" class="gray">
-                    <input type="date" id="Date" placeholder="Date" value="<?php echo date('Y-m-d'); ?>"  class="gray">
-                    <input type="time" id="Time" placeholder="Time" value="12:00" class="gray">
-                    <input type="text" id="Comments" placeholder='Comments (e.g. "asking for $15")' class="gray">
+
+
+                <!-- <form class="subheader"> -->
+                <form class="subheader" action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
+                    <input type="text" id="Destination" name="Destination" placeholder="Destination (e.g. Vienna)" class="gray">
+                    <span class="create-missing">
+                        <?php if($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST['name'])) 
+                            echo "*This field is required."; 
+                        ?>
+                    </span>
+                    
+                    <input type="date" id="Date" name="Date" placeholder="Date" value="<?php echo date('Y-m-d'); ?>"  class="gray">
+                    <span class="create-missing">
+                        <?php if($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST['name'])) 
+                            echo "*This field is required."; 
+                        ?>
+                    </span>
+                    
+                    
+                    <input type="time" id="Time" name="Time" placeholder="Time" value="12:00" class="gray">
+                    <span class="create-missing">
+                        <?php if($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST['name'])) 
+                            echo "*This field is required."; 
+                        ?>
+                    </span>
+                    
+                    <input type="text" id="Comments" name="Comments" placeholder='Comments (e.g. "asking for $15")' class="gray">
+                    <span class="create-missing">
+                        <?php if($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST['name'])) 
+                            echo "*This field is required."; 
+                        ?>
+                    </span>
+                    
                     <!-- Zip + Dropdowns -->
                     <div class="flex-container-stretch">
+
                         <div class="cp-dropdown subheader gray" style="flex-grow: 3">
-                            <input type="number" id="zip-code" placeholder="Zip code">
+                            <input type="number" id="zip-code" name="zip-code" placeholder="Zip code">
                         </div>
+                        <span class="create-missing">
+                            <?php if($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST['name'])) 
+                                echo "*This field is required."; 
+                            ?>
+                        </span>
+                    
+                    
                         <div class="cp-dropdown subheader gray" style="flex-grow: 3">
                             <select class="dropdown" id="cp-dropdown">
                                 <option value="driver">Driver</option>
@@ -187,6 +223,13 @@
                             </select>
                         </div>
                     </div>
+                    <span class="create-missing">
+                        <?php if($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST['name'])) 
+                            echo "*This field is required."; 
+                        ?>
+                    </span>
+                    
+                    
                 </form>
             </div>
         </div>
@@ -199,23 +242,20 @@
     </footer>
     
         
+<!-- PHP -->
+<?php
+
+
+
+?>
+
+
+
 
 <!-- CDN for JS bootstrap -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<!-- for local -->
-<!-- <script src="jquery.min.js"></script> -->
-<!-- <script src="bootstrap/js/bootstrap.min.js"></script> -->
-
-
-<script>
-// Remove default square img if logo doesn't load !!!
-var logo = document.getElementById("ridr-logo");
-logo.onerror = function () { 
-    this.style.display = "none";
-}  
-</script>
 
 <!-- modal JS -->
 <script type="text/javascript" src="js/modal.js"></script>
