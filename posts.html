@@ -94,9 +94,10 @@
 
     <!-- BODY -->
     <div class="main">
+        <!-- POSTS -->
         <div class="posts-pg flex-container-stretch">
             <div class="posts-div" style="flex-grow: 5">
-                <!-- Buttons-->
+                <!-- Top Buttons-->
 				<div class="posts-right-top">
                     <!-- I'm Looking For Driver/Rider BUTTON -->
 					<div class="driver-rider-dropdown normal-text">
@@ -145,6 +146,7 @@
                 </div>
             </div>
         </div>
+        <!-- CREATE POST -->
         <div class="main">
         <!-- The Modal -->
         <div id="create-post-modal-container" class="modal">
@@ -152,14 +154,14 @@
             <div class="create-post-modal-content">
                 <span class="close">&times;</span>
                 <!-- Heading -->
-                <p class="mega-header create-post-p">Create Post</p>
+                <p class="mega-header create-post-p" style="margin-bottom: 2rem;">Create Post</p>
                 <!-- Form Content -->
                 <form class="subheader">
-                    <input type="text" class="gray" id="Destination" placeholder="Destination Area">
-                    <!-- https://codepen.io/kylelavery88/pen/adbzLQ to "time" placeholder -->
-                    <input type="date" id="Date" placeholder="Date" required="required" class="gray">
-                    <input type="time" id="Time" placeholder="Time" step="900" class="gray">
+                    <input type="text" id="Destination" placeholder="Destination (e.g. Vienna)" class="gray">
+                    <input type="date" id="Date" placeholder="Date" value="<?php echo date('Y-m-d'); ?>"  class="gray">
+                    <input type="time" id="Time" placeholder="Time" value="12:00" class="gray">
                     <input type="text" id="Comments" placeholder='Comments (e.g. "asking for $15")' class="gray">
+                    <!-- Zip + Dropdowns -->
                     <div class="flex-container-stretch">
                         <div class="cp-dropdown subheader gray" style="flex-grow: 3">
                             <input type="number" id="zip-code" placeholder="Zip code">
@@ -170,7 +172,7 @@
                                 <option value="rider">Rider</option>
                             </select>
                         </div>
-                        <div class="cp-dropdown subheader gray" style="flex-grow: 3">
+                    <div class="cp-dropdown subheader gray" style="flex-grow: 3">
                             <select class="dropdown" id="cp-dropdown">
                                 <option selected="true" disabled="disabled">Seats</option>    
                                 <option value="N/A">N/A</option>
@@ -185,7 +187,6 @@
                             </select>
                         </div>
                     </div>
-                    <button class="main_button header submit-button" value="Submit" onclick="createPostFunction()">Submit</button>
                 </form>
             </div>
         </div>
