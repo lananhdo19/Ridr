@@ -1,3 +1,4 @@
+/*background split screen features*/
 body{
     background-image: url("images/BlackCar.jpg");
     background-repeat: no-repeat;
@@ -11,18 +12,23 @@ body{
     vertical-align: middle;
 }
 
-.signUpTab,
-.loginTab{
-    width: 50%;
-    background: #fff;
-    float: left;
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
-    cursor: pointer;
-    text-transform: uppercase;
+
+a{
+    color: #F06565 !important;
+    text-decoration: underline !important;
 }
 
+a:hover{
+    color: #e00000 !important;
+}
+
+p{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/*default styling for individual panels*/
 .signup-form,
 .login-form{
     background: #fff;
@@ -33,12 +39,14 @@ body{
     height: 400px;
 }
 
+/*logo*/
 img{
     height: 30%;
     width: 30%;
     position: relative;
 }
 
+/*input for forms*/
 .inputP{
     width: 100%;
     padding: 10px;
@@ -67,12 +75,14 @@ h3{
     text-align: center;
 }
 
+/*error messages*/
 .error{
     color: #F06565;
     padding-left: 3px;
 }
 
 
+/*resize upon screen changes*/
 @media (min-width: 768px) {
     .h-md-100 { height: 100vh; }
 
