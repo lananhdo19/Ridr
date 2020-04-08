@@ -21,7 +21,7 @@
                 <?php include('posts/posts-body.html') ?>
             </div>
         </div>
-        <?php include('posts/create-post.html') ?>
+        <?php include('posts/create-post.php') ?>
     </div>
 
     <!-- FOOTER -->

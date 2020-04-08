@@ -9,33 +9,27 @@
             <!-- Heading -->
             <p class="mega-header create-post-p" style="margin-bottom: 2rem;">Create Post</p>
             <!-- Form Content -->
-            <form class="subheader" action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
-                <input type="text" id="Destination" name="Destination" placeholder="Destination (e.g. Vienna)" class="gray">
-                <span id="field-missing field-missing-dest"></span>
-
-                <input type="date" id="Date" name="Date" placeholder="Date" value="<?php echo date('Y-m-d'); ?>"  class="gray">
-                <span id="field-missing field-missing-date"></span>
-                    
-                <input type="time" id="Time" name="Time" placeholder="Time" value="12:00" class="gray">
-                <span id="field-missing field-missing-time"></span>
-                    
+            <form class="subheader" action="" method="POST">
+                <!-- Input Fields -->
+                <input required type="text" id="Destination" name="Destination" placeholder="Destination (e.g. Vienna)" class="gray">
+                <input required type="date" id="Date" name="Date" placeholder="Date" value="<?php echo date('Y-m-d'); ?>"  class="gray">
+                <input required type="time" id="Time" name="Time" placeholder="Time" value="12:00" class="gray">                    
                 <input type="text" id="Comments" name="Comments" placeholder='Comments (e.g. "asking for $15")' class="gray">
-                <span id="field-missing field-missing-comments"></span>
-                    
                 <!-- Zip + Dropdowns -->
-                <div class="flex-container-stretch">
+                <div class="flex-container-stretch" style="margin-top: 10px;">
                     <div class="cp-dropdown subheader gray" style="flex-grow: 3; margin-left: 0px;">
-                        <input type="number" id="zip-code" name="zip-code" placeholder="Zip code">
+                        <input required type="number" min="00501" max="99950"
+                            id="zip-code" name="zip-code" placeholder="Zip code">
                     </div>
                     <div class="cp-dropdown subheader gray" style="flex-grow: 3">
-                        <select class="dropdown" id="cp-dropdown" name="isDriver">
+                        <select class="dropdown" id="isDriver" name="isDriver">
                             <option value="driver">Driver</option>
                             <option value="rider">Rider</option>
                         </select>
                     </div>
                 <div class="cp-dropdown subheader gray" style="flex-grow: 3; margin-right: 0px;">
-                        <select class="dropdown seats" id="cp-dropdown" name="seats">
-                            <option selected="true" disabled="disabled">Seats</option>    
+                        <select required class="dropdown" id="seats" name="seats">
+                            <option value="" selected="true" disabled="disabled">Seats</option>    
                             <option value="N/A">N/A</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -48,10 +42,8 @@
                         </select>
                     </div>
                 </div>
-                <span id="field-missing field-missing-zip"></span>
-                <span id="field-missing field-missing-seats"></span>
+                <!-- https://www.w3schools.com/js/js_validation.asp -->
                 <button type="submit" value="Submit" id="create-post-submit" class="main_button header submit-button">Submit</button>
-                <!-- <button type="submit" value="Submit" onclick="createPostOnSubmit()" id="create-post-submit" class="main_button header submit-button">Submit</button> -->
             </form>
         </div>
     </div>
@@ -61,24 +53,32 @@
 
 <?php 
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && (
+    !empty($_POST['Destination']) || !empty($_POST['Date']) || !empty($_POST['Time']) ||
+    !empty($_POST['Comments']) || !empty($_POST['zip-code']) || !empty($_POST['cp-dropdown']) ) )
+{    
+    insertData();
+}
 
 /** insert data **/
 function insertData() {
 
-    require('php/connect-db.php'); // needs to be connected to the db
-
-    // names: Destination, Date, Time, Comments, zip-code, seats
+    require('php/connectdb.php'); // move to inside the function & if sttement
  
     $destination = $_POST['Destination'];
     $date = $_POST['Date']; // "12/01/2020" --> 2020-12-01 
     $time = $_POST['Time']; // "01:01 PM" --> 13:01,  01:01 AM --> 01:01 
     $comments = $_POST['Comments'];
     $zipcode = $_POST['zip-code'];
-    $isDriver = $POST['isDriver'];
+    $isDriver = $_POST['isDriver'];
     $seats = $_POST['seats'];
-    $isDriver = $_POST['isDriver']; //does $_POST get the value or the text??
 
-    if ( ($isDriver == "driver") || ($isDriver == "Driver") ) 
+    if (strlen($zipcode)==3)
+        $zipcode = "00" . $zipcode;
+    else if (strlen($zipcode)==4)
+        $zipcode = "0" . $zipcode;
+
+    if ($isDriver == "driver") 
         $isDriver = 0;
     else
         $isDriver = 1;
@@ -86,29 +86,27 @@ function insertData() {
     // 2020-04-11 08:00:00
     $datetime = $date . " " . $time . ":00";
     
-    if ($seats == "N/A")
+    if ($seats == "N/A" || $isDriver==1)
         $seats = 0;
     else
-        $seats = parseInt($seats);
+        $seats = (int)$seats;
 
-        
-    // INSERT INTO table (column names, ...) VALUES (:ph1, :ph2) 
-    $query = "INSERT INTO post (post_ID, email, destination, date_time, comment, zipcode, isDriver, seats) 
-              VALUES (:post_ID, :email, :destination, date_time, :comment, :zipcode, :isDriver, :seats)";
-    
+
+    // INSERT INTO `post` (`email`, `destination`, `datetime`, `comment`, `zipcode`, `isDriver`, `seats`) 
+    $query = "INSERT INTO post (email, destination, datetime, comment, zipcode, isDriver, seats) 
+              VALUES (:email, :destination, :datetime, :comment, :zipcode, :isDriver, :seats)";
     $statement = $db->prepare($query);
 
-    $post_ID = "1230"; //??
     $email = "user3@virginia.edu"; //??
-
-    $statement->bindValue(':post_ID', $post_ID);
+   
     $statement->bindValue(':email', $email);
     $statement->bindValue(':destination', $destination);
-    $statement->bindValue(':date_time', $datetime);
-    $statement->bindValue(':comment', $comment);
+    $statement->bindValue(':datetime', $datetime);
+    $statement->bindValue(':comment', $comments);
     $statement->bindValue(':zipcode', $zipcode);
     $statement->bindValue(':isDriver', $isDriver);
-
+    $statement->bindValue(':seats', $seats);
+  
     $statement->execute();
     $statement->closeCursor();
 

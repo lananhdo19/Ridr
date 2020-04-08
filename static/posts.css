@@ -6,9 +6,11 @@
     float: left;
     display: -webkit-box;
 }
-#cp-dropdown {
-    margin: 10px 0;
+#zip-code, #seats, #isDriver {
+    line-height: normal;
+    padding: 5px 7px;
     width: -webkit-fill-available;
+    margin: 0;
 }
 .cp-dropdown {
     width: fit-content;
@@ -73,11 +75,6 @@
     margin: 25px auto; 
     display: block;
 }
-#zip-code {
-    line-height: normal;
-    padding: 5px 7px;
-    width: -webkit-fill-available;
-}
 
 /* The Modal (background) */
 .modal {
@@ -122,8 +119,9 @@
 }
 input[type=text], input[type=date], input[type=time] {
     width: 100%;
-    padding: 10px 20px;
-    margin: 20px 0 10px 0;
+    height: 50px;
+    /* padding: 10px 20px; */
+    margin: 20px 0 0 0;
     box-sizing: border-box;
     border-bottom: 1px solid gray;
     border-top: none;
