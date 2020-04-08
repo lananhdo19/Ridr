@@ -160,14 +160,12 @@ function checkPassLogin(){
 function login(){
     let xhrAccount = new XMLHttpRequest();
     xhrAccount.onload = function() {
-        if (xhrAccount.status == 200) {
-            if (xhrAccount.responseText == "true") {
+        if (xhrAccount.responseText == "true") {
                 window.location.href = "posts.php";
-            }else {
+        }else {
                 document.getElementById("email-msg-login").innerHTML = xhrAccount.responseText;
             }
         }
-    }
 
     xhrAccount.open('POST', 'php/login.php', true);
     xhrAccount.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -183,8 +181,8 @@ function checkExistingAndCreate(){
                 window.location.href = "posts.php";
             } else {
                 document.getElementById("name-msg").innerHTML = xhrAccount.responseText;
-
-            } else createAccount();
+                createAccount();
+            }
         }
     }
 
