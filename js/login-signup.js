@@ -160,18 +160,12 @@ function checkPassLogin(){
 function login(){
     let xhrAccount = new XMLHttpRequest();
     xhrAccount.onload = function() {
-        if (xhrAccount.status == 200) {
-<<<<<<< HEAD
-                window.location.href = "posts.php";
-=======
-            if (xhrAccount.responseText == "true") {
+        if (xhrAccount.responseText == "true") {
                 window.location.href = "posts.html";
-            }else {
+        }else {
                 document.getElementById("email-msg-login").innerHTML = xhrAccount.responseText;
             }
->>>>>>> f87880e7d0b66399a0615f1499c7a38e9c9280bf
         }
-    }
 
     xhrAccount.open('POST', 'php/login.php', true);
     xhrAccount.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -187,8 +181,8 @@ function checkExistingAndCreate(){
                 window.location.href = "posts.php";
             } else {
                 document.getElementById("name-msg").innerHTML = xhrAccount.responseText;
-
-            } else createAccount();
+                createAccount();
+            }
         }
     }
 
