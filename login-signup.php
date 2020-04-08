@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Ridr</title>
+    <!-- <title>Ridr</title> -->
     <?php include('base/doc-heading.html') ?>
 </head>
 <body>

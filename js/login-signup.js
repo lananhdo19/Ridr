@@ -165,7 +165,7 @@ function login(){
         }
     }
 
-    xhrAccount.open('POST', 'js/login.php', true);
+    xhrAccount.open('POST', '../php/login.php', true);
     xhrAccount.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhrAccount.send("email=" + email_login.value + "&password=" + pass_login.value);
 }
@@ -183,7 +183,7 @@ function checkExistingUser(){
         }
     }
 
-    xhrAccount.open('POST', 'js/checkExistingUser.php', true);
+    xhrAccount.open('POST', '../php/checkExistingUser.php', true);
     xhrAccount.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhrAccount.send("email=" + email_sign.value + "&password=" + pass_sign.value);
 }
@@ -197,7 +197,7 @@ function createAccount(){
         }
     }
 
-    xhrAccount.open('POST', 'js/createAccount.php', true);
+    xhrAccount.open('POST', '../php/createAccount.php', true);
     xhrAccount.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhrAccount.send("email=" + email_sign.value + "&password=" + pass_sign.value
                  + "&first_name=" + firstName.value  + "&last_name=" + lastName.value

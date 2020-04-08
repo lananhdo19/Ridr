@@ -23,7 +23,6 @@
         <?php include('posts/create-post.html') ?>
     </div>
 
-
     <!-- FOOTER -->
     <?php include('base/footer.html') ?>
     
