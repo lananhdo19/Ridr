@@ -15,7 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($statement->rowCount() > 0) {
         echo "Account Already Exists";
-        return true;
     }
 
     $statement->closeCursor();
