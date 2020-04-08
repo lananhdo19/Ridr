@@ -9,7 +9,7 @@
 
 $username = 'root';
 $password = '';
-$host = 'localhost:3306';
+$host = 'localhost:3306'; //localhost:3306
 $dbname = 'ridr';
 /******************************/
 

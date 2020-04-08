@@ -1,96 +1,118 @@
-    <!-- CREATE POST -->
-    <div class="main">
-        <!-- The Modal -->
-        <div id="create-post-modal-container" class="modal">
-            <!-- Modal content -->
-            <div class="create-post-modal-content">
-                <span class="close">&times;</span>
-                <!-- Heading -->
-                <p class="mega-header create-post-p" style="margin-bottom: 2rem;">Create Post</p>
-                <!-- Form Content -->
 
+<!-- CREATE POST -->
+<div class="main">
+    <!-- The Modal -->
+    <div id="create-post-modal-container" class="modal">
+        <!-- Modal content -->
+       <div class="create-post-modal-content">
+            <span class="close">&times;</span>
+            <!-- Heading -->
+            <p class="mega-header create-post-p" style="margin-bottom: 2rem;">Create Post</p>
+            <!-- Form Content -->
+            <form class="subheader" action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
+                <input type="text" id="Destination" name="Destination" placeholder="Destination (e.g. Vienna)" class="gray">
+                <span id="field-missing field-missing-dest"></span>
 
-                <!-- <form class="subheader"> -->
-                <form class="subheader" action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
-                    <input type="text" id="Destination" name="Destination" placeholder="Destination (e.g. Vienna)" class="gray">
-                    <span class="create-missing">
-                        <?php if($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST['name'])) 
-                            echo "*This field is required."; 
-                        ?>
-                    </span>
+                <input type="date" id="Date" name="Date" placeholder="Date" value="<?php echo date('Y-m-d'); ?>"  class="gray">
+                <span id="field-missing field-missing-date"></span>
                     
-                    <input type="date" id="Date" name="Date" placeholder="Date" value="<?php echo date('Y-m-d'); ?>"  class="gray">
-                    <span class="create-missing">
-                        <?php if($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST['name'])) 
-                            echo "*This field is required."; 
-                        ?>
-                    </span>
+                <input type="time" id="Time" name="Time" placeholder="Time" value="12:00" class="gray">
+                <span id="field-missing field-missing-time"></span>
                     
+                <input type="text" id="Comments" name="Comments" placeholder='Comments (e.g. "asking for $15")' class="gray">
+                <span id="field-missing field-missing-comments"></span>
                     
-                    <input type="time" id="Time" name="Time" placeholder="Time" value="12:00" class="gray">
-                    <span class="create-missing">
-                        <?php if($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST['name'])) 
-                            echo "*This field is required."; 
-                        ?>
-                    </span>
-                    
-                    <input type="text" id="Comments" name="Comments" placeholder='Comments (e.g. "asking for $15")' class="gray">
-                    <span class="create-missing">
-                        <?php if($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST['name'])) 
-                            echo "*This field is required."; 
-                        ?>
-                    </span>
-                    
-                    <!-- Zip + Dropdowns -->
-                    <div class="flex-container-stretch">
-
-                        <div class="cp-dropdown subheader gray" style="flex-grow: 3">
-                            <input type="number" id="zip-code" name="zip-code" placeholder="Zip code">
-                        </div>
-                        <span class="create-missing">
-                            <?php if($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST['name'])) 
-                                echo "*This field is required."; 
-                            ?>
-                        </span>
-                    
-                    
-                        <div class="cp-dropdown subheader gray" style="flex-grow: 3">
-                            <select class="dropdown" id="cp-dropdown">
-                                <option value="driver">Driver</option>
-                                <option value="rider">Rider</option>
-                            </select>
-                        </div>
-                    <div class="cp-dropdown subheader gray" style="flex-grow: 3">
-                            <select class="dropdown" id="cp-dropdown">
-                                <option selected="true" disabled="disabled">Seats</option>    
-                                <option value="N/A">N/A</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                            </select>
-                        </div>
+                <!-- Zip + Dropdowns -->
+                <div class="flex-container-stretch">
+                    <div class="cp-dropdown subheader gray" style="flex-grow: 3; margin-left: 0px;">
+                        <input type="number" id="zip-code" name="zip-code" placeholder="Zip code">
                     </div>
-                    <span class="create-missing">
-                        <?php if($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST['name'])) 
-                            echo "*This field is required."; 
-                        ?>
-                    </span>
-
-                    <button class="main_button header submit-button" value="Submit">Submit</button>
-                </form>
-            </div>
+                    <div class="cp-dropdown subheader gray" style="flex-grow: 3">
+                        <select class="dropdown" id="cp-dropdown" name="isDriver">
+                            <option value="driver">Driver</option>
+                            <option value="rider">Rider</option>
+                        </select>
+                    </div>
+                <div class="cp-dropdown subheader gray" style="flex-grow: 3; margin-right: 0px;">
+                        <select class="dropdown seats" id="cp-dropdown" name="seats">
+                            <option selected="true" disabled="disabled">Seats</option>    
+                            <option value="N/A">N/A</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                    </div>
+                </div>
+                <span id="field-missing field-missing-zip"></span>
+                <span id="field-missing field-missing-seats"></span>
+                <button type="submit" value="Submit" id="create-post-submit" class="main_button header submit-button">Submit</button>
+                <!-- <button type="submit" value="Submit" onclick="createPostOnSubmit()" id="create-post-submit" class="main_button header submit-button">Submit</button> -->
+            </form>
         </div>
+    </div>
+</div>
+
+
+
+<?php 
+
+
+/** insert data **/
+function insertData() {
+
+    require('php/connect-db.php'); // needs to be connected to the db
+
+    // names: Destination, Date, Time, Comments, zip-code, seats
+ 
+    $destination = $_POST['Destination'];
+    $date = $_POST['Date']; // "12/01/2020" --> 2020-12-01 
+    $time = $_POST['Time']; // "01:01 PM" --> 13:01,  01:01 AM --> 01:01 
+    $comments = $_POST['Comments'];
+    $zipcode = $_POST['zip-code'];
+    $isDriver = $POST['isDriver'];
+    $seats = $_POST['seats'];
+    $isDriver = $_POST['isDriver']; //does $_POST get the value or the text??
+
+    if ( ($isDriver == "driver") || ($isDriver == "Driver") ) 
+        $isDriver = 0;
+    else
+        $isDriver = 1;
     
-
+    // 2020-04-11 08:00:00
+    $datetime = $date . " " . $time . ":00";
     
+    if ($seats == "N/A")
+        $seats = 0;
+    else
+        $seats = parseInt($seats);
 
-        <?php
+        
+    // INSERT INTO table (column names, ...) VALUES (:ph1, :ph2) 
+    $query = "INSERT INTO post (post_ID, email, destination, date_time, comment, zipcode, isDriver, seats) 
+              VALUES (:post_ID, :email, :destination, date_time, :comment, :zipcode, :isDriver, :seats)";
+    
+    $statement = $db->prepare($query);
+
+    $post_ID = "1230"; //??
+    $email = "user3@virginia.edu"; //??
+
+    $statement->bindValue(':post_ID', $post_ID);
+    $statement->bindValue(':email', $email);
+    $statement->bindValue(':destination', $destination);
+    $statement->bindValue(':date_time', $datetime);
+    $statement->bindValue(':comment', $comment);
+    $statement->bindValue(':zipcode', $zipcode);
+    $statement->bindValue(':isDriver', $isDriver);
+
+    $statement->execute();
+    $statement->closeCursor();
+
+}
 
 
-
-        ?>
+?>

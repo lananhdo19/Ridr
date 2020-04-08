@@ -11,6 +11,10 @@
 .normal-text {
     font-size: 15px;
 }
+#field-missing {
+    color: red;
+    font-size: 14px;
+}
 /* Responsive */
 @media only screen and (max-width: 900px) {
     .header {

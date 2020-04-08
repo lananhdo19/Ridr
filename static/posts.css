@@ -123,7 +123,7 @@
 input[type=text], input[type=date], input[type=time] {
     width: 100%;
     padding: 10px 20px;
-    margin: 15px 0;
+    margin: 20px 0 10px 0;
     box-sizing: border-box;
     border-bottom: 1px solid gray;
     border-top: none;
