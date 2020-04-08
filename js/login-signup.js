@@ -161,11 +161,11 @@ function login(){
     let xhrAccount = new XMLHttpRequest();
     xhrAccount.onload = function() {
         if (xhrAccount.status == 200) {
-                window.location.href = "posts.html";
+                window.location.href = "posts.php";
         }
     }
 
-    xhrAccount.open('POST', '../php/login.php', true);
+    xhrAccount.open('POST', 'php/login.php', true);
     xhrAccount.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhrAccount.send("email=" + email_login.value + "&password=" + pass_login.value);
 }
@@ -176,14 +176,14 @@ function checkExistingUser(){
     xhrAccount.onload = function() {
         if (xhrAccount.status == 200) {
             if (xhrAccount.responseText == "true") {
-                window.location.href = "posts.html";
+                window.location.href = "posts.php";
             } else {
                 document.getElementById("name-msg").innerHTML = xhrAccount.responseText;
             }
         }
     }
 
-    xhrAccount.open('POST', '../php/checkExistingUser.php', true);
+    xhrAccount.open('POST', 'php/checkExistingUser.php', true);
     xhrAccount.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhrAccount.send("email=" + email_sign.value + "&password=" + pass_sign.value);
 }
@@ -193,11 +193,11 @@ function createAccount(){
     let xhrAccount = new XMLHttpRequest();
     xhrAccount.onload = function() {
         if (xhrAccount.status == 200) {
-                window.location.href = "posts.html";
+                window.location.href = "posts.php";
         }
     }
 
-    xhrAccount.open('POST', '../php/createAccount.php', true);
+    xhrAccount.open('POST', 'php/createAccount.php', true);
     xhrAccount.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhrAccount.send("email=" + email_sign.value + "&password=" + pass_sign.value
                  + "&first_name=" + firstName.value  + "&last_name=" + lastName.value
