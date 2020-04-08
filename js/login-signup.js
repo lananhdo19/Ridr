@@ -86,11 +86,11 @@ signup_btn.addEventListener('click', function(){
    if (checkEmailSign() &&
        checkName() &&
        checkPassSign()){
-
-       if (!checkExistingUser()){
-           console.log("creating account now");
-           createAccount();
-       }
+       checkExistingAndCreate();
+      /* if (!checkExistingUser()){
+           console.log(checkExistingUser());
+          // createAccount();
+       }*/
    }
 }, false)
 
@@ -161,7 +161,15 @@ function login(){
     let xhrAccount = new XMLHttpRequest();
     xhrAccount.onload = function() {
         if (xhrAccount.status == 200) {
+<<<<<<< HEAD
                 window.location.href = "posts.php";
+=======
+            if (xhrAccount.responseText == "true") {
+                window.location.href = "posts.html";
+            }else {
+                document.getElementById("email-msg-login").innerHTML = xhrAccount.responseText;
+            }
+>>>>>>> f87880e7d0b66399a0615f1499c7a38e9c9280bf
         }
     }
 
@@ -171,7 +179,7 @@ function login(){
 }
 
 
-function checkExistingUser(){
+function checkExistingAndCreate(){
     let xhrAccount = new XMLHttpRequest();
     xhrAccount.onload = function() {
         if (xhrAccount.status == 200) {
@@ -179,7 +187,8 @@ function checkExistingUser(){
                 window.location.href = "posts.php";
             } else {
                 document.getElementById("name-msg").innerHTML = xhrAccount.responseText;
-            }
+
+            } else createAccount();
         }
     }
 
@@ -190,6 +199,7 @@ function checkExistingUser(){
 
 
 function createAccount(){
+    console.log("creating account");
     let xhrAccount = new XMLHttpRequest();
     xhrAccount.onload = function() {
         if (xhrAccount.status == 200) {

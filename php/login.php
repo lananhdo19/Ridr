@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $pass = $tuple[1];
 
         if(password_verify($password, $pass)){
+            echo "true";
             session_start();
             $_SESSION['email'] = $email;
             $_SESSION['first_name'] = $tuple[2];
