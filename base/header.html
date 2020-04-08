@@ -1,21 +1,53 @@
+<style>
+  .acc-dropdown {
+    position: relative;
+    display: inline-block !important;
+  }
+  .acc-dropdown-content {
+    display: none !important;
+    position: absolute;
+    background-color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .acc-dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .acc-dropdown-content a:hover {background-color: #3d3d3d;}
+  
+  .acc-dropdown:hover .acc-dropdown-content {display: block !important;}
+</style>  
+  
+  
   <header>
     <nav class="navbar header" id="navbar">
-            <!-- Left Side: Logo -->
-      <div class="left_nav">
-        <a class="ridr-logo" href="login-signup.html">
-                    <img src="static/images/logoWhite.png" id="ridr-logo" class="d-inline-block align-top" style="height:40px" onerror="this.style.display='none'" >
-                </a>
+        <!-- Left Side: Logo -->
+        <div class="left_nav">
+        	<a class="ridr-logo" href="posts.php">
+                <img src="static/images/logoWhite.png" id="ridr-logo" class="d-inline-block align-top" style="height:40px" onerror="this.style.display='none'" >
+            </a>
+        </div>
+        <!-- Right side: Posts, Login/Account -->
+        <div class="right_nav">
+            <div>
+                <a href="posts.php" class="subheader post_nav_item">Posts</a>
             </div>
-            <!-- Right side: Posts, Login/Account -->
-            <div class="right_nav">
-                <div>
-                    <a href="posts.php" class="subheader post_nav_item">Posts</a>
-                </div>
-                <div>
-                    <a href="dashboard.html" class="subheader"><span>Hi name</span>
-                    <img src="static/images/profilepic.png" href="#" width="42" height="42">
+            <div class="acc-dropdown">
+                <div class="acc-hover-div">
+                    <a href="dashboard.php" class="subheader">
+                        <span>Hi name</span>
+                        <img src="static/images/profilepic.png" href="#" width="42" height="42">
                     </a>
                 </div>
+                <div class="acc-dropdown-content">
+                    <a href="dashboard.php">Dashboard</a>
+                    <a href="#">Logout</a>
+                </div>
             </div>
+        </div>
     </nav>
   </header>

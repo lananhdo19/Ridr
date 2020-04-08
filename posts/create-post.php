@@ -60,11 +60,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && (
     insertData();
 }
 
-/** insert data **/
 function insertData() {
 
     require('php/connectdb.php'); // move to inside the function & if sttement
- 
+    session_start(); // make sure the user's logged in 
+
+
     $destination = $_POST['Destination'];
     $date = $_POST['Date']; // "12/01/2020" --> 2020-12-01 
     $time = $_POST['Time']; // "01:01 PM" --> 13:01,  01:01 AM --> 01:01 
@@ -97,7 +98,7 @@ function insertData() {
               VALUES (:email, :destination, :datetime, :comment, :zipcode, :isDriver, :seats)";
     $statement = $db->prepare($query);
 
-    $email = "user3@virginia.edu"; //??
+    $email = $_SESSION['user'];
    
     $statement->bindValue(':email', $email);
     $statement->bindValue(':destination', $destination);
