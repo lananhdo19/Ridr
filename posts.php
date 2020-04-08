@@ -25,7 +25,6 @@
 
     <!-- FOOTER -->
     <?php include('base/footer.html') ?>
-    
 
 <?php include('base/bottom-scripts.html') ?>
 
