@@ -9,29 +9,23 @@ a:any-link {
 .navbar a:link, a:visited, a:active, a:hover {
     color: white;
 }
-/* Navbar */
-.navbar {
-    background-color: black;
-    text-align: center;
-    padding: 15px 30px;
-}
-.navbar div {
-    display: inline-block;
-}
-.left_nav {
-    display: inline-block;
-}
-.right_nav {
-    float: right;
-}
-.post_nav_item {
-    margin-right: 30px;
-}
-
-
-
 /* Main Screen */
 .main {
     min-height: 90vh;
-    padding: 15px 40px;
+    padding: 15px 50px;
+}
+@media only screen and (max-width: 850px) {
+    .main {
+        padding: 15px 30px !important;
+    }
+}
+@media only screen and (max-width: 775px) {
+    .main {
+        padding: 15px 20px !important;
+    }
+}
+@media only screen and (max-width: 715px) {
+    .main {
+        padding: 15px 0px !important;
+    }
 }

@@ -3,6 +3,9 @@
 <head>
     <title>Ridr: Posts</title>
     <?php include('base/doc-heading.html') ?>
+    <link type="text/css" rel="stylesheet" href="static/sidebar-formatting.css"/>
+    <link type="text/css" rel="stylesheet" href="static/range-slider.css"/>
+    <link type="text/css" rel="stylesheet" href="static/calendar.css"/>
 </head>
 
 <body>  

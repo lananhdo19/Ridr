@@ -24,7 +24,6 @@
 /* Posts Side */
 .posts-pg {
     height: 100vh;
-    min-width: 650px;
     height: fit-content;
 }
 .posts-div {
@@ -47,15 +46,14 @@
     padding: 30px;
     margin-bottom: 40px;
     border: rgba(0, 0, 0, 0.692) solid 1px;
-    display: flex;
 }
-.panel-p {
+.panel-vertical-top {
     text-align: left;
     line-height: normal;
-    font-size: 15px;
     width: 100%;
     margin-top: auto;
     margin-bottom: auto;
+    padding-right: 30px;
 }
 .profile-pic {
     object-fit: cover;
@@ -97,7 +95,7 @@
     margin: 10vh auto;
     padding: 50px 100px;
     width: 50%;
-    min-width: 625px;
+    min-width: 575px;
 }
 
 /* The Close Button */
@@ -161,5 +159,29 @@ input[type=date]::-webkit-calendar-picker-indicator {
 @media only screen and (max-width: 700px) {
     .posts-right {
         padding: 30px;
+    }
+}
+
+/*if screen is greater than 600px*/
+@media screen and (min-width: 600px) {
+    .panel-body, .panel-vertical-top {
+        display: flex;
+    }
+}
+/* makes posts vertical, not horizontal, when screen too small */
+@media only screen and (max-width: 600px) {
+    .panel-body {
+        display: block;
+        overflow: auto !important;
+    }
+    .panel-vertical-top {
+        display: inline-flex;
+        float: left !important;
+        width: 100% !important;
+        margin-bottom: 25px !important;
+        padding-right: 0 !important;
+    }
+    .request_button, .offer_button, .request_pending, .accept_button {
+        display: block !important;
     }
 }

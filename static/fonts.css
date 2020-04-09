@@ -16,12 +16,15 @@
     font-size: 14px;
 }
 /* Responsive */
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 800px) {
     .header {
         font-size: 17px;
     }
+    .subheader {
+        font-size: 17px;
+    }
     .normal-text {
-        font-size: 13px;
+        font-size: 15px;
     }
 }
 @media only screen and (max-width: 600px) {
