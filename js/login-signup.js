@@ -173,11 +173,10 @@ function checkExistingAndCreate(){
     let xhrAccount = new XMLHttpRequest();
     xhrAccount.onload = function() {
         if (xhrAccount.status == 200) {
-            if (xhrAccount.responseText == "true") {
+            if (xhrAccount.responseText != "Account Already Exists") {
                 createAccount();
             } else {
                 document.getElementById("name-msg").innerHTML = xhrAccount.responseText;
-                createAccount();
             }
         }
     }
