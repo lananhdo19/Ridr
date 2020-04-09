@@ -15,12 +15,16 @@
 }
 /* Request and Offer Buttons */
 .request_button {
-    background-color: #F98686;
+    background-color: rgba(252, 175, 105, .16);
     padding: 15px;
+    color: #FF7A00;
+    border: 1px solid #FF7A00;
 }
 .offer_button {
-    background-color: #FCAF69;
-    padding: 15px;
+    background-color: rgba(249,134,134,.16);
+    padding: 15px 30px;
+    color: #FF3D3D;
+    border: 1px solid #FF3D3D;
 }
 /* Login/Signup Buttons (Red) */
 .btn-red{
