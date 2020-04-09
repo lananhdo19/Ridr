@@ -11,7 +11,7 @@
 <body>  
 
     <!-- HEADER -->
-    <?php include('base/header.html'); ?>
+    <?php include('base/header.php'); ?>
 
     <!-- FILTERS -->
     <?php include('filter-posts.html') ?>
