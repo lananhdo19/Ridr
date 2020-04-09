@@ -63,8 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && (
 function insertData() {
 
     require('php/connectdb.php'); // move to inside the function & if sttement
-    session_start(); // make sure the user's logged in 
-
+    // global $db
 
     $destination = $_POST['Destination'];
     $date = $_POST['Date']; // "12/01/2020" --> 2020-12-01 
