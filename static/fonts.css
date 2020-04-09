@@ -28,7 +28,7 @@
     }
 }
 @media only screen and (max-width: 600px) {
-    .header {
+    .subheader {
         font-size: 15px;
     }
     .normal-text {
