@@ -1,6 +1,6 @@
 <?php
 
-require('php/connectdb.php');
+require('connectdb.php');
 session_start();
 
 if(isset($_POST['apply']))

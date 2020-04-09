@@ -1,6 +1,6 @@
 <?php
 
-require('php/connectdb.php');
+require('connectdb.php');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = htmlspecialchars($_POST['email']);
     $password = password_hash(htmlspecialchars($_POST['password']), PASSWORD_BCRYPT);
