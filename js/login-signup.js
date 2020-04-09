@@ -87,10 +87,6 @@ signup_btn.addEventListener('click', function(){
        checkName() &&
        checkPassSign()){
        checkExistingAndCreate();
-      /* if (!checkExistingUser()){
-           console.log(checkExistingUser());
-          // createAccount();
-       }*/
    }
 }, false)
 
@@ -178,7 +174,7 @@ function checkExistingAndCreate(){
     xhrAccount.onload = function() {
         if (xhrAccount.status == 200) {
             if (xhrAccount.responseText == "true") {
-                window.location.href = "posts.php";
+                createAccount();
             } else {
                 document.getElementById("name-msg").innerHTML = xhrAccount.responseText;
                 createAccount();
