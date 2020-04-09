@@ -1,6 +1,6 @@
 <?php
 
-require('connectdb.php');
+require('php/connectdb.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
