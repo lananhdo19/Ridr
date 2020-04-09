@@ -1,3 +1,7 @@
+.mypanel {
+    cursor: zoom-in;
+    /* cursor: alias; */
+}
 /* Dropdowns */
 .dropdown {
     margin: 0 20px;

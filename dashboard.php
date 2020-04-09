@@ -25,36 +25,8 @@
         <div class="post-listings mainPost">
             <h2>Offers & Pending Requests</h2>
             <br>
-            <div class="panel panel-default">
-            <div class="panel-body">
-                <div class="panel-vertical-top">
-                    <img src="static/images/aesthetic-user-profile-img.png" class="profile-pic">
-                    <p class="normal-text">
-                        {{Destination}}<br/>
-                        {{Date}}<br/>
-                        {{Time}}<br/>
-                        {{Comments}}
-                    </p>
-                </div>
-                <button type="button" class="accept_button subheader right-div-button">Accept</button>
-            </div>
-            <br>
-            <div class="panel panel-default">
-            <div class="panel-body">
-                <div class="panel-vertical-top">
-                    <img src="static/images/aesthetic-user-profile-img.png" class="profile-pic">
-                    <p class="normal-text">
-                        {{Destination}}<br/>
-                        {{Date}}<br/>
-                        {{Time}}<br/>
-                        {{Comments}}
-                    </p>
-                </div>
-                <div class="request_pending subheader right-div-button">Request Pending</div>
-            </div>
-
-            <h2>Past Posts</h2>
-            <div class="panel panel-default">
+            <!-- Listing -->
+            <div class="panel panel-default mypanel">
                 <div class="panel-body">
                     <div class="panel-vertical-top">
                         <img src="static/images/aesthetic-user-profile-img.png" class="profile-pic">
@@ -65,9 +37,45 @@
                             {{Comments}}
                         </p>
                     </div>
-                    <button type="button" class="offer_button subheader right-div-button">Offer</button>
+                    <button type="button" class="accept_button subheader right-div-button">Accept</button>
                 </div>
             </div>
+            <!-- Listing -->
+            <br>
+            <!-- Listing -->
+            <div class="panel panel-default mypanel">
+                <div class="panel-body">
+                    <div class="panel-vertical-top">
+                        <img src="static/images/aesthetic-user-profile-img.png" class="profile-pic">
+                        <p class="normal-text">
+                            {{Destination}}<br/>
+                            {{Date}}<br/>
+                            {{Time}}<br/>
+                            {{Comments}}
+                        </p>
+                    </div>
+                    <button class="request_pending subheader right-div-button">Request Pending</button>
+                </div>
+            </div>
+            <!-- Listing -->
+
+            <h2>Past Posts</h2>
+            <!-- Listing -->
+            <div class="panel panel-default mypanel">
+                <div class="panel-body">
+                    <div class="panel-vertical-top">
+                        <img src="static/images/aesthetic-user-profile-img.png" class="profile-pic">
+                        <p class="normal-text">
+                            {{Destination}}<br/>
+                            {{Date}}<br/>
+                            {{Time}}<br/>
+                            {{Comments}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Listing -->
+        </div>
     </div>
 
     <!-- Column for information on a specifc post listing the riders -->

@@ -1,5 +1,5 @@
 /* All Buttons */
-.main_button, .request_button, .offer_button {
+.main_button, .request_button, .offer_button, .accept_button, .request_pending {
     border: none;
     text-align: center;
     text-decoration: none;
@@ -33,6 +33,7 @@
     border: 1px solid #25B50E;
 }
 .request_pending {
+    cursor: context-menu !important;
     width: min-content;
     background-color: #FF3D3D;
     padding: 10px 26px;
