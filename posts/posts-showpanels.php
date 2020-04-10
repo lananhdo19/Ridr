@@ -41,7 +41,7 @@ $posts = getAllTasks();
                                 </span>
                             </p>
                             
-                            Location: <?php echo $post['destination']; ?>
+                            Location:  <?php echo $post['destination']; ?>
                             <br/>
                             <?php formatDateAndTime($post['datetime']); ?>
                             <br/>
@@ -69,11 +69,21 @@ function formatDateAndTime($datetime) {
     // 2020-04-11 08:00:00
     // $datetime = $date . " " . $time . ":00";
     $datetime_array = explode(" ", $datetime);
-    $date = $datetime_array[0];
+    
+    $date_raw = $datetime_array[0];
+    $date = date('F j, Y',strtotime($date_raw));
+    $dayOfWeek = date("l", strtotime($date_raw));
+    
     $time = $datetime_array[1];
     $time = substr($time, 0, -3); //removes the :00 from time
+    if ($time[0]=="0")            //removes the 0 from time if begins with 0 (e.g. 08:00)
+        $time = substr($time,1);
+    
+    $meridiem = "PM";
+    if ($time < 13)
+        $meridiem = "AM";
 
-    echo "Date:" . $date . "<br/>" . "Time: " . $time;
+    echo "Date:  " . $dayOfWeek . ", " . $date . "<br/>" . "Time:  " . $time . $meridiem;
 }
 
 ?>
