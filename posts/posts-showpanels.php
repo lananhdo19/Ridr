@@ -30,7 +30,7 @@ $posts = getAllTasks();
                         > -->
                         <img src="static/images/sail.jfif" class="profile-pic">
                         <div class="normal-text" style="line-height: 1.5em;">
-                            <p class="subheader" style="font-weight: 500;">
+                            <p style="font-size:18px; font-weight: 500;">
                                 <?php
                                     if ($post['isDriver'] == 0) { echo "I'm offering a ride."; }
                                     else { echo "I'm looking for a ride."; }
