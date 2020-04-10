@@ -24,27 +24,25 @@ $posts = getAllTasks();
             <!-- Listing -->
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <div class="panel-vertical-top" style="position: relative">
+                    <div class="panel-vertical-top">
                         <!-- <img class="profile-pic" src=
                             <?php echo "'" . $post['profile-pic'] . "'"; ?>
                         > -->
-                        <img src="static/images/aesthetic-user-profile-img.png" class="profile-pic" 
-                        style="margin: auto 35px auto 0; position: absolute; height:90% !important; width:120px !important;">
-                        <p class="normal-text" style="margin-left:150px !important; margin-bottom: 0 !important;">
-                            <?php echo $post['email']; ?>
-                            <br/>
+                        <img src="static/images/sail.jfif" class="profile-pic">
+                        <div class="normal-text" style="line-height: 1.5em;">
+                            <p style="color:darkgrey;"><?php echo $post['email']; ?></p>
                             <?php
                                 if ($post['isDriver'] == 0) { echo "I'm offering a ride."; }
                                 else { echo "I'm looking for a ride."; }
                             ?>
                             <br/>
-                            <?php echo $post['destination']; ?>
+                            Location: <?php echo $post['destination']; ?>
                             <br/>
                             <?php formatDateAndTime($post['datetime']); ?>
                             <br/>
                             <?php echo $post['comment']; ?>
                             <br/>
-                        </p>
+                        </div>
                     </div>
                     <button type="button" class="request_button subheader right-div-button">Request</button>
                 </div>
@@ -65,7 +63,7 @@ function formatDateAndTime($datetime) {
     $time = $datetime_array[1];
     $time = substr($time, 0, -3); //removes the :00 from time
 
-    echo $date . "<br/>" . $time;
+    echo "Date:" . $date . "<br/>" . "Time: " . $time;
 }
 
 ?>

@@ -164,6 +164,9 @@ input[type=date]::-webkit-calendar-picker-indicator {
     .posts-right {
         padding: 30px;
     }
+    .im-looking-for-drpdn {
+        margin-left: 10px;
+    }
 }
 
 /*if screen is greater than 600px*/
