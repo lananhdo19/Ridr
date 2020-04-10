@@ -21,7 +21,7 @@
         <div class="posts-pg flex-container-stretch">
             <div class="posts-div" style="flex-grow: 5">
                 <?php include('posts/posts-header.html') ?>
-                <?php include('posts/posts-showpanels.html') ?>
+                <?php include('posts/posts-showpanels.php') ?>
             </div>
         </div>
         <?php include('posts/create-post.php') ?>
