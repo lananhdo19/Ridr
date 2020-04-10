@@ -27,7 +27,15 @@
                 <?php include('posts/posts-showpanels.php') ?>
             </div>
         </div>
-        <?php include('posts/create-post.php') ?>
+        <?php 
+            if (count($_SESSION) > 0 ) {
+                include('posts/create-post.php');
+            }
+            else {
+                
+            }
+        ?>
+        
     </div>
 
     <!-- FOOTER -->

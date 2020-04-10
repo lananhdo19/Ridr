@@ -1,4 +1,4 @@
-<?php session_start();?>
+<?php session_start(); ?>
 <?php
 if (isset($_SESSION['email'])) {
     ?>
@@ -34,6 +34,31 @@ if (isset($_SESSION['email'])) {
         </nav>
     </header>
 
-    <?php
+<?php
+}
+else {
+?>
+    <link type="text/css" rel="stylesheet" href="static/navbar.css"/>
+
+    <header>
+        <nav class="navbar header" id="navbar">
+            <!-- Left Side: Logo -->
+            <div class="left_nav">
+                <a class="ridr-logo" href="posts.php">
+                    <img src="static/images/logoWhite.png" id="ridr-logo" class="d-inline-block align-top"
+                        style="height:40px" onerror="this.style.display='none'">
+                </a>
+            </div>
+            <!-- Right side: Posts, Login/Account -->
+            <div class="right_nav">
+                <div>
+                    <a href="posts.php" class="subheader post_nav_item">Posts</a>
+                    <a href="login-signup.html" class="subheader">
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<?php
 }
 ?>

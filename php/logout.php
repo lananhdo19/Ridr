@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (count($_SESSION) > 0 ){
+if (count($_SESSION) > 0 ) {
     foreach ($_SESSION as $key => $value){
         unset($_SESSION[$key]);
     }
