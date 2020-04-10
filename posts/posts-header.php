@@ -1,11 +1,6 @@
 <?php
-    //sve img in our filepth
-    //store filepth to profile pic in col of posts
-    
     if ( (!isset($_SESSION['email'])) ) {
         echo "<script> var logged_in = false; </script>";
-        // echo "<script>alert('Please log in first.');</script>";
-        // header("Location: login-signup.html");
     }
     else 
         echo "<script> var logged_in = true; </script>";

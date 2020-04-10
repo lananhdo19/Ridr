@@ -28,7 +28,6 @@
             </div>
         </div>
         <?php if (isset($_SESSION['email'])) include('posts/create-post.php'); ?>
-        
     </div>
 
     <!-- FOOTER -->
