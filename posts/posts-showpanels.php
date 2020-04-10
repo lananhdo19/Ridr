@@ -29,10 +29,8 @@ $posts = getAllTasks();
                             <?php echo "'" . $post['profile-pic'] . "'"; ?>
                         > -->
                         <img src="static/images/aesthetic-user-profile-img.png" class="profile-pic" 
-                        style="margin: auto 35px auto 0; position: absolute; height:90% !important; width:120px !important;">
-                        <p class="normal-text" style="margin-left:150px !important; margin-bottom: 0 !important;">
-                        <!-- <img src="static/images/aesthetic-user-profile-img.png" class="profile-pic"> -->
-                        <p class="normal-text">
+                        style="margin: auto 35px auto 0; position: absolute; height:100% !important; width:120px !important;">
+                        <p class="normal-text" style="margin-left:150px !important;">
                             <?php echo $post['email']; ?>
                             <br/>
                             <?php

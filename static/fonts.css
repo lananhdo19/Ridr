@@ -9,8 +9,7 @@
     font-size: 18px;
 }
 .normal-text {
-    font-size: 16px;
-    line-height: 1.4em;
+    font-size: 15px;
 }
 #field-missing {
     color: red;
@@ -19,12 +18,20 @@
 /* Responsive */
 @media only screen and (max-width: 800px) {
     .header {
-        font-size: 18px;
+        font-size: 17px;
     }
     .subheader {
         font-size: 17px;
     }
     .normal-text {
         font-size: 15px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .subheader {
+        font-size: 15px;
+    }
+    .normal-text {
+        font-size: 14px;
     }
 }
