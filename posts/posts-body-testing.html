@@ -1,43 +1,90 @@
+<!-- Listing 1 -->
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="panel-vertical-top">
+            <img src="static/images/aesthetic-user-profile-img.png" class="profile-pic">
+            <p class="normal-text">
+                {{Destination}}<br/>
+                {{Date}}<br/>
+                {{Time}}<br/>
+                {{Comments}}
+            </p>
+        </div>
+        <button type="button" class="request_button subheader right-div-button">Request</button>
+    </div>
+</div>
+<!-- Listing 1 -->
+
+
+<?php
+
+function getAllTasks() {
+    global $db;
+
+    $query = "SELECT * FROM post"; //selecting all posts
+    $statement = $db->prepare($query);
+    $statement->execute();
+
+    //fetchAll() --> retrieve all rows
+    $results = $statement->fetchAll();
+    $statement->closeCursor();
+    return $results;
+}
+
+$posts = getAllTasks();
+
+?>
+
 <div class="flex-container-wrap panels">
     <!-- Ride Listings -->
     <div class="post-listings" id="post-listings">
-        <!-- Listing 1 -->
-        <!-- <div class="panel panel-default">
-            <div class="panel-body">
-                <img src="static/images/aesthetic-user-profile-img.png" class="profile-pic">
-                <p class="panel-p" id="panel-p"> -->
-                    <?php selectData() ?>
-                <!-- </p>
-                <button type="button" class="request_button normal-text right-div-button">Request</button>
+    <?php foreach ($posts as $post):  ?> <!-- iterating over each row in post table -->
+            <!-- Listing -->
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="panel-vertical-top">
+                        <img class="profile-pic" src=
+                            <?php echo "'" . $post['profile-pic'] . "'"; ?>
+                        >
+                        <!-- <img src="static/images/aesthetic-user-profile-img.png" class="profile-pic"> -->
+                        <p class="normal-text">
+                            <?php echo $post['email']; ?>
+                            <br/>
+                            <?php
+                                if ($post['isDriver'] == 0) { echo "I'm offering a ride."; }
+                                else { echo "I'm looking for a ride."; }
+                            ?>
+                            <br/>
+                            <?php echo $post['email']; ?>
+                            <br/>
+                            <?php echo $post['destination']; ?>
+                            <br/>
+                            <!-- <?php formatDateAndTime($post['datetime']); ?> -->
+                            <br/>
+                            <?php echo $post['comment']; ?>
+                            <br/>
+                        </p>
+                    </div>
+                    <button type="button" class="request_button subheader right-div-button">Request</button>
+                </div>
             </div>
-        </div> -->
+            <!-- Listing -->
+        <?php endforeach; ?>
+    </div>
+</div>
 
 
+<?php
 
+function formatDateAndTime($datetime) {
+    // 2020-04-11 08:00:00
+    // $datetime = $date . " " . $time . ":00";
+    $datetime_array = explode(" ", $datetime);
+    $date = $datetime_array[0];
+    $time = $datetime_array[1];
+    $time = substr($time, 0, -3); //removes the :00 from time
 
-<?php  
-
-function selectData()
-{
-    require('connectdb.php'); //mkes sure the connect-to-dtbse file exists
-
-    $query = "SELECT * FROM post"; //* means I wnat all cols of data (otherwise, use comma-sep column names)
-    $statement = $db->prepare($query); 
-    $statement->execute();
-
-    // fetchAll() returns an array for all of the rows in the result set
-    $results = $statement->fetchAll();
-
-    $statement->closecursor();
-    
-    foreach ($results as $result) { //display the data	
-        echo '<div class="panel panel-default">' . '\n' . '<div class="panel-body">' . '\n';
-        echo '<p class="panel-p" id="panel-p">' . '\n';
-        echo $results['destination'] . "<br/>" . $results['date'] . "<br/>" . $results['time'] . "<br/>" . $results['comment'];   
-        //echo '</p>' . '\n' . <button type="button" class="request_button normal-text right-div-button">Request</button>' . '\n' . 
-        //    '</div>' . '\n' . '</div>' . '\n';
-
-    } 
+    echo $date . "<br/>" . $time;
 }
 
 ?>

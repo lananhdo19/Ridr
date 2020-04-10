@@ -16,6 +16,9 @@
     <!-- FILTERS -->
     <?php include('filter-posts.html') ?>
 
+    <!-- Connect to DB -->
+    <?php require('php/connectdb.php'); ?>
+
     <!-- BODY -->
     <div class="main">
         <div class="posts-pg flex-container-stretch">

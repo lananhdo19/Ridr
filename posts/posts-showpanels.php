@@ -20,14 +20,15 @@ $posts = getAllTasks();
 <div class="flex-container-wrap panels">
     <!-- Ride Listings -->
     <div class="post-listings" id="post-listings">
-        <?php foreach ($posts as $post):  ?> <!-- iterating over each row in post table -->
+    <?php foreach ($posts as $post):  ?> <!-- iterating over each row in post table -->
+            <!-- Listing -->
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="panel-vertical-top">
-                        <img class="profile-pic" src=
+                        <!-- <img class="profile-pic" src=
                             <?php echo "'" . $post['profile-pic'] . "'"; ?>
-                        >
-                        <!-- <img src="static/images/aesthetic-user-profile-img.png" class="profile-pic"> -->
+                        > -->
+                        <img src="static/images/aesthetic-user-profile-img.png" class="profile-pic">
                         <p class="normal-text">
                             <?php echo $post['email']; ?>
                             <br/>
@@ -36,8 +37,6 @@ $posts = getAllTasks();
                                 else { echo "I'm looking for a ride."; }
                             ?>
                             <br/>
-                            <?php echo $post['email']; ?>
-                            <br/>
                             <?php echo $post['destination']; ?>
                             <br/>
                             <?php formatDateAndTime($post['datetime']); ?>
@@ -45,12 +44,15 @@ $posts = getAllTasks();
                             <?php echo $post['comment']; ?>
                             <br/>
                         </p>
+                    </div>
+                    <button type="button" class="request_button subheader right-div-button">Request</button>
                 </div>
-                <button type="button" class="request_button subheader right-div-button">Request</button>
             </div>
+            <!-- Listing -->
         <?php endforeach; ?>
     </div>
 </div>
+
 
 <?php
 

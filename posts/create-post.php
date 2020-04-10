@@ -62,7 +62,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && (
 
 function insertData() {
 
-    require('php/connectdb.php'); // move to inside the function & if sttement
     // global $db
 
     $destination = $_POST['Destination'];
