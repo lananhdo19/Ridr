@@ -23,31 +23,37 @@ $posts = getAllTasks();
     <?php foreach ($posts as $post):  ?> <!-- iterating over each row in post table -->
             <!-- Listing -->
             <div class="panel panel-default">
+                <?php //only display posts that haven't passed yet
+                    $now = (new \DateTime());
+                    $post_published = new DateTime($post['datetime']); //2020-04-11 08:00:00
+                            
+                    if ( $now < $post_published ) {
+                ?>
                 <div class="panel-body">
-                    <div class="panel-vertical-top" style="font-weight:400;">
-                        <!-- <img class="profile-pic" src=
-                            <?php echo "'" . $post['profile-pic'] . "'"; ?>
-                        > -->
-                        <img src="static/images/sail.jfif" class="profile-pic">
-                        <div class="normal-text" style="line-height: 1.5em;">
-                            <p style="font-size:18px;">
-                                <?php
-                                    if ($post['isDriver'] == 0) { echo "Offering a ride"; }
-                                    else { echo "Looking for a ride."; }
-                                ?>
-                                <br/>
-                                <span style="color:darkgrey; font-size:14px;">
-                                    <?php echo $post['email']; ?>
-                                </span>
-                            </p>
+                        <div class="panel-vertical-top" style="font-weight:400;">
+                                <!-- <img class="profile-pic" src=
+                                    <?php echo "'" . $post['profile-pic'] . "'"; ?>
+                                > -->
+                                <img src="static/images/sail.jfif" class="profile-pic">
+                                <div class="normal-text" style="line-height: 1.5em;">
+                                    <p style="font-size:18px;">
+                                        <?php
+                                            if ($post['isDriver'] == 0) { echo "Offering a ride"; }
+                                            else { echo "Looking for a ride."; }
+                                        ?>
+                                        <br/>
+                                        <span style="color:darkgrey; font-size:14px;">
+                                            <?php echo $post['email']; ?>
+                                        </span>
+                                    </p>
 
-                            <?php echo "<span style='font-weight:500;'>" . "Location:  " . "</span>" . $post['destination']; ?>
-                            <br/>
-                            <?php formatDateAndTime($post['datetime']); ?>
-                            <br/>
-                            <?php if ($post['comment'] != "") echo "<span style='font-weight:500;'>" . "Additional Comments:  " . "</span>" . $post['comment']; ?>
+                                    <?php echo "<span style='font-weight:500;'>" . "Location:  " . "</span>" . $post['destination']; ?>
+                                    <br/>
+                                    <?php formatDateAndTime($post['datetime']); ?>
+                                    <br/>
+                                    <?php if ($post['comment'] != "") echo "<span style='font-weight:500;'>" . "Additional Comments:  " . "</span>" . $post['comment']; ?>
+                                </div>
                         </div>
-                    </div>
                     <?php 
                         if ($post['isDriver'] == 0) 
                             echo '<button type="button" class="request_button subheader right-div-button">Request</button>';
@@ -55,6 +61,7 @@ $posts = getAllTasks();
                             echo '<button type="button" class="offer_button subheader right-div-button">Offer</button>';
                     ?>
                 </div>
+                <?php } ?>
             </div>
             <!-- Listing -->
         <?php endforeach; ?>
@@ -70,6 +77,8 @@ function formatDateAndTime($datetime) {
     // 2020-04-11 08:00:00
     // $datetime = $date . " " . $time . ":00";
     $datetime_array = explode(" ", $datetime);
+
+    echo $datetime;
     
     $date_raw = $datetime_array[0];
     $date = date('F j, Y',strtotime($date_raw));
