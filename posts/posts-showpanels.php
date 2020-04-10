@@ -26,7 +26,7 @@ $posts = getAllTasks();
                 <?php //only display posts that haven't passed yet
                     $now = (new \DateTime());
                     $post_published = new DateTime($post['datetime']); //2020-04-11 08:00:00
-                            
+
                     if ( $now < $post_published ) {
                 ?>
                 <div class="panel-body">
@@ -77,8 +77,6 @@ function formatDateAndTime($datetime) {
     // 2020-04-11 08:00:00
     // $datetime = $date . " " . $time . ":00";
     $datetime_array = explode(" ", $datetime);
-
-    echo $datetime;
     
     $date_raw = $datetime_array[0];
     $date = date('F j, Y',strtotime($date_raw));
