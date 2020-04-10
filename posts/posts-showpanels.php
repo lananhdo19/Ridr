@@ -30,12 +30,17 @@ $posts = getAllTasks();
                         > -->
                         <img src="static/images/sail.jfif" class="profile-pic">
                         <div class="normal-text" style="line-height: 1.5em;">
-                            <p style="color:darkgrey;"><?php echo $post['email']; ?></p>
-                            <?php
-                                if ($post['isDriver'] == 0) { echo "I'm offering a ride."; }
-                                else { echo "I'm looking for a ride."; }
-                            ?>
-                            <br/>
+                            <p class="subheader" style="font-weight: 500;">
+                                <?php
+                                    if ($post['isDriver'] == 0) { echo "I'm offering a ride."; }
+                                    else { echo "I'm looking for a ride."; }
+                                ?>
+                                <br/>
+                                <span style="color:darkgrey; font-size:14px;">
+                                    <?php echo $post['email']; ?>
+                                </span>
+                            </p>
+                            
                             Location: <?php echo $post['destination']; ?>
                             <br/>
                             <?php formatDateAndTime($post['datetime']); ?>

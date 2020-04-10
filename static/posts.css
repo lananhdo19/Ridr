@@ -61,8 +61,8 @@
 }
 .profile-pic {
     object-fit: cover;
-    height: 100px !important;
-    width: 100px !important;
+    height: 120px !important;
+    width: 120px !important;
     margin-right: 30px;
 }
 .right-div-button {
