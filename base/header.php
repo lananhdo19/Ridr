@@ -52,8 +52,10 @@ else {
             <!-- Right side: Posts, Login/Account -->
             <div class="right_nav">
                 <div>
-                    <a href="posts.php" class="subheader post_nav_item">Posts</a>
-                    <a href="login-signup.html" class="subheader">
+                    <a href="posts.html" class="subheader post_nav_item">Posts</a>
+                </div>
+                <div>
+                    <a href="login-signup.html" class="subheader">Log In</a>
                 </div>
             </div>
         </nav>
