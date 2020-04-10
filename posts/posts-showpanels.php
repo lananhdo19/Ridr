@@ -32,8 +32,8 @@ $posts = getAllTasks();
                         <div class="normal-text" style="line-height: 1.5em;">
                             <p style="font-size:18px; font-weight: 500;">
                                 <?php
-                                    if ($post['isDriver'] == 0) { echo "I'm offering a ride."; }
-                                    else { echo "I'm looking for a ride."; }
+                                    if ($post['isDriver'] == 0) { echo "Offering a ride."; }
+                                    else { echo "Looking for a ride."; }
                                 ?>
                                 <br/>
                                 <span style="color:darkgrey; font-size:14px;">
@@ -45,8 +45,11 @@ $posts = getAllTasks();
                             <br/>
                             <?php formatDateAndTime($post['datetime']); ?>
                             <br/>
-                            <?php echo $post['comment']; ?>
-                            <br/>
+                            
+                            <p style="margin-top:5px;">
+                                <?php echo $post['comment']; ?>
+                            <p>
+                            <!-- <br/> -->
                         </div>
                     </div>
                     <?php 
@@ -76,14 +79,21 @@ function formatDateAndTime($datetime) {
     
     $time = $datetime_array[1];
     $time = substr($time, 0, -3); //removes the :00 from time
-    if ($time[0]=="0")            //removes the 0 from time if begins with 0 (e.g. 08:00)
-        $time = substr($time,1);
-    
-    $meridiem = "PM";
-    if ($time < 13)
-        $meridiem = "AM";
 
-    echo "Date:  " . $dayOfWeek . ", " . $date . "<br/>" . "Time:  " . $time . $meridiem;
+    $meridiem = "PM";
+    if ($time < 12)
+        $meridiem = "AM";
+    
+    $time_array = explode(":", $time);
+    $hour = $time_array[0];
+    $min = $time_array[1];
+
+    if ($hour=="0")  //removes the 0 from time if begins with 0 (e.g. 08:00)
+        $hour = substr($hour,1);
+    if ($meridiem = "AM")
+        $hour = (int)$hour + 12;
+    $time = $hour . ":" . $min;
+
 }
 
 ?>
