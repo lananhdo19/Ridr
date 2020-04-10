@@ -49,7 +49,12 @@ $posts = getAllTasks();
                             <br/>
                         </div>
                     </div>
-                    <button type="button" class="request_button subheader right-div-button">Request</button>
+                    <?php 
+                        if ($post['isDriver'] == 0) 
+                            echo '<button type="button" class="request_button subheader right-div-button">Request</button>';
+                        else
+                            echo '<button type="button" class="offer_button subheader right-div-button">Offer</button>';
+                    ?>
                 </div>
             </div>
             <!-- Listing -->
