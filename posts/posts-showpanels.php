@@ -24,15 +24,15 @@ $posts = getAllTasks();
             <!-- Listing -->
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <div class="panel-vertical-top">
+                    <div class="panel-vertical-top" style="font-weight:400;">
                         <!-- <img class="profile-pic" src=
                             <?php echo "'" . $post['profile-pic'] . "'"; ?>
                         > -->
                         <img src="static/images/sail.jfif" class="profile-pic">
                         <div class="normal-text" style="line-height: 1.5em;">
-                            <p style="font-size:18px; font-weight: 500;">
+                            <p style="font-size:18px;">
                                 <?php
-                                    if ($post['isDriver'] == 0) { echo "Offering a ride."; }
+                                    if ($post['isDriver'] == 0) { echo "Offering a ride"; }
                                     else { echo "Looking for a ride."; }
                                 ?>
                                 <br/>
@@ -40,16 +40,11 @@ $posts = getAllTasks();
                                     <?php echo $post['email']; ?>
                                 </span>
                             </p>
-                            
-                            Location:  <?php echo $post['destination']; ?>
+                            <?php echo "Location:  " . $post['destination']; ?>
                             <br/>
                             <?php formatDateAndTime($post['datetime']); ?>
                             <br/>
-                            
-                            <p style="margin-top:5px;">
-                                <?php echo $post['comment']; ?>
-                            <p>
-                            <!-- <br/> -->
+                            <?php if ($post['comment'] != "") echo "Additional Comments:  " . $post['comment']; ?>
                         </div>
                     </div>
                     <?php 
@@ -69,6 +64,8 @@ $posts = getAllTasks();
 <?php
 
 function formatDateAndTime($datetime) {
+    // DO NOT CHANGE!! CHANGING ANY LINE OR ORDER OF LINES WILL MESS IT UP
+
     // 2020-04-11 08:00:00
     // $datetime = $date . " " . $time . ":00";
     $datetime_array = explode(" ", $datetime);
@@ -88,12 +85,15 @@ function formatDateAndTime($datetime) {
     $hour = $time_array[0];
     $min = $time_array[1];
 
-    if ($hour=="0")  //removes the 0 from time if begins with 0 (e.g. 08:00)
+    if ($hour[0]=="0")  //removes the 0 from time if begins with 0 (e.g. 08:00)
         $hour = substr($hour,1);
-    if ($meridiem = "AM")
-        $hour = (int)$hour + 12;
+    if ($hour == "0")   //hour 0 should be 12 (12AM)
+        $hour = "12";
+    if ($hour > 12)     //if hour > 13 (e.g. 13)
+        $hour = (int)$hour - 12;
     $time = $hour . ":" . $min;
 
+    echo "Date:  " . $dayOfWeek . ", " . $date . "<br/>" . "Time:  " . $time . $meridiem;
 }
 
 ?>
