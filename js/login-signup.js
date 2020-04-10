@@ -1,7 +1,7 @@
 //JS function switching between sign up/login tabs
 $(document).ready(function() {
-    $(".login-form").hide();
-    $(".loginTab").css("color", "white");
+    $(".signup-form").hide();
+    $(".signupTab").css("color", "white");
 
     $(".loginTab").click(function(){
         $(".signup-form").hide();
@@ -83,11 +83,11 @@ login_btn.addEventListener('click', function(){
 //signup button
 let signup_btn = document.getElementById("signUpButton");
 signup_btn.addEventListener('click', function(){
-   if (checkEmailSign() &&
-       checkName() &&
-       checkPassSign()){
+   if (checkEmailSign() && checkName() && checkPassSign())
+   {
        checkExistingAndCreate();
    }
+
 }, false)
 
 

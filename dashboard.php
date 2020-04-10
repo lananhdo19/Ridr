@@ -7,15 +7,23 @@
     </head>
 <body>
 
-<?php include('base/header.html'); ?>
+<?php include('base/header.php'); ?>
 
+<?php
+if (isset($_SESSION['email'])) {
+?>
 <!-- Row for Columns on Entire page -->
 <div class="row">
 
     <!-- Personal Info Column displays your profile pic and name -->
     <div class="personalInfo col-3 ">
         <img class="profilePic-Dash" src="static/images/profilepic.png" href="#">
-        <h3 class="name-dash">{Your name}</h3>
+        <h3 class="name-dash">
+            <?php
+                if (isset($_SESSION['first_name']) ) echo $_SESSION['first_name'];
+                if (isset($_SESSION['last_name']) ) echo " " . $_SESSION['last_name'];
+            ?>
+        </h3>
         <!-- <button type="button" class="main_button header" id="logout-button">Log out</button> -->
     </div>
 
@@ -167,3 +175,6 @@
 </script>
 <script src="js/dashboard.js"></script>
 </html>
+<?php
+}
+?>
