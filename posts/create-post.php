@@ -95,7 +95,6 @@ function insertData() {
               VALUES (:email, :destination, :datetime, :comment, :zipcode, :isDriver, :seats)";
     $statement = $db->prepare($query);
 
-    // $email = $_SESSION['user'];
     $email = $_SESSION['email'];
    
     $statement->bindValue(':email', $email);
