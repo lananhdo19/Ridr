@@ -40,11 +40,12 @@ $posts = getAllTasks();
                                     <?php echo $post['email']; ?>
                                 </span>
                             </p>
-                            <?php echo "Location:  " . $post['destination']; ?>
+
+                            <?php echo "<span style='font-weight:500;'>" . "Location:  " . "</span>" . $post['destination']; ?>
                             <br/>
                             <?php formatDateAndTime($post['datetime']); ?>
                             <br/>
-                            <?php if ($post['comment'] != "") echo "Additional Comments:  " . $post['comment']; ?>
+                            <?php if ($post['comment'] != "") echo "<span style='font-weight:500;'>" . "Additional Comments:  " . "</span>" . $post['comment']; ?>
                         </div>
                     </div>
                     <?php 
@@ -93,7 +94,7 @@ function formatDateAndTime($datetime) {
         $hour = (int)$hour - 12;
     $time = $hour . ":" . $min;
 
-    echo "Date:  " . $dayOfWeek . ", " . $date . "<br/>" . "Time:  " . $time . $meridiem;
+    echo "<span style='font-weight:500;'>" . "Date:  " . "</span>" . $dayOfWeek . ", " . $date . "<br/>" . "<span style='font-weight:500;'>" . "Time:  " . "</span>" . $time . $meridiem;
 }
 
 ?>
