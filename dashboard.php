@@ -9,80 +9,42 @@
 
 <?php include('base/header.php'); ?>
 
-<?php
-if (isset($_SESSION['email'])) {
+<?php if (isset($_SESSION['email'])) {
+
+include('php/connectdb.php');
+include('php/db-functions.php');
+$userposts = getUserPosts();
+
 ?>
+
 <!-- Row for Columns on Entire page -->
 <div class="row">
 
     <!-- Personal Info Column displays your profile pic and name -->
     <div class="personalInfo col-3 ">
         <img class="profilePic-Dash" src="static/images/profilepic.png" href="#">
-        <h3 class="name-dash">
+        <h2 class="name-dash">
             <?php
                 if (isset($_SESSION['first_name']) ) echo $_SESSION['first_name'];
                 if (isset($_SESSION['last_name']) ) echo " " . $_SESSION['last_name'];
             ?>
-        </h3>
-        <!-- <button type="button" class="main_button header" id="logout-button">Log out</button> -->
+        </h2>
+        <h5><?php if (isset($_SESSION['email']) ) echo $_SESSION['email'];?></h5>
+        <br/>
+        <br/>
+        <br/>
     </div>
 
     <!-- Column for past posts and requests -->
     <div class="history col-6">
-
         <div class="post-listings mainPost">
-            <h2>Current Rides</h2>
+            <h1 class="mega-header">Current Rides</h2>
             <br>
-            <!-- Listing -->
-            <div class="panel panel-default magnify-cursor">
-                <div class="panel-body">
-                    <div class="panel-vertical-top">
-                        <img src="static/images/aesthetic-user-profile-img.png" class="profile-pic">
-                        <p class="normal-text">
-                            {{Destination}}<br/>
-                            {{Date}}<br/>
-                            {{Time}}<br/>
-                            {{Comments}}
-                        </p>
-                    </div>
-                    <div class="driving_div subheader right-div-button">Driving</div>
-                </div>
-            </div>
-            <!-- Listing -->
+            <?php include('dashboard/current-posts.php') ?>
             <br>
-            <!-- Listing -->
-            <div class="panel panel-default magnify-cursor">
-                <div class="panel-body">
-                    <div class="panel-vertical-top">
-                        <img src="static/images/aesthetic-user-profile-img.png" class="profile-pic">
-                        <p class="normal-text">
-                            {{Destination}}<br/>
-                            {{Date}}<br/>
-                            {{Time}}<br/>
-                            {{Comments}}
-                        </p>
-                    </div>
-                    <div class="riding_div subheader right-div-button">Riding</div>
-                </div>
-            </div>
-            <!-- Listing -->
-
-            <h2>Past Rides</h2>
-            <!-- Listing -->
-            <div class="panel panel-default magnify-cursor">
-                <div class="panel-body">
-                    <div class="panel-vertical-top">
-                        <img src="static/images/aesthetic-user-profile-img.png" class="profile-pic">
-                        <p class="normal-text">
-                            {{Destination}}<br/>
-                            {{Date}}<br/>
-                            {{Time}}<br/>
-                            {{Comments}}
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <!-- Listing -->
+            <h1 class="mega-header">Past Rides</h2>
+            <br/>
+            <?php include('dashboard/past-posts.php') ?>
         </div>
     </div>
 
@@ -166,6 +128,7 @@ if (isset($_SESSION['email'])) {
 
 
 </body>
+</html>
 
 <script
         src="https://code.jquery.com/jquery-3.4.1.js"
@@ -174,7 +137,12 @@ if (isset($_SESSION['email'])) {
 
 </script>
 <script src="js/dashboard.js"></script>
-</html>
+
 <?php
+}
+else {
+    echo '<div style="text-align: center; padding: 30vh 0;">
+            <h1>You are not logged in.</h1>
+          </div>';
 }
 ?>

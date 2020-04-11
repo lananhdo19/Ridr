@@ -26,6 +26,9 @@
     .normal-text {
         font-size: 15px;
     }
+    .mega-header {
+        font-size: 35px !important;
+    }
 }
 @media only screen and (max-width: 600px) {
     .subheader {

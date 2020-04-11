@@ -67,6 +67,13 @@ div.row{
 }
 
 @media only screen and (max-width: 900px) {
+    .row {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+    .profilePic-Dash {
+        margin-top: 75px !important;
+    }
     div.row {
         display: block;
         max-width: 100%;
