@@ -1,5 +1,6 @@
 <?php
 
+/* Returns all the posts in the post table */
 function getAllPosts() {
     global $db;
 
@@ -13,6 +14,7 @@ function getAllPosts() {
     return $results;
 }
 
+/* Returns all posts of the logged in user */
 function getUserPosts() {
     global $db;
 
@@ -26,6 +28,10 @@ function getUserPosts() {
     return $results;
 }
 
+/* Param: a string formatted as a DateTime 
+   Return: true if the datetime is present or future
+   Return: false if the datetime is past
+*/
 function notPast($datetime) {
     $now = (new \DateTime());
     $datetime = new DateTime($datetime); //2020-04-11 08:00:00
@@ -36,11 +42,18 @@ function notPast($datetime) {
         return false;
 }
 
+/* Param: string email
+   Return: string before the "@" 
+   e.g. "zm5du@virginia.edu" --> return "zm5du"
+*/
 function getUsername($email) {
     $email_split = explode("@",$email);
     return $email_split[0];
 }
 
+/* Param: a string formatted as a DateTime 
+   Echos the date in human-readable form
+*/
 function formatDateAndTime($datetime) {
     // 2020-04-11 08:00:00
     // $datetime = $date . " " . $time . ":00";
