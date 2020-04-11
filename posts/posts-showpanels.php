@@ -36,9 +36,9 @@ $posts = getAllTasks();
                                 > -->
                                 <img src="static/images/sail.jfif" class="profile-pic">
                                 <div class="normal-text" style="line-height: 1.5em;">
-                                    <p style="font-size:18px;">
+                                    <p style="font-weight:500;">
                                         <?php
-                                            if ($post['isDriver'] == 0) { echo "Offering a ride"; }
+                                            if ($post['isDriver'] == 0) { echo "Giving a ride"; }
                                             else { echo "Looking for a ride."; }
                                         ?>
                                         <br/>
@@ -56,9 +56,9 @@ $posts = getAllTasks();
                         </div>
                     <?php 
                         if ($post['isDriver'] == 0) 
-                            echo '<button type="button" class="request_button subheader right-div-button">Request</button>';
+                            echo '<button type="button" class="request_button subheader right-div-button">Take Ride</button>';
                         else
-                            echo '<button type="button" class="offer_button subheader right-div-button">Offer</button>';
+                            echo '<button type="button" class="offer_button subheader right-div-button">Give Ride</button>';
                     ?>
                 </div>
                 <?php } ?>

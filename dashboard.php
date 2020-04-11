@@ -31,10 +31,10 @@ if (isset($_SESSION['email'])) {
     <div class="history col-6">
 
         <div class="post-listings mainPost">
-            <h2>Offers & Pending Requests</h2>
+            <h2>Current Rides</h2>
             <br>
             <!-- Listing -->
-            <div class="panel panel-default mypanel">
+            <div class="panel panel-default magnify-cursor">
                 <div class="panel-body">
                     <div class="panel-vertical-top">
                         <img src="static/images/aesthetic-user-profile-img.png" class="profile-pic">
@@ -45,13 +45,13 @@ if (isset($_SESSION['email'])) {
                             {{Comments}}
                         </p>
                     </div>
-                    <button type="button" class="accept_button subheader right-div-button">Accept</button>
+                    <div class="driving_div subheader right-div-button">Driving</div>
                 </div>
             </div>
             <!-- Listing -->
             <br>
             <!-- Listing -->
-            <div class="panel panel-default mypanel">
+            <div class="panel panel-default magnify-cursor">
                 <div class="panel-body">
                     <div class="panel-vertical-top">
                         <img src="static/images/aesthetic-user-profile-img.png" class="profile-pic">
@@ -62,14 +62,14 @@ if (isset($_SESSION['email'])) {
                             {{Comments}}
                         </p>
                     </div>
-                    <button class="request_pending subheader right-div-button">Request Pending</button>
+                    <div class="riding_div subheader right-div-button">Riding</div>
                 </div>
             </div>
             <!-- Listing -->
 
-            <h2>Past Posts</h2>
+            <h2>Past Rides</h2>
             <!-- Listing -->
-            <div class="panel panel-default mypanel">
+            <div class="panel panel-default magnify-cursor">
                 <div class="panel-body">
                     <div class="panel-vertical-top">
                         <img src="static/images/aesthetic-user-profile-img.png" class="profile-pic">

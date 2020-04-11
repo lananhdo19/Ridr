@@ -1,3 +1,8 @@
+/* Magnify Cursor */
+.magnify-cursor {
+    cursor: zoom-in;
+    /* cursor: alias; */
+}
 /* All Buttons */
 .main_button, .request_button, .offer_button, .accept_button, .request_pending {
     border: none;
@@ -14,32 +19,45 @@
     padding: 20px;
 }
 /* Request and Offer Buttons */
+/* Request and Offer Buttons */
 .request_button {
-    background-color: rgba(252, 175, 105, .12);
-    padding: 15px 25px;
-    color: rgb(255, 115, 0);
-    border: 1px solid #FF7A00;
+    /* color: #FF3D3D;
+    border: 1px solid #FF5555;
+    background-color: rgba(249,134,134,.12); */
+    background-color: #FFA654;
+    color: white;
+
+    width: 160px;
+    padding: 15px 30px;
 }
 .offer_button {
-    background-color: rgba(249,134,134,.16);
-    padding: 15px 39px;
-    color: #FF3D3D;
-    border: 1px solid #FF3D3D;
+    /* color: rgb(255, 115, 0);
+    background-color: rgba(252, 175, 105, .15);
+    border: 1px solid #FF7A00; */
+    background-color: #FF6B6B;
+    color: white;
+
+    width: 160px;
+    padding: 15px 30px;
 }
 .accept_button {
-    background-color: rgba(95,211,76,.16);
-    padding: 15px 30px;
     color: #25B50E;
+    background-color: rgba(95,211,76,.16);
     border: 1px solid #25B50E;
+    padding: 15px 30px;
 }
-.request_pending {
-    cursor: context-menu !important;
+.driving_div {
     width: min-content;
-    background-color: #FF3D3D;
+    background-color: #FF6B6B;
     padding: 10px 26px;
     color: white;
 }
-
+.riding_div {
+    width: min-content;
+    background-color: #FFA654;
+    padding: 10px 26px;
+    color: white;
+}
 /* Login/Signup Buttons (Red) */
 .btn-red{
     width: 100%;
