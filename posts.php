@@ -14,7 +14,7 @@
     <?php include('base/header.php'); ?>
 
     <!-- FILTERS -->
-    <?php include('filter-posts.html') ?>
+    <?php include('filter-posts.php'); ?>
 
     <!-- Connect to DB -->
     <?php require('php/connectdb.php'); ?>
