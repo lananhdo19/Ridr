@@ -63,6 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && (
 function insertData() {
     global $db;
 
+    // Getting the submitted form fields
     $destination = $_POST['Destination'];
     $date = $_POST['Date']; // "12/01/2020" --> 2020-12-01 
     $time = $_POST['Time']; // "01:01 PM" --> 13:01,  01:01 AM --> 01:01 
@@ -71,8 +72,9 @@ function insertData() {
     $isDriver = $_POST['isDriver'];
     $seats = $_POST['seats'];
     
-    // 2020-04-11 08:00:00
-    $datetime = $date . " " . $time . ":00";
+    // Cleaning the submitted data
+
+    $datetime = $date . " " . $time . ":00"; // 2020-04-11 08:00:00
 
     if (strlen($zipcode)==3)
         $zipcode = "00" . $zipcode;
@@ -90,6 +92,7 @@ function insertData() {
         $seats = (int)$seats;
 
 
+    // Inserting into db
     // INSERT INTO `post` (`email`, `destination`, `datetime`, `comment`, `zipcode`, `isDriver`, `seats`) 
     $query = "INSERT INTO post (email, destination, datetime, comment, zipcode, isDriver, seats) 
               VALUES (:email, :destination, :datetime, :comment, :zipcode, :isDriver, :seats)";
@@ -108,6 +111,14 @@ function insertData() {
     $statement->execute();
     $statement->closeCursor();
 
+    // Clearing the form so it doesn't resubmit on page refresh
+    unset ($_POST['Destination']);
+    unset ($_POST['Date']); // "12/01/2020" --> 2020-12-01 
+    unset ($_POST['Time']); // "01:01 PM" --> 13:01,  01:01 AM --> 01:01 
+    unset ($_POST['Comment']);
+    unset ($_POST['zip-code']);
+    unset ($_POST['isDriver']);
+    unset ($_POST['seats']);
 }
 
 

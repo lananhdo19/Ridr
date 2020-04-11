@@ -36,6 +36,10 @@ function notPast($datetime) {
         return false;
 }
 
+function getUsername($email) {
+    $email_split = explode("@",$email);
+    return $email_split[0];
+}
 
 function formatDateAndTime($datetime) {
     // 2020-04-11 08:00:00

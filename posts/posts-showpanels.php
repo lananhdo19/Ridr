@@ -28,7 +28,7 @@ $posts = getAllPosts();
                                         ?>
                                         <br/>
                                         <span style="color:darkgrey; font-size:14px;">
-                                            <?php echo $post['first_name'] . " " . $post['last_name']; ?>
+                                            <?php echo getUsername($post['email']); ?>
                                         </span>
                                     </p>
 
