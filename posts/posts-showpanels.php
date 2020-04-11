@@ -1,6 +1,7 @@
 <?php
 
 include('php/db-functions.php');
+include('php/functions.php');
 $posts = getAllPosts();
 
 ?>
