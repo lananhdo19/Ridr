@@ -12,17 +12,13 @@
     </head>
 
     <body>
-    <form action="php/filter.php" method="post">
+    <form action="php/filter.php" method="get">
         <button class="openbtn" onclick="toggleMenu()">☰</button> 
         <div class="sidebar" id="filters">
             <!-- Date (calendar) -->
             <label class="header">Date</label><br>
-            <input type="text" id="datepicker" name="date" value='<?php if(isset($_POST['date'])) echo $_POST['date']; ?>'>
-            <script>
-                $(document).ready(function () {
-                    $('#datepicker').datepicker({ dateFormat: 'yy-mm-dd' });
-                });
-            </script>
+            <input type="text" id="datepicker" name="date" value='<?php if(isset($_GET['date'])) echo $_GET['date']; ?>'>
+            
         
             <!-- Time -->
             <label class="header">Time</label><br>
@@ -44,20 +40,9 @@
     </form>
 
     <script>
-        var datePickerOptions = {
-        dateFormat: 'd/m/yy',
-        firstDay: 1,
-        changeMonth: true,
-        changeYear: true
-        }
-
-        $(document).ready(function() {
-            $('.datepicker').datepicker();
-            $('#addInput').live('click', function(){
-                $input = $('<input type="text" name="mydate[]" />').datepicker(datePickerOptions);
-                $('<div>').html($input).appendTo($('#main'));
-            });
-        }); 
+        $(document).ready(function () {
+            $('#datepicker').datepicker({ dateFormat: 'yy-mm-dd' });
+        });
     </script>
 
     </body>
