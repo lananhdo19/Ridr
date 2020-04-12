@@ -1,7 +1,6 @@
-/* Magnify Cursor */
-.magnify-cursor {
-    /* cursor: zoom-in; */
-    cursor: alias !important;
+/* Pointer Cursor */
+.pointer-cursor {
+    cursor: pointer;
 }
 /* All Buttons */
 .main_button, .request_button, .offer_button, .accept_button, .request_pending {
@@ -24,18 +23,18 @@
     width: 160px;
     padding: 15px 30px;
 }
-.request_button {
+.request_button, .request_button_hover {
     /* color: #FF3D3D;
     border: 1px solid #FF5555;
     background-color: rgba(249,134,134,.12); */
     background-color: rgb(255, 183, 115);
     color: white;
 }
-.offer_button {
+.offer_button, .offer_button_hover {
     /* color: rgb(255, 115, 0);
     background-color: rgba(252, 175, 105, .15);
     border: 1px solid #FF7A00; */
-    background-color: rgb(255, 151, 151);
+    background-color: rgb(255, 130, 130);
     color: white;
 }
 .accept_button {
@@ -44,24 +43,25 @@
     border: 1px solid #25B50E;
     padding: 15px 30px;
 }
-.riding_div, .driving_div {
-    width: min-content;
-    padding: 10px 26px;
-    color: white;
+
+/* Darker on Hover */
+.request_button_hover, .offer_button_hover {
+    transition-duration: 0.3s;
 }
-.riding_div {
-    background-color: rgb(255, 196, 140);
+.request_button_hover:hover {
+    background-color: rgb(255, 162, 75);
 }
-.driving_div {
-    background-color: rgb(255, 177, 177);
+.offer_button_hover:hover {
+    background-color: rgb(255, 98, 98);
 }
+
 /* Login/Signup Buttons (Red) */
 .btn-red{
     width: 100%;
     height: 30px;
     text-align: center;
     line-height: 30px;
-    background: #F06565;
+    background: rgb(255, 93, 93);
     color: white;
     font-weight: bold;
     letter-spacing: 1px;
