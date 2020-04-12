@@ -17,14 +17,13 @@
         <div class="sidebar" id="filters">
             <!-- Date (calendar) -->
             <label class="header">Date</label><br>
-            <input type="text" id="datepicker">
+            <input type="text" id="datepicker" name="date" value='<?php if(isset($_POST['date'])) echo $_POST['date']; ?>'>
             <script>
                 $(document).ready(function () {
-                    $('#datepicker').datepicker();
+                    $('#datepicker').datepicker({ dateFormat: 'yy-mm-dd' });
                 });
             </script>
         
-
             <!-- Time -->
             <label class="header">Time</label><br>
             <div id="time-container">
@@ -33,7 +32,7 @@
                 <input type="time" id="to_time" name="to_time" placeholder="hrs:mins" pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$">
             </div>
 
-            <!-- Destination / Zipcode-->
+            <!-- Destination (zipcode) -->
             <label class="header">Destination</label><br>
             <div id="destination-container">
                 <input type="text" id="zipcode" name="zipcode" maxlength="5" pattern="[0-9]{5}" placeholder="zip code">
