@@ -1,4 +1,4 @@
-<? php global $post ?>
+<?php global $post ?>
 
 <div class="panel-vertical-top">
     <img src="static/images/aesthetic-user-profile-img.png" class="profile-pic">
