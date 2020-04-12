@@ -1,31 +1,29 @@
 <?php
 require('connectdb.php');
-global $db;
 
 if(isset($_POST['submit'])){
-    // reformat time?
-    //$from_time = $_POST['from_time'];
-    //$to_time = $_POST['to_time'];
+    $from_time = $_POST['from_time']; //time: 6:04pm->18:04
+    $to_time = $_POST['to_time'];
     $zipcode = $_POST['zipcode'];
-
-    $query = "SELECT * FROM post WHERE zipcode='$zipcode'";
-
-    /*if($zipcode != "") {
-        $query .= " zipcode='$zipcode'";
-    }
-    $query;*/
-    $statement = $db->prepare($query);
-    $statement->execute();
-
-    //fetchAll() --> retrieve all rows
-    $results = $statement->fetchAll();
-    $statement->closeCursor();
-    return $results;
+    //$date = 
+    //rider/driver
     
+    $sql = "SELECT * FROM post WHERE true";
 
-    //$query = "SELECT * FROM post WHERE TIME(datetime) >= '$from_time' AND TIME(datetime)<'$to_time' ORDER BY datetime DESC";
-  
-
+    
+    if($from_time != "" and $to_time != "") {
+        $sql .= " AND TIME(datetime)>='$from_time' AND TIME(datetime)<'$to_time' ORDER BY datetime DESC";
+    } 
+    if($zipcode != "") {
+        $sql .= " AND zipcode='$zipcode'";
+    }
+    
+    
+    $query = $db->prepare($sql);
+    $query->execute();
+    $results = $query->fetchAll( PDO::FETCH_ASSOC ); 
+    print_r($results);  
+    
 }
 
 ?>

@@ -40,7 +40,7 @@
             <!-- Distance -->
             <label class="header">Distance</label><br>
             <form class="range-slider">  
-                0 mi <input type="range" id="inputRange" value="0"> 100 mi
+                0 mi <input type="range" id="inputRange" name="distance" value="0"> 100 mi
                 <p>Value: <span id="sliderValue"></span></p>
             </form>
 
