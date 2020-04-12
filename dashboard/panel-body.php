@@ -1,4 +1,4 @@
-<? php global $post; ?>
+<?php global $post ?>
 
 <div class="panel-vertical-top" value="<?php echo $post['post_ID']; ?>">
     <img src="static/images/aesthetic-user-profile-img.png" class="profile-pic">
