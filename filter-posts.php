@@ -18,7 +18,6 @@
             <!-- Date (calendar) -->
             <label class="header">Date</label><br>
             <input type="text" id="datepicker" name="date" value='<?php if(isset($_GET['date'])) echo $_GET['date']; ?>'>
-            
         
             <!-- Time -->
             <label class="header">Time</label><br>

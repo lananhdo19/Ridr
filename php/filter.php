@@ -1,15 +1,23 @@
 <?php
 require('connectdb.php');
 
+include('posts/create-post.php');
+
 if(isset($_GET['submit'])){
     $date = $_GET['date'];
     $from_time = $_GET['from_time']; //time: 6:04pm->18:04
     $to_time = $_GET['to_time'];
     $zipcode = $_GET['zipcode'];
-    //rider/driver
+    $isDriver = $_GET['isDriver'];
     
     $sql = "SELECT * FROM post WHERE true";
-
+    
+    if($isDriver == "driver") {
+        $sql .= " AND isDriver='0'";
+    }
+    if($isDriver == "rider") {
+        $sql .= " AND isDriver='1'";
+    }
     if($date != "") {
         $sql .= " AND DATE(datetime)='$date'";
     }
