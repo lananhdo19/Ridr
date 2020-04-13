@@ -111,6 +111,9 @@ function insertData() {
     $statement->execute();
     $statement->closeCursor();
 
+    //Alert user that post has been successfully listed
+    echo '<script>alert("Post has successfully created.")</script>';
+
     // Clearing the form so it doesn't resubmit on page refresh
     unset ($email, $destination, $datetime, $comment, $zipcode, $isDriver, $seats);
 }
