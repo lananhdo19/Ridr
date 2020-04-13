@@ -14,14 +14,14 @@
                 <input required type="text" id="Destination" name="Destination" placeholder="Destination (e.g. Vienna)" class="gray">
                 <input required type="date" id="Date" name="Date" placeholder="Date" value="<?php echo date('Y-m-d'); ?>"  class="gray">
                 <input required type="time" id="Time" name="Time" placeholder="Time" value="12:00" class="gray">                    
-                <input type="text" id="Comment" name="Comment" placeholder='Comment (e.g. "asking for $15")' class="gray">
+                <textarea id="Comment" name="Comment" placeholder='Comments (e.g. "asking for $15")' class="gray" maxlength="500" style="width:100%; height:115px; width: 100%; margin-top: 40px;"></textarea>
                 <!-- Zip + Dropdowns -->
-                <div class="flex-container-stretch" style="margin-top: 10px;">
-                    <div class="cp-dropdown subheader gray" style="flex-grow: 3; margin-left: 0px;">
+                <div class="flex-container-stretch">
+                    <!-- <div class="cp-dropdown subheader gray" style="flex-grow: 3; margin-left: 0px;">
                         <input required type="number" min="00501" max="99950"
                             id="zip-code" name="zip-code" placeholder="Zip code">
-                    </div>
-                    <div class="cp-dropdown subheader gray" style="flex-grow: 3">
+                    </div> -->
+                    <div class="cp-dropdown subheader gray" style="flex-grow: 3; margin-left: 0px;">
                         <select class="dropdown" id="isDriver" name="isDriver">
                             <option value="driver">Driver</option>
                             <option value="rider">Rider</option>
@@ -68,7 +68,8 @@ function insertData() {
     $date = $_POST['Date']; // "12/01/2020" --> 2020-12-01 
     $time = $_POST['Time']; // "01:01 PM" --> 13:01,  01:01 AM --> 01:01 
     $comment = $_POST['Comment'];
-    $zipcode = $_POST['zip-code'];
+    // $zipcode = $_POST['zip-code'];
+    $zipcode = "12345";
     $isDriver = $_POST['isDriver'];
     $seats = $_POST['seats'];
     
@@ -76,10 +77,10 @@ function insertData() {
 
     $datetime = $date . " " . $time . ":00"; // 2020-04-11 08:00:00
 
-    if (strlen($zipcode)==3)
-        $zipcode = "00" . $zipcode;
-    else if (strlen($zipcode)==4)
-        $zipcode = "0" . $zipcode;
+    // if (strlen($zipcode)==3)
+    //     $zipcode = "00" . $zipcode;
+    // else if (strlen($zipcode)==4)
+    //     $zipcode = "0" . $zipcode;
 
     if ($isDriver == "driver") 
         $isDriver = 0;
