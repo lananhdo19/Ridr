@@ -68,7 +68,8 @@ function insertData() {
     $date = $_POST['Date']; // "12/01/2020" --> 2020-12-01 
     $time = $_POST['Time']; // "01:01 PM" --> 13:01,  01:01 AM --> 01:01 
     $comment = $_POST['Comment'];
-    $zipcode = $_POST['zip-code'];
+    // $zipcode = $_POST['zip-code'];
+    $zipcode = "12345";
     $isDriver = $_POST['isDriver'];
     $seats = $_POST['seats'];
     
@@ -76,10 +77,10 @@ function insertData() {
 
     $datetime = $date . " " . $time . ":00"; // 2020-04-11 08:00:00
 
-    if (strlen($zipcode)==3)
-        $zipcode = "00" . $zipcode;
-    else if (strlen($zipcode)==4)
-        $zipcode = "0" . $zipcode;
+    // if (strlen($zipcode)==3)
+    //     $zipcode = "00" . $zipcode;
+    // else if (strlen($zipcode)==4)
+    //     $zipcode = "0" . $zipcode;
 
     if ($isDriver == "driver") 
         $isDriver = 0;
