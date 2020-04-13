@@ -9,7 +9,7 @@
             <!-- Heading -->
             <p class="mega-header create-post-p" style="margin-bottom: 2rem;">Create Post</p>
             <!-- Form Content -->
-            <form class="subheader" action="" method="POST">
+            <form class="subheader" action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
                 <!-- Input Fields -->
                 <input required type="text" id="Destination" name="Destination" placeholder="Destination (e.g. Vienna)" class="gray">
                 <input required type="date" id="Date" name="Date" placeholder="Date" value="<?php echo date('Y-m-d'); ?>"  class="gray">
@@ -111,14 +111,11 @@ function insertData() {
     $statement->execute();
     $statement->closeCursor();
 
+    //Alert user that post has been successfully listed
+    echo '<script>alert("Post has successfully created.")</script>';
+
     // Clearing the form so it doesn't resubmit on page refresh
-    unset ($_POST['Destination']);
-    unset ($_POST['Date']); // "12/01/2020" --> 2020-12-01 
-    unset ($_POST['Time']); // "01:01 PM" --> 13:01,  01:01 AM --> 01:01 
-    unset ($_POST['Comment']);
-    unset ($_POST['zip-code']);
-    unset ($_POST['isDriver']);
-    unset ($_POST['seats']);
+    unset ($email, $destination, $datetime, $comment, $zipcode, $isDriver, $seats);
 }
 
 
