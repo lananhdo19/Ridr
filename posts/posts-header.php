@@ -11,10 +11,12 @@
     <!-- I'm Looking For Driver/Rider BUTTON -->
     <div class="driver-rider-dropdown normal-text">
         <p class="header" style="margin: auto;">I'm looking for a</p>
-        <select class="dropdown subheader im-looking-for-drpdn">
-            <option value="driver">driver</option>
-            <option value="rider">rider</option>
-          </select>
+        <form action="php/filter.php" method="get">
+            <select class="dropdown subheader im-looking-for-drpdn" name="isDriverRider">
+                <option value="driver">driver</option>
+                <option value="rider">rider</option>
+            </select>
+        </form>
     </div>
     <!-- Create Post Button -->
     <div class="create-post-button-div">
