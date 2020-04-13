@@ -39,88 +39,22 @@ $userposts = getUserPosts();
     <!-- Column for past posts and requests -->
     <div class="history col-6">
         <div class="post-listings mainPost">
-            <h1 class="mega-header">Current Rides</h2>
+            <h1 class="mega-header">Current Rides</h1>
             <br>
             <?php include('dashboard/current-posts.php') ?>
             <br>
-            <h1 class="mega-header">Past Rides</h2>
+            <h1 class="mega-header">Past Rides</h1>
             <br/>
             <?php include('dashboard/past-posts.php') ?>
         </div>
     </div>
 
     <!-- Column for information on a specifc post listing the riders -->
-    <div class="expandedPostColumn col-3">
+    <div class="expandedPostColumn col-3" id="expandedPostColumn">
         <div class="expandedPostContainer">
-                <div class="expandedPost">
-                    <div class="expandedPost-Body">
-                    <h4>Information about Post</h4>
-                    <p>
-                        {{Destination}}<br/>
-                        {{Date}}<br/>
-                        {{Time}}<br/>
-                        {{Comments}}
-                    </p>
-                    </div>
+            <div class="expandedPost">
 
-
-                    <!-- Table for riders listing returned from database and edited by DOM JS -->
-                    <table class="expandedPostRiders">
-                        <tbody>
-                            <tr>
-                                <div class="riders-body">
-                                    <hr>
-                                    <p class="panel-p">
-                                        {{Rider Name}}<br/>
-                                        {{Rider Contact}}<br/>
-                                        {{Comments}}
-                                    </p>
-                                </div>
-                            </tr>
-                            <tr>
-                                <div class="riders-body">
-                                    <hr>
-                                    <p class="panel-p">
-                                        {{Rider Name}}<br/>
-                                        {{Rider Contact}}<br/>
-                                        {{Comments}}
-                                    </p>
-                                </div>
-                            </tr>
-                            <tr>
-                                <div class="riders-body">
-                                    <hr>
-                                    <p class="panel-p">
-                                        {{Rider Name}}<br/>
-                                        {{Rider Contact}}<br/>
-                                        {{Comments}}
-                                    </p>
-                                </div>
-                            </tr>
-                            <tr>
-                                <div class="riders-body">
-                                    <hr>
-                                    <p class="panel-p">
-                                        {{Rider Name}}<br/>
-                                        {{Rider Contact}}<br/>
-                                        {{Comments}}
-                                    </p>
-                                </div>
-                            </tr>
-                            <tr>
-                                <div class="riders-body">
-                                    <hr>
-                                    <p class="panel-p">
-                                        {{Rider Name}}<br/>
-                                        {{Rider Contact}}<br/>
-                                        {{Comments}}
-                                    </p>
-                                </div>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-        </div>
+            </div>
 
     </div>
 
@@ -137,7 +71,6 @@ $userposts = getUserPosts();
         crossorigin="anonymous">
 
 </script>
-<script src="js/dashboard.js"></script>
 
 <?php
 }

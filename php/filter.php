@@ -1,6 +1,8 @@
 <?php
 require('connectdb.php');
 
+// include('posts/create-post.php'); this line causes the big pg gap bug
+
 if(isset($_GET['submit'])){
     session_start();
 
