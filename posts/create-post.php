@@ -14,14 +14,14 @@
                 <input required type="text" id="Destination" name="Destination" placeholder="Destination (e.g. Vienna)" class="gray">
                 <input required type="date" id="Date" name="Date" placeholder="Date" value="<?php echo date('Y-m-d'); ?>"  class="gray">
                 <input required type="time" id="Time" name="Time" placeholder="Time" value="12:00" class="gray">                    
-                <input type="text" id="Comment" name="Comment" placeholder='Comment (e.g. "asking for $15")' class="gray">
+                <textarea id="Comment" name="Comment" placeholder='Comments (e.g. "asking for $15")' class="gray" maxlength="500" style="width:100%; height:115px; width: 100%; margin-top: 40px;"></textarea>
                 <!-- Zip + Dropdowns -->
-                <div class="flex-container-stretch" style="margin-top: 10px;">
-                    <div class="cp-dropdown subheader gray" style="flex-grow: 3; margin-left: 0px;">
+                <div class="flex-container-stretch">
+                    <!-- <div class="cp-dropdown subheader gray" style="flex-grow: 3; margin-left: 0px;">
                         <input required type="number" min="00501" max="99950"
                             id="zip-code" name="zip-code" placeholder="Zip code">
-                    </div>
-                    <div class="cp-dropdown subheader gray" style="flex-grow: 3">
+                    </div> -->
+                    <div class="cp-dropdown subheader gray" style="flex-grow: 3; margin-left: 0px;">
                         <select class="dropdown" id="isDriver" name="isDriver">
                             <option value="driver">Driver</option>
                             <option value="rider">Rider</option>
