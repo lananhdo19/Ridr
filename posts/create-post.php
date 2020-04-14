@@ -112,14 +112,15 @@ function insertData() {
     $statement->closeCursor();
 
     // Clearing the form so it doesn't resubmit on page refresh
+    unset ($email);
     unset ($destination);
+    unset ($datetime);
     unset ($date);
     unset ($time);
     unset ($comment);
     unset ($zipcode);
     unset ($isDriver);
     unset ($seats);
-    
 }
 
 
