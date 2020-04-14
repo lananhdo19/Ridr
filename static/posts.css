@@ -90,7 +90,7 @@
 }
   
   /* Modal Content */
-  .create-post-modal-content {
+  .create-post-modal-content, .which-post-modal-content {
     background-color: white;
     margin: 10vh auto;
     padding: 50px 100px;

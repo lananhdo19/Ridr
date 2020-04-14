@@ -54,6 +54,7 @@
             </div>
         </div>
         <?php if (isset($_SESSION['email'])) include('posts/create-post.php'); ?>
+        <?php if (isset($_SESSION['email'])) include('posts/which-post.php'); ?>
     </div>
 
     <!-- FOOTER -->

@@ -42,20 +42,47 @@ $posts = getAllPosts();
                     <!-- Take/Give Ride Buttons -->
                     <?php 
                         if ($post['isDriver'] == 0) {
-                            echo '<form action="posts/take-ride.php" method="post" class="takegive_form">';
+                            // echo '<form action="posts/which-post.php" method="post" class="takegive_form">';
                             echo '<input type="hidden" name="post_ID" value="' . $post['post_ID'] . '">';
                             echo '<input type="hidden" name="email" value="' . $post['email'] . '">';
-                            echo '<button type="submit" class="request_button subheader right-div-button"  
+                            echo '<button type="submit" onclick="buttonClickedT()" class="request_button subheader right-div-button"  
                                           id="' . $post['post_ID'] . '">Take Ride</button>';
-                            echo '</form>';
+
+                            echo '<button hidden type="button" id="take-ride-button" name="take-ride-button">Take Ride</button>';
+                            echo '<script>function buttonClickedT() {
+                                    console.log(logged_in); 
+                                    if (!logged_in) { 
+                                        alert("Please log in first."); 
+                                        window.location.href="login-signup.html"; 
+                                    } 
+                                    else {
+                                        document.getElementById("take-ride-button").click();
+                                    }
+                                  }</script>';
+
+                            // echo '</form>';
                         }
                         else {
-                            echo '<form action="posts/give-ride.php" method="post" class="takegive_form">';
+                            // echo '<form action="posts/which-post.php" method="post" class="takegive_form">';
                             echo '<input type="hidden" name="post_ID" value="' . $post['post_ID'] . '">';
                             echo '<input type="hidden" name="email" value="' . $post['email'] . '">';
-                            echo '<button type="submit" class="offer_button subheader right-div-button"  
+                            echo '<button type="submit" onclick="buttonClickedG()" class="offer_button subheader right-div-button"  
                                           id="' . $post['post_ID'] . '">Give Ride</button>';
-                            echo '</form>';
+
+
+                            echo '<button hidden type="button" id="give-ride-button" name="give-ride-button">Give Ride</button>';
+                            echo '<script>function buttonClickedG() {
+                                    console.log(logged_in); 
+                                    if (!logged_in) { 
+                                        alert("Please log in first."); 
+                                        window.location.href="login-signup.html"; 
+                                    } 
+                                    else {
+                                        document.getElementById("give-ride-button").click();
+                                    }
+                                  }</script>';
+
+                            // echo '</form>';
                         }
                     ?>
                 </div>
