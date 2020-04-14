@@ -32,10 +32,12 @@ take.onclick = function() {
 }
 spanT.onclick = function() {
   modal_which.style.display = "none";
+  setcookie("which_post", "", 1);
 }
 window.onclick = (event) => {
   if (event.target == modal_which) {
     modal_which.style.display = "none";
+    setcookie("which_post", "", 1);
   }
 }
 
@@ -48,9 +50,11 @@ give.onclick = function() {
 }
 spanG.onclick = function() {
   modal_which.style.display = "none";
+  setcookie("which_post", "", 1);
 }
 window.onclick = (event) => {
   if (event.target == modal_which) {
     modal_which.style.display = "none";
+    setcookie("which_post", "", 1);
   }
 }

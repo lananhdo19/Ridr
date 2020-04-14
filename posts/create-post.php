@@ -7,7 +7,7 @@
        <div class="create-post-modal-content">
             <span class="closeCP" id="close_create_post">&times;</span>
             <!-- Heading -->
-            <p class="mega-header create-post-p" style="margin-bottom: 2rem;">Create Post</p>
+            <p class="mega-header text-center" style="margin-bottom: 2rem;">Create Post</p>
             <!-- Form Content -->
             <form class="subheader" action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
                 <!-- Input Fields -->

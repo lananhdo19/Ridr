@@ -24,7 +24,7 @@ function getUsername($email) {
 }
 
 /* Param: a string formatted as a DateTime 
-   Echos the date in human-readable form
+   Echos the date and time in human-readable form
 */
 function formatDateAndTime($datetime) {
     // 2020-04-11 08:00:00
@@ -57,4 +57,17 @@ function formatDateAndTime($datetime) {
     echo "<span style='font-weight:500;'>" . "Date:  " . "</span>" . $dayOfWeek . ", " . $date . "<br/>" . "<span style='font-weight:500;'>" . "Time:  " . "</span>" . $time . $meridiem;
 }
 
-?>
+/* Param: a string formatted as a DateTime 
+   Echos the date in human-readable form
+*/
+function formatDate($datetime) {
+    // 2020-04-11 08:00:00
+    // $datetime = $date . " " . $time . ":00";
+    $datetime_array = explode(" ", $datetime);
+    
+    $date_raw = $datetime_array[0];
+    $date = date('F j, Y',strtotime($date_raw));
+    $dayOfWeek = date("l", strtotime($date_raw));
+    
+    return $dayOfWeek . ", " . $date;
+}
