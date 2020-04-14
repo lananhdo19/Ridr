@@ -1,5 +1,5 @@
 <?php if ($post['isDriver'] == 0) { ?>
-    <div class="panel panel-default magnify-cursor">
+    <div class="panel panel-default pointer-cursor">
         <div class="panel-body">
             <?php include('panel-body.php'); ?>
             <?php 
