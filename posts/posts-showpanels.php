@@ -3,7 +3,6 @@
 include('php/db-functions.php');
 include('php/functions.php');
 $posts = getAllPosts();
-
 ?>
 
 <div class="flex-container-wrap panels">
