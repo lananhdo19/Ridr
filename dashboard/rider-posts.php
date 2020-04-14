@@ -1,7 +1,5 @@
 <?php if ($post['isDriver'] == 1) { ?>
-    <div class="panel panel-default pointer-cursor" id=<?php echo "'" . $post['post_ID'] . "'"; ?>
-         onclick=<?php echo '"expandPost(' . "'" . $post['post_ID'] . "'" . ')"'; ?>  
-    >
+    <div class="panel panel-default pointer-cursor" id=<?php echo "'" . $post['post_ID'] . "'"; ?> >
         <div class="panel-body">
             <?php include('panel-body.php'); ?>
             <?php 
@@ -12,5 +10,3 @@
     </div>
     <br>
 <?php } ?>
-
-<script src="js/expand-post.js"></script>
