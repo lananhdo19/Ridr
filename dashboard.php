@@ -50,7 +50,7 @@ $userposts = getUserPosts();
     </div>
 
     <!-- Column for information on a specifc post listing the riders -->
-    <div class="expandedPostColumn col-3" id="expandedPostColumn">
+    <div class="expandedPostColumn col-3">
         <div class="expandedPostContainer">
             <div class="expandedPost">
 
@@ -71,6 +71,7 @@ $userposts = getUserPosts();
         crossorigin="anonymous">
 
 </script>
+<script src="js/dashboard.js"></script>
 
 <?php
 }
