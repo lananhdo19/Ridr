@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo 
         "<script>
             alert('You have successfully requested a ride from " . $driver_email . ".');
-            window.location.href='../dashboard.php';
+            window.location.href='../posts.php';
         </script>";
     }
 
