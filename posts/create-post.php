@@ -112,13 +112,13 @@ function insertData() {
     $statement->closeCursor();
 
     // Clearing the form so it doesn't resubmit on page refresh
-    unset ($_POST['Destination']);
-    unset ($_POST['Date']); // "12/01/2020" --> 2020-12-01 
-    unset ($_POST['Time']); // "01:01 PM" --> 13:01,  01:01 AM --> 01:01 
-    unset ($_POST['Comment']);
-    unset ($_POST['zip-code']);
-    unset ($_POST['isDriver']);
-    unset ($_POST['seats']);
+    unset ($destination);
+    unset ($datetime);
+    unset ($time);
+    unset ($comment);
+    unset ($zipcode);
+    unset ($isDriver);
+    unset ($seats);
 }
 
 
