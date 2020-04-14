@@ -9,7 +9,7 @@
 
 <?php include('base/header.php'); ?>
 
-<?php if (isset(['email'])) {
+<?php if (isset($_SESSION['email'])) {
 
 include('php/connectdb.php');
 include('php/db-functions.php');
