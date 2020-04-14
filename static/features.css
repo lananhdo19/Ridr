@@ -1,3 +1,11 @@
+/* Button styled as link */
+.button_like_link {
+    color: cornflowerblue;
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    text-decoration: underline;
+}
 /* Pointer Cursor */
 .pointer-cursor {
     cursor: pointer;
@@ -20,7 +28,7 @@
 
 /* Request and Offer Buttons */
 .request_button, .offer_button {
-    width: 160px;
+    width: 162px;
     padding: 15px 30px;
 }
 .request_button, .request_button_hover {

@@ -1,5 +1,6 @@
 <?php 
 
+session_start();
 $userposts = getUserPosts();
 
 ?>
@@ -7,34 +8,42 @@ $userposts = getUserPosts();
 <!-- WHICH POST -->
 <div class="main">
     <!-- The Modal -->
-    <div id="which-post-modal-container" class="modal">
+    <div id="which-post-modal-container" class="modal text-center">
         <!-- Modal content -->
         <div class="which-post-modal-content">
             <span class="closeWP" id="close_which_form">&times;</span>
             <!-- Heading -->
-            <p class="mega-header text-center" style="margin-bottom: 2rem;">
-                <?php echo $_COOKIE['which_button']; ?>
-                <?php echo '<script>getCookie("which_button");</script>'; ?>
+            <p class="mega-header" style="margin-bottom: 2rem;" id="testing">
+                <script>console.log("localStorage: " + localStorage.getItem("which_button"))</script>
+                <?php
+                    if(isset($_POST) && !empty($_POST['which_button'])){
+                        echo $_POST['which_button'];
+                        exit();
+                    }
+                ?>
+
             </p>
+            <p style="margin-bottom:0; font-size: 30px;">Which ride is this for?</p>
             <!-- Form Content -->
-            <form class="subheader" action="" method="POST">
-            <p class="text-center" style="margin-bottom: 2rem;font-size: 30px;">Which ride is this for?</p>
+            <!-- if ($_COOKIE['which_button']=="take") echo "posts/take-ride.php"; elseif ($_COOKIE['which_button']=="give") echo "posts/give-ride.php"; -->
+            <!-- if (getCookie('which_button')=="take") echo "posts/take-ride.php"; elseif (getCookie('which_button')=="give") echo "posts/give-ride.php"; -->
+            <form class="subheader" action="<?php echo "posts/give-ride.php" ?>" method="POST">
+                <div class="which-form-input" style="margin: 40px 0;">
                 <div class="flex-container-stretch">
-                <div class="cp-dropdown subheader gray" style="flex-grow: 3;">
-                        <select class="dropdown" id="userPosts" name="userPosts">
-                            <?php 
-                                foreach ($userposts as $post) {
-                                    echo '<option value="'. $post['post_ID'] .'">' . formatDate($post['datetime']) . ' on ' . $post['destination']. '</option>';
-                                }
-                                // formatDate($post['datetime'])
-                                // echo " . '</option>'";
-                            ?>
-                        </select>
+                    <div class="cp-dropdown subheader gray" style="flex-grow: 3; margin: auto;">
+                            <select class="dropdown" name="mypost" id="userPosts">
+                                <?php 
+                                    foreach ($userposts as $post) {
+                                        if ( notPast($post['datetime'])==true )
+                                        echo '<option value="'. $post['post_ID'] . '">' . formatDate($post['datetime']) . ' on ' . $post['destination']. '</option>';
+                                    }
+                                ?>
+                            </select>
+                        </div>
                     </div>
+                    <button type="submit" value="Submit" class="button_like_link" name="donthavepost">I don't have a post</button>
                 </div>
-                <!-- https://www.w3schools.com/js/js_validation.asp -->
-                <a href="#" style="color:black">I don't have a post.</a>
-                <button type="submit" value="Submit" id="create-post-submit" class="main_button header submit-button">Submit</button>
+                <button type="submit" value="Submit" id="create-post-submit" class="main_button header submit-button" style="margin: auto;">Submit</button>
             </form>
         </div>
     </div>
