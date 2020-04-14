@@ -1,8 +1,6 @@
 <?php
 require('connectdb.php');
 
-include('posts/create-post.php');
-
 if(isset($_GET['submit'])){
     $date = $_GET['date'];
     $from_time = $_GET['from_time']; //time: 6:04pm->18:04
