@@ -4,7 +4,7 @@
             <?php include('panel-body.php'); ?>
             <?php 
                 if (notPast($post['datetime'])==true) 
-                    echo '<button class="offer_button subheader right-div-button offer_button_hover">Driving</button>'; 
+                    echo '<button class="offer_button subheader right-div-button">Driving</button>'; 
             ?>
         </div>
     </div>
