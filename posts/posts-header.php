@@ -8,7 +8,7 @@
 ?>
 <!-- Top Buttons-->
 <div class="posts-right-top">
-    <!-- I'm Looking For Driver/Rider BUTTON -->
+    <!-- I'm Looking For Driver/Rider BUTTON 
     <div class="driver-rider-dropdown normal-text">
         <p class="header" style="margin: auto;">I'm looking for a</p>
         <form action="php/filter.php" method="get">
@@ -17,7 +17,7 @@
                 <option value="rider">rider</option>
             </select>
         </form>
-    </div>
+    </div> -->
     <!-- Create Post Button -->
     <div class="create-post-button-div">
         <button type="submit" onclick='buttonClicked()' class="main_button header" id="create-post-button2">Create post</button>

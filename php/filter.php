@@ -7,7 +7,6 @@ if(isset($_GET['submit'])){
     $date = $_GET['date'];
     $from_time = $_GET['from_time']; //time: 6:04pm->18:04
     $to_time = $_GET['to_time'];
-    $zipcode = $_GET['zipcode'];
     
     //$sql = "SELECT * FROM post WHERE true";
     $sql = "DELETE FROM filtertable";
@@ -36,9 +35,7 @@ if(isset($_GET['submit'])){
     if($from_time != "" and $to_time != "") {
         $sql .= " AND TIME(datetime)>='$from_time' AND TIME(datetime)<='$to_time'";
     } 
-    if($zipcode != "") {
-        $sql .= " AND zipcode='$zipcode'";
-    }
+    
 
     $query = $db->prepare($sql);
     $query->execute();
