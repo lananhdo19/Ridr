@@ -5,7 +5,7 @@
     <div id="create-post-modal-container" class="modal">
         <!-- Modal content -->
        <div class="create-post-modal-content">
-            <span class="close">&times;</span>
+            <span class="closeCP" id="close_create_post">&times;</span>
             <!-- Heading -->
             <p class="mega-header create-post-p" style="margin-bottom: 2rem;">Create Post</p>
             <!-- Form Content -->

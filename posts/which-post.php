@@ -6,7 +6,7 @@
     <div id="which-post-modal-container" class="modal">
         <!-- Modal content -->
         <div class="which-post-modal-content">
-            <span class="close" id="close_which_form">&times;</span>
+            <span class="closeWP" id="close_which_form">&times;</span>
             <!-- Heading -->
             <p class="mega-header create-post-p" style="margin-bottom: 2rem;">Which post is this {request/offer} for?</p>
             <!-- Form Content -->
