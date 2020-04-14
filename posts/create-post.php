@@ -58,6 +58,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && (
     !empty($_POST['Comment']) || !empty($_POST['zip-code']) || !empty($_POST['cp-dropdown']) ) )
 {    
     insertData();
+
+    // Clearing the form so it doesn't resubmit on page refresh
+    echo "<meta http-equiv='refresh' content='0'>";
 }
 
 function insertData() {
@@ -113,10 +116,7 @@ function insertData() {
     $statement->closeCursor();
 
     //Alert user that post has been successfully listed
-    echo '<script>alert("Post has successfully been created.")</script>';
-
-    // Clearing the form so it doesn't resubmit on page refresh
-    unset ($email, $destination, $datetime, $comment, $zipcode, $isDriver, $seats);
+    echo '<script>alert("Post has successfully been created.")</script>';  
 }
 
 

@@ -4,7 +4,6 @@
     <title>Ridr: Posts</title>
     <?php include('base/doc-heading.html') ?>
     <link type="text/css" rel="stylesheet" href="static/sidebar-formatting.css"/>
-    <link type="text/css" rel="stylesheet" href="static/calendar.css"/>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
