@@ -23,7 +23,6 @@
         <button type="submit" onclick='buttonClicked()' class="main_button header">Create post</button>
         <button hidden type="button" id="create-post-button" name="create-post-button">Create post</button>
         <script>function buttonClicked(){
-            console.log(logged_in); 
             if (!logged_in) { 
                 alert('Please log in first.'); 
                 window.location.href="login-signup.html"; 

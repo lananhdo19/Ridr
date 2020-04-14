@@ -50,7 +50,6 @@ $posts = getAllPosts();
 
                             echo '<button hidden type="button" id="take-ride-button" name="take-ride-button">Take Ride</button>';
                             echo '<script>function buttonClickedT() {
-                                    console.log(logged_in); 
                                     if (!logged_in) { 
                                         alert("Please log in first."); 
                                         window.location.href="login-signup.html"; 
@@ -72,7 +71,6 @@ $posts = getAllPosts();
 
                             echo '<button hidden type="button" id="give-ride-button" name="give-ride-button">Give Ride</button>';
                             echo '<script>function buttonClickedG() {
-                                    console.log(logged_in); 
                                     if (!logged_in) { 
                                         alert("Please log in first."); 
                                         window.location.href="login-signup.html"; 
