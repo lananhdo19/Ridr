@@ -2,7 +2,7 @@
 $(document).ready(function() {
     $(".expandedPost").hide();
 
-    $(".panel-vertical-top").on('click', function () {
+    $("#more-info").on('click', function () {
 
         if ($(".expandedPost").is(":hidden")){
             $(".expandedPost").show();

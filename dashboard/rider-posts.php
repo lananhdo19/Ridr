@@ -27,7 +27,7 @@
                 </span>
             </div>
             <?php if($post['rideFound']==0)
-                echo '<button class="request_button request_button_hover subheader right-div-button">More Information</button>'
+                echo '<button id="more-info" class="request_button request_button_hover subheader right-div-button">More Information</button>'
             ?>
         </div>
     </div>

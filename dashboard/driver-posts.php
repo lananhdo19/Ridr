@@ -25,8 +25,8 @@
                     <?php echo $post['post_ID']; ?>
                 </span>
             </div>
-            <?php 
-                echo '<button class="offer_button offer_button_hover subheader right-div-button">More Information</button>'; 
+            <?php
+                echo '<button id="more-info" class="offer_button offer_button_hover subheader right-div-button">More Information</button>'; 
             ?>
         </div>
     </div>
