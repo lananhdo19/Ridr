@@ -8,7 +8,6 @@ function getAllPosts() {
     $statement = $db->prepare($query);
     $statement->execute();
 
-    //fetchAll() --> retrieve all rows
     $results = $statement->fetchAll();
     $statement->closeCursor();
     return $results;
@@ -22,7 +21,6 @@ function getUserPosts() {
     $statement = $db->prepare($query);
     $statement->execute();
 
-    //fetchAll() --> retrieve all rows
     $results = $statement->fetchAll();
     $statement->closeCursor();
     return $results;
@@ -36,7 +34,6 @@ function getPostFromID($ID) {
     $statement = $db->prepare($query);
     $statement->execute();
 
-    //fetchAll() --> retrieve all rows
     $results = $statement->fetch();
     $statement->closeCursor();
     return $results;
@@ -46,11 +43,10 @@ function getPostFromID($ID) {
 function getRidersFromID($ID) {
     global $db;
 
-    $query = "SELECT * FROM riders WHERE post_ID=" . $ID; //selecting user's posts
+    $query = "SELECT * FROM riders WHERE post_ID=" . $ID; 
     $statement = $db->prepare($query);
     $statement->execute();
 
-    //fetchAll() --> retrieve all rows
     $results = $statement->fetchAll();
     $statement->closeCursor();
     return $results;
@@ -62,10 +58,36 @@ function getNameFromEmail($ID){
     $query = "SELECT first_name, last_name FROM user WHERE email= '" . $ID . "'";
     $statement = $db->prepare($query);
     $statement->execute();
-    //echo $query;
-    //fetchAll() --> retrieve all rows
+
     $results = $statement->fetch();
     $statement->closeCursor();
     return $results;
 }
+
+/*Returns number of riders based on post ID*/
+function getNumRidersFromID($ID) {
+    global $db;
+
+    $query = "SELECT * FROM riders WHERE driver_post_ID=" . $ID;
+    $statement = $db->prepare($query);
+    $statement->execute();
+
+    $results = $statement->fetchAll();
+    $statement->closeCursor();
+    return count($results);
+}
+
+/*Returns driver based on rider's post ID*/
+function getDriverFromRiderPostID($rider_post_ID) {
+    global $db;
+
+    $query = "SELECT * FROM rides WHERE rider_post_ID=" . $rider_post_ID;
+    $statement = $db->prepare($query);
+    $statement->execute();
+
+    $results = $statement->fetch();
+    $statement->closeCursor();
+    return $results;
+}
+
 ?>

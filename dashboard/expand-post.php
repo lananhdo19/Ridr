@@ -8,7 +8,7 @@
     $result = "";
 
     $result = "   <div class=\"expandedPost-Body\">
-                    <h4>Information about Post</h4>
+                    <h4>Post Information</h4>
                     <p>
                     " . $post['destination'] . " <br/>
                     " . substr($post['datetime'], 0 , 10) . " <br/>
