@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Insert into rider table and update post table
     insertData($mypost_ID, $rider_email, $driver_email);
-    // updateSeatsRiderTaken($mypost_ID, $theirpost_ID);
+    updateSeatsRiderTaken($mypost_ID, $theirpost_ID);
 
     // Clearing the form so it doesn't resubmit on page refresh
     echo "<meta http-equiv='refresh' content='0'>";
