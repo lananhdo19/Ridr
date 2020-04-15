@@ -97,9 +97,9 @@ function insertData() {
 
 
     // Inserting into db
-    // INSERT INTO `post` (`email`, `destination`, `datetime`, `comment`, `zipcode`, `isDriver`, `seats`) 
-    $query = "INSERT INTO post (email, destination, datetime, comment, zipcode, isDriver, seats) 
-              VALUES (:email, :destination, :datetime, :comment, :zipcode, :isDriver, :seats)";
+    // INSERT INTO `post` (`email`, `destination`, `datetime`, `comment`, `zipcode`, `isDriver`, `seats`, `seats_left`) 
+    $query = "INSERT INTO post (email, destination, datetime, comment, zipcode, isDriver, seats, seats_left) 
+              VALUES (:email, :destination, :datetime, :comment, :zipcode, :isDriver, :seats, :seats_left)";
     $statement = $db->prepare($query);
 
     $email = $_SESSION['email'];
@@ -111,6 +111,7 @@ function insertData() {
     $statement->bindValue(':zipcode', $zipcode);
     $statement->bindValue(':isDriver', $isDriver);
     $statement->bindValue(':seats', $seats);
+    $statement->bindValue(':seats_left', $seats);
   
     $statement->execute();
     $statement->closeCursor();

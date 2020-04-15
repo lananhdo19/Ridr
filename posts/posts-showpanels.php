@@ -14,6 +14,7 @@ $posts = getAllPosts();
             <div class="panel panel-default">
             <?php //only display posts that haven't passed yet
                 if ( notPast($post['datetime'])==true ) {
+                    if ( (($post['isDriver']==0) && ($post['seats_left'] > 0)) || ( ($post['isDriver']==1) && ($post['rideFound']==1) ) ) { //if they're driver & has seats left or if they're rider and ride not found
             ?>
                 <div class="panel-body">
                         <div class="panel-vertical-top" style="font-weight:400;">
@@ -64,7 +65,7 @@ $posts = getAllPosts();
                         }
                     ?>
                 </div>
-                <?php } ?>
+                <?php } } ?>
             </div>
             <!-- Listing -->
         <?php endforeach; ?>

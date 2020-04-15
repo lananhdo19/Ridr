@@ -5,12 +5,19 @@ require('../php/connectdb.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     global $db;
-
-    // SETUP CORRECTLY
-    if (!isset($_POST['donthavepost']))
-        $mypost_ID = $_POST['mypost'];
+    $mypost_ID;
     $theirpost_ID = $POST['post_ID'];
     $poster_email = $POST['email'];
+
+    // If they have a post, save it
+    if (!isset($_POST['donthavepost']))
+        $mypost_ID = $_POST['mypost'];
+
+    // If they don't have a post, create one
+    if (isset($_POST['donthavepost'])) {
+        createPost($theirpost_ID);
+        $mypost_ID = getMyPostID($theirpost_ID, $myemail);
+    }
 
     // the post creator is the driver, and the logged-in user is rider requesting to take the ride
     $myemail = $_SESSION['email'];
@@ -19,19 +26,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $riderpost_ID = $mypost_ID;
     $driverpost_ID = $theirpost_ID;
 
-    if (!isset($_POST['donthavepost'])) {
-        createPost($theirpost_ID);
-        $mypost_ID = getMyPostID();
-    }
+    // Insert into rider table and update post table
+    insertData($mypost_ID, $rider_email, $driver_email);
+    // updateSeatsRiderTaken($mypost_ID, $theirpost_ID);
 
-    else
-        insertData($mypost_ID, $rider_email, $driver_email);
+    // Clearing the form so it doesn't resubmit on page refresh
+    echo "<meta http-equiv='refresh' content='0'>";
 
-        // Clearing the form so it doesn't resubmit on page refresh
-        echo "<meta http-equiv='refresh' content='0'>";  
+    // Alert user and redirect
+    echo 
+    "<script>
+        alert('You have successfully requested a ride from " . $driver_email . 
+            ". This has been saved in your dashboard.');
+        // window.location.href='../posts.php';
+    </script>";
 }
 
-function createPost($theirpost_ID) {
+function createPost($theirpost_ID, $myemail) {
     $theirpost = getPostFromID($ID);
 
     // Inserting into db
@@ -52,35 +63,43 @@ function createPost($theirpost_ID) {
     $statement->closeCursor();
 }
 
-function getMyPostID() {
-    $query = "SELECT * FROM post WHERE post_ID=" . $ID;
+function getMyPostID($theirpost_ID) {
+    $query = "SELECT * FROM rides WHERE driver_post_ID=" . $theirpost_ID . " AND rider_email='" . $rider_email . "' AND driver_email='" . $driver_email . "'";
     $statement = $db->prepare($query);
     $statement->execute();
-
     $results = $statement->fetch();
     $statement->closeCursor();
     return $results;
 }
 
-function insertData($mypost_ID, $rider_email, $driver_email) {
+function insertData($mypost_ID, $theirpost_ID, $rider_email, $driver_email) {
 
     // Insert into db
-    $query = "INSERT INTO rides (mypost_ID, rider_email, driver_email) VALUES (:mypost_ID, :rider_email, :driver_email)";
+    $query = "INSERT INTO rides (driver_post_ID, rider_post_ID, driver_email, rider_email) 
+              VALUES (:driver_post_ID, :rider_post_ID :driver_email, :rider_email,)";
     $statement = $db->prepare($query);
-    $statement->bindValue(':mypost_ID', $mypost_ID);
-    $statement->bindValue(':rider_email', $rider_email);
+    $statement->bindValue(':driver_post_ID', $theirpost_ID);
+    $statement->bindValue(':rider_post_ID', $mypost_ID);
     $statement->bindValue(':driver_email', $driver_email);
+    $statement->bindValue(':rider_email', $rider_email);
     $statement->execute();
-
-    // Alert user and redirect
-    echo 
-    "<script>
-        alert('You have successfully requested a ride from " . $driver_email . ".');
-        // window.location.href='../posts.php';
-    </script>";
 
     // Close the query I opened above
     $statement->closeCursor(); 
+}
+
+function updateSeatsRiderTaken($mypost_ID, $theirpost_ID) {
+   $query = "UPDATE post SET seats_left=:seats WHERE post_ID=" . $theirpost_ID;
+   $statement = $db->prepare($query);
+   $statement->bindValue(':seats_left', $seats_left);  //decrement??
+   $statement->execute();
+   $statement->closeCursor();
+
+   $query = "UPDATE post SET rideFound=:rideFound WHERE post_ID=" . $mypost_ID;
+   $statement = $db->prepare($query);
+   $statement->bindValue(':rideFound', 0);
+   $statement->execute();
+   $statement->closeCursor();
 }
 
 ?>
