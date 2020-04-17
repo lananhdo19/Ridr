@@ -7,7 +7,7 @@
                     <span style="font-weight:500;">I'm driving</span>
                     <br/>
                     <span style="font-weight:500;">Riders: </span>
-                    <?php echo getNumRidersFromID($post['post_ID']) ?>
+                    <?php echo $post['seats'] - $post['seats_left'] ?>
                     <br/>
                     <span style="font-weight:500;">Seats: </span>
                     <?php echo $post['seats'] ?>

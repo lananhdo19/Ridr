@@ -64,19 +64,6 @@ function getNameFromEmail($ID){
     return $results;
 }
 
-/*Returns number of riders based on post ID*/
-function getNumRidersFromID($ID) {
-    global $db;
-
-    $query = "SELECT * FROM riders WHERE driver_post_ID=" . $ID;
-    $statement = $db->prepare($query);
-    $statement->execute();
-
-    $results = $statement->fetchAll();
-    $statement->closeCursor();
-    return count($results);
-}
-
 /*Returns driver based on rider's post ID*/
 function getDriverFromRiderPostID($rider_post_ID) {
     global $db;

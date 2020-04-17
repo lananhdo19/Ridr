@@ -44,24 +44,20 @@ $posts = getAllPosts();
                     <!-- Take/Give Ride Buttons -->
                     <?php 
                         if ($post['isDriver'] == 0) {
-                            // echo '<form action="posts/which-post.php" method="post" class="takegive_form">';
                             echo '<input type="hidden" name="post_ID" value="' . $post['post_ID'] . '">';
                             echo '<input type="hidden" name="email" value="' . $post['email'] . '">';
                             echo '<button type="submit" onclick="buttonClickedT(' . isset($_SESSION['email']) . ", " . $post['post_ID'] . ')" class="request_button subheader right-div-button"  
                                           id="' . $post['post_ID'] . '">Take Ride</button>';
 
                             echo '<button hidden type="button" id="take-ride-button" name="take-ride-button">Take Ride</button>';
-                            // echo '</form>';
                         }
                         else {
-                            // echo '<form action="posts/which-post.php" method="post" class="takegive_form">';
                             echo '<input type="hidden" name="post_ID" value="' . $post['post_ID'] . '">';
                             echo '<input type="hidden" name="email" value="' . $post['email'] . '">';
                             echo '<button type="submit" onclick="buttonClickedG(' . isset($_SESSION['email']) . ", " . $post['post_ID'] . ')" class="offer_button subheader right-div-button"  
                                           id="' . $post['post_ID'] . '">Give Ride</button>';
 
                             echo '<button hidden type="button" id="give-ride-button" name="give-ride-button">Give Ride</button>';
-                            // echo '</form>';
                         }
                     ?>
                 </div>
