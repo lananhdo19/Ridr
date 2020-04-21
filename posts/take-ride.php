@@ -29,11 +29,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     else {
         // Insert into db
-        $query = "INSERT INTO rides (post_ID, rider_email, driver_email) VALUES (:post_ID, :rider_email, :driver_email)";
+        /*$query = "INSERT INTO rides (post_ID, rider_email, driver_email) VALUES (:post_ID, :rider_email, :driver_email)";
         $statement = $db->prepare($query);
         $statement->bindValue(':post_ID', $post_ID);
         $statement->bindValue(':rider_email', $rider_email);
         $statement->bindValue(':driver_email', $driver_email);
+        $statement->execute();*/
+        $query = "INSERT INTO riders (post_ID, rider_email) VALUES (:post_ID, :rider_email)";
+        $statement = $db->prepare($query);
+        $statement->bindValue(':post_ID', $post_ID);
+        $statement->bindValue(':rider_email', $rider_email);
+        //$statement->bindValue(':driver_email', $driver_email);
         $statement->execute();
 
         // Alert user and redirect
