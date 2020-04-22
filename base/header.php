@@ -22,7 +22,7 @@ if (isset($_SESSION['email'])) {
                     <div class="acc-hover-div">
                         <a href="dashboard.php" class="subheader">
                             <span>Hi <?php if (isset($_SESSION['first_name']) ) echo $_SESSION['first_name'];?></span>
-                            <img src="static/images/profilepic.png" href="#" width="42" height="42">
+                            <img src="static/images/profilepic-black.png" href="#" width="42" height="42">
                         </a>
                     </div>
                     <div class="acc-dropdown-content subheader" style="text-align: left;">

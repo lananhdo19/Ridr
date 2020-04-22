@@ -58,7 +58,7 @@ if(isset($_GET['submit'])){
                                 <!-- <img class="profile-pic" src=
                                     <?php echo "'" . $post['profile-pic'] . "'"; ?>
                                 > -->
-                                <img src="static/images/sail.jfif" class="profile-pic">
+                                <img src="static/images/profilepic-black.png" class="profile-pic">
                                 <div class="normal-text">
                                     <p style="font-weight:500;">
                                         <?php
