@@ -6,7 +6,7 @@ header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Origin, Au
 header('Access-Control-Max-Age: 1000');
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PUT');
 
-if(isset($_SESSION['email']) && isset($_GET['submit'])){
+if( isset($_SESSION['email']) ) {
     echo "session email exists";
 
     $color = $_GET['color'];
@@ -18,6 +18,8 @@ if(isset($_SESSION['email']) && isset($_GET['submit'])){
     $query->execute();
 
     $posts = $query->fetchAll( PDO::FETCH_ASSOC );
+
+    header("Location: dashboard.php");
 }
 
 ?>

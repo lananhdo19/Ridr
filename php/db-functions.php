@@ -83,7 +83,7 @@ function getProfilePic($email) {
     }
 
     $statement->closeCursor();
-    return "black";
+    return "static/images/profilepic-black";
 }
 
 ?>
