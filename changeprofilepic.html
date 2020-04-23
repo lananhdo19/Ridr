@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ridr: Dashboard</title>
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <meta name="author" content="Lan Anh Do, Rebekah Kang, Zaeda Meherin">
+    <meta name="description" content="Ridr - a rideshare website for college students">  
+
+    <!-- JQuery, Bootstrap, Google Font -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway:400,500,700&display=swap" rel="stylesheet">
+    
+    <link type="text/css" rel="stylesheet" href="static/base.css" />
+    <link type="text/css" rel="stylesheet" href="static/div-formatting.css" />
+    <link type="text/css" rel="stylesheet" href="static/features.css" />
+    <link type="text/css" rel="stylesheet" href="static/fonts.css" />
+    <link type="text/css" rel="stylesheet" href="static/posts.css" />
+    <link rel="stylesheet" href="static/dashboard.css"/>
+</head>
+<body>
+
+<div class="row">
+    <div class="history col-12 ml-5 mr-5">
+        <div class="post-listings mainPost">
+            <h1 class="mega-header mb-3">Change Profile Picture</h1>
+            <h3 class="header mb-4">Color Selected: {{color, default: black}}</h3>
+            <input type="submit" name="submit" class="main_button header mb-5" value="Save">
+            <a href="dashboard.php"><button type="button" class="btn-danger header mb-5"">Cancel</button></a>
+
+            <div class="d-block">
+                <div class="d-inline-block m-2 ">
+                    <img src="static/images/profilepic-black.png" height="120" width="120">
+                </div>
+                <div class="d-inline-block m-2">
+                    <img src="static/images/profilepic-grey.png" height="120" width="120">
+                </div>
+                <div class="d-inline-block m-2">
+                    <img src="static/images/profilepic-lighttan.png" height="120" width="120">
+                </div>
+                <div class="d-inline-block m-2">
+                    <img src="static/images/profilepic-tan.png" height="120" width="120">
+                </div>
+                <div class="d-inline-block m-2">
+                    <img src="static/images/profilepic-lightred.png" height="120" width="120">
+                </div>
+                <div class="d-inline-block m-2">
+                    <img src="static/images/profilepic-red.png" height="120" width="120">
+                </div>
+                <div class="d-inline-block m-2">
+                    <img src="static/images/profilepic-maroon.png" height="120" width="120">
+                </div>
+                <div class="d-inline-block m-2">
+                    <img src="static/images/profilepic-lightorange.png" height="120" width="120">
+                </div>
+                <div class="d-inline-block m-2">
+                    <img src="static/images/profilepic-orange.png" height="120" width="120">
+                </div>
+                <div class="d-inline-block m-2">
+                    <img src="static/images/profilepic-lightblue.png" height="120" width="120">
+                </div>
+                <div class="d-inline-block m-2">
+                    <img src="static/images/profilepic-blue.png" height="120" width="120">
+                </div>
+                <div class="d-inline-block m-2">
+                    <img src="static/images/profilepic-darkblue.png" height="120" width="120">
+                </div>
+                <div class="d-inline-block m-2">
+                    <img src="static/images/profilepic-lightyellow.png" height="120" width="120">
+                </div>
+                <div class="d-inline-block m-2">
+                    <img src="static/images/profilepic-yellow.png" height="120" width="120">
+                </div>
+                <div class="d-inline-block m-2">
+                    <img src="static/images/profilepic-lightgreen.png" height="120" width="120">
+                </div>
+                <div class="d-inline-block m-2">
+                    <img src="static/images/profilepic-green.png" height="120" width="120">
+                </div>
+                <div class="d-inline-block m-2">
+                    <img src="static/images/profilepic-lightpink.png" height="120" width="120">
+                </div>
+                <div class="d-inline-block m-2">
+                    <img src="static/images/profilepic-pink.png" height="120" width="120">
+                </div>
+                <div class="d-inline-block m-2">
+                    <img src="static/images/profilepic-lightpurple.png" height="120" width="120">
+                </div>
+                <div class="d-inline-block m-2">
+                    <img src="static/images/profilepic-purple.png" height="120" width="120">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
