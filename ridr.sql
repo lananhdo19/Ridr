@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 21, 2020 at 03:50 AM
+-- Generation Time: Apr 23, 2020 at 07:25 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.3.13
 
@@ -44,8 +44,9 @@ CREATE TABLE `filtertable` (
 --
 
 INSERT INTO `filtertable` (`post_ID`, `email`, `destination`, `datetime`, `comment`, `zipcode`, `isDriver`, `seats`) VALUES
-(1, 'user3@virginia.edu', 'Springfield', '2020-07-08 12:00:00', 'pick up @ Monroe Hall', '00099', 0, 8),
-(4, 'rbkh13@gmail.com', 'Vienna metro station', '2020-04-12 12:00:00', '', '22031', 1, 0);
+(44, 'persona@virginia.edu', 'GMU', '2020-04-25 16:00:00', '', '12345', 0, 4),
+(46, 'persona@virginia.edu', 'Fair Oaks Mall', '2020-05-21 18:00:00', '', '12345', 1, 0),
+(47, 'rbkh13@gmail.com', 'Heaven', '2020-05-25 15:00:00', '', '12345', 0, 2);
 
 -- --------------------------------------------------------
 
@@ -73,7 +74,20 @@ INSERT INTO `post` (`post_ID`, `email`, `destination`, `datetime`, `comment`, `z
 (44, 'persona@virginia.edu', 'GMU', '2020-04-25 16:00:00', '', '12345', 0, 4),
 (45, 'rbkh13@gmail.com', 'Fairfax Station', '2020-04-22 12:30:00', '', '12345', 1, 0),
 (46, 'persona@virginia.edu', 'Fair Oaks Mall', '2020-05-21 18:00:00', '', '12345', 1, 0),
-(47, 'rbkh13@gmail.com', 'Heaven', '2020-05-25 15:00:00', '', '12345', 0, 2);
+(47, 'rbkh13@gmail.com', 'Heaven', '2020-05-25 15:00:00', '', '12345', 0, 2),
+(48, 'personb@virginia.edu', 'Springfield', '2020-04-22 12:00:00', '', '12345', 0, 4),
+(49, 'personb@virginia.edu', 'Vienna', '2020-04-21 12:04:00', '', '12345', 1, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `profilepics`
+--
+
+CREATE TABLE `profilepics` (
+  `email` varchar(500) NOT NULL,
+  `color` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -92,7 +106,8 @@ CREATE TABLE `riders` (
 --
 
 INSERT INTO `riders` (`rider_ID`, `post_ID`, `rider_email`) VALUES
-(7, 43, 'rbkh13@gmail.com');
+(7, 43, 'rbkh13@gmail.com'),
+(9, 47, 'personb@virginia.edu');
 
 -- --------------------------------------------------------
 
@@ -114,6 +129,7 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`email`, `password`, `first_name`, `last_name`) VALUES
 ('ld9hu@virginia.edu', '*84AAC12F54AB666ECFC2A83C676908C8BBC381B1', 'Lan Anh', 'Do'),
 ('persona@virginia.edu', '$2y$10$SBXsEQry3e.G9SN11q1NTe2JjGORku8lwz8xw.qghsT1xJ4qDWuei', 'Person ', 'A'),
+('personb@virginia.edu', '$2y$10$YGk2iEy1Vea2HozIf2KBFuW/ecwEBHph3qBAIS/HwHDhn73g.j7Fa', 'Person B', 'Test'),
 ('rbkh13@gmail.com', '$2y$10$bhrGVrwuvDUmPnoLD9cYH.82wM4gGyGy7/15xPHQjGtbTjDtMc4VC', 'Rebekah', 'Kang'),
 ('rk4tb@virginia.edu', '$2y$10$4V0QEf9/Pb1bazv8kLJjvunh0Y9f06gtqABbgqyiflrFJ.kji3kKy', 'Rebecca', 'Kim'),
 ('test2@virginia.edu', '*196BDEDE2AE4F84CA44C47D54D78478C7E2BD7B7', 'John', 'Doe'),
@@ -149,13 +165,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `post_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `post_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `riders`
 --
 ALTER TABLE `riders`
-  MODIFY `rider_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `rider_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
