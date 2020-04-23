@@ -24,8 +24,8 @@ $userposts = getUserPosts();
     <!-- Personal Info Column displays your profile pic and name -->
     <div class="personalInfo col-3 ">
         <img class="profilePic-Dash"
-            src=<?php echo '"' . getProfilePic($_SESSION['email']) . '"' ?>
-        href="#">
+            src="<?php echo getProfilePic($_SESSION['email']) ?>"
+            href="#">
         <h2 class="name-dash">
             <?php
                 if (isset($_SESSION['first_name']) ) echo $_SESSION['first_name'];

@@ -73,7 +73,7 @@ function getNameFromEmail($ID){
 function getProfilePic($email) {
     global $db;
 
-    $query = "SELECT * FROM profilepics WHERE email=" . $email;
+    $query = "SELECT * FROM profilepics WHERE email='" . $email . "'";
     $statement = $db->prepare($query);
     $statement->execute();
 
@@ -83,7 +83,7 @@ function getProfilePic($email) {
     }
 
     $statement->closeCursor();
-    return "static/images/profilepic-black";
+    return "static/images/profilepic-black.png";
 }
 
 ?>
