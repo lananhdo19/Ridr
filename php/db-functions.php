@@ -68,4 +68,22 @@ function getNameFromEmail($ID){
     $statement->closeCursor();
     return $results;
 }
+
+/* Returns color from the profilepics table */
+function getProfilePic($email) {
+    global $db;
+
+    $query = "SELECT * FROM profilepics WHERE email=" . $email;
+    $statement = $db->prepare($query);
+    $statement->execute();
+
+    if ($statement->rowCount() == 1) {
+        $results = $statement->fetch();
+        return $results['color'];
+    }
+
+    $statement->closeCursor();
+    return "black";
+}
+
 ?>
