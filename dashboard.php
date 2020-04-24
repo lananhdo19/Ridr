@@ -23,7 +23,7 @@ $userposts = getUserPosts();
 
     <!-- Personal Info Column displays your profile pic and name -->
     <div class="personalInfo col-3 ">
-        <img class="profilePic-Dash" src="static/images/profilepic.png" href="#">
+        <img class="profilePic-Dash" src="static/images/profilepic-black.png" href="#">
         <h2 class="name-dash">
             <?php
                 if (isset($_SESSION['first_name']) ) echo $_SESSION['first_name'];
@@ -31,6 +31,7 @@ $userposts = getUserPosts();
             ?>
         </h2>
         <h5><?php if (isset($_SESSION['email']) ) echo $_SESSION['email'];?></h5>
+        <a href="http://localhost:4200/" style="color: #136A9F;">Change Profile Picture</a>
         <br/>
         <br/>
         <br/>
