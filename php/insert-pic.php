@@ -1,59 +1,33 @@
 <?php
-
 header('Access-Control-Allow-Origin: http://localhost:4200');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding');
 header('Access-Control-Max-Age: 1000');
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PUT');
 
+require('connectdb.php');
+include('db-functions.php');
+include('functions.php');
 
-$getdata = file_get_contents("php://input");
-//echo $getdata;
-$email = "sdfsafd";
+session_start();
+$email = $_GET['email'];
+$color = $_GET['color'];
+$color = substr($color, 1, -1); //removing "" around the color
+$color_path = 'static/images/profilepic-' . $color . '.png';
 
-
-
-//do sessions in angular for email????
-
-
-
-
-$sql = "INSERT INTO profilepics VALUES (" . $email . "," . $getdata . ")";
-echo $sql;
-$query = $db->prepare($sql);
+if (ifProfilePicSet($email)) {
+    $sql = "UPDATE profilepics SET color='" . $color_path . "' WHERE email='" . $email . "'";
+    echo $sql;
+    $query = $db->prepare($sql);
     $query->execute();
- //   $query->closeCursor();
-//
- //  $posts = $query->fetchAll( PDO::FETCH_ASSOC );
-
-
-//if( isset($_SESSION['email']) ) {
-    //echo "session email exists";
-
-
-    //$request = json_decode($getdata);
-
-  //  $data = [];
-   // foreach ($request as $k => $v) {
-  //      $data[0]['get' . $k] = $v;
-  //  }
-
-    //send response in json back
-
-
-//
-    //$email = $_SESSION['email'];
-
-    //echo $email;
-
-//    $sql = "UPDATE profilepics SET color=$color WHERE email=$email";
-//
-//    $query = $db->prepare($sql);
-//    $query->execute();
-//
-//    $posts = $query->fetchAll( PDO::FETCH_ASSOC );
-//
-//    header("Location: dashboard.php");
-//}
+    $query->closeCursor();
+}
+else {
+    $sql = "INSERT INTO profilepics VALUES ('" . $email . "','" . $color_path . "')";
+    echo $sql;
+    $query = $db->prepare($sql);
+    $query->execute();
+    $query->closeCursor();
+}
 
 ?>

@@ -86,4 +86,22 @@ function getProfilePic($email) {
     return "static/images/profilepic-black.png";
 }
 
+/* Returns true if the user is in the profilepics table */
+function ifProfilePicSet($email) {
+    global $db;
+
+    $query = "SELECT * FROM profilepics WHERE email='" . $email . "'";
+    $statement = $db->prepare($query);
+    $statement->execute();
+
+    if ($statement->rowCount() == 1) {
+        $results = $statement->fetch();
+        $statement->closeCursor();
+        return true;
+    }
+
+    $statement->closeCursor();
+    return false;
+}
+
 ?>
