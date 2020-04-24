@@ -16,10 +16,9 @@ $posts = getAllPosts();
             ?>
                 <div class="panel-body">
                         <div class="panel-vertical-top" style="font-weight:400;">
-                                <!-- <img class="profile-pic" src=
-                                    <?php echo "'" . $post['profile-pic'] . "'"; ?>
-                                > -->
-                                <img src="static/images/profilepic-black.png" class="profile-pic">
+                                <img 
+                                src="<?php echo getProfilePic($post['email']) ?>"
+                                class="profile-pic">
                                 <div class="normal-text">
                                     <p style="font-weight:500;">
                                         <?php
