@@ -1,7 +1,6 @@
 <?php global $post ?>
 
 <div class="panel-vertical-top" value="<?php echo $post['post_ID']; ?>">
-    <img src="static/images/aesthetic-user-profile-img.png" class="profile-pic">
     <p class="normal-text" style="line-height: 1.25em !important;">
         <?php
         //if($post['isDriver']==0) echo "<span style='color:red;'>Number of Riders: </span><br/>";

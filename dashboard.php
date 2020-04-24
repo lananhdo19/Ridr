@@ -33,6 +33,7 @@ $userposts = getUserPosts();
             ?>
         </h2>
         <h5><?php if (isset($_SESSION['email']) ) echo $_SESSION['email'];?></h5>
+        <a href="http://localhost:4200/" style="color: #136A9F;">Change Profile Picture</a>
         <br/>
         <br/>
         <br/>

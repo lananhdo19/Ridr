@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <?php
 if (isset($_SESSION['email'])) {
-    ?>
+?>
     <link type="text/css" rel="stylesheet" href="static/navbar.css"/>
 
     <header>
