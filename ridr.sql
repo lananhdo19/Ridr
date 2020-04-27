@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 23, 2020 at 07:25 PM
+-- Generation Time: Apr 26, 2020 at 07:02 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.3.13
 
@@ -44,9 +44,7 @@ CREATE TABLE `filtertable` (
 --
 
 INSERT INTO `filtertable` (`post_ID`, `email`, `destination`, `datetime`, `comment`, `zipcode`, `isDriver`, `seats`) VALUES
-(44, 'persona@virginia.edu', 'GMU', '2020-04-25 16:00:00', '', '12345', 0, 4),
-(46, 'persona@virginia.edu', 'Fair Oaks Mall', '2020-05-21 18:00:00', '', '12345', 1, 0),
-(47, 'rbkh13@gmail.com', 'Heaven', '2020-05-25 15:00:00', '', '12345', 0, 2);
+(46, 'persona@virginia.edu', 'Fair Oaks Mall', '2020-05-21 18:00:00', '', '12345', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -88,6 +86,15 @@ CREATE TABLE `profilepics` (
   `email` varchar(500) NOT NULL,
   `color` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `profilepics`
+--
+
+INSERT INTO `profilepics` (`email`, `color`) VALUES
+('rbkh13@gmail.com', 'static/images/profilepic-black.png'),
+('rk4tb@virginia.edu', 'static/images/profilepic-red.png'),
+('undefined', 'static/images/profilepic-grey.png');
 
 -- --------------------------------------------------------
 

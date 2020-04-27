@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Ridr: Posts</title>
+    <meta name="author" content="Rebekah Kang, Zaeda Meherin, Lan Ahn Do">
     <?php include('base/doc-heading.html') ?>
     <link type="text/css" rel="stylesheet" href="static/sidebar-formatting.css"/>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">

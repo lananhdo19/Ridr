@@ -3,6 +3,7 @@
 <head>
     <?php include('base/doc-heading.html') ?>
     <title>Ridr: Dashboard</title>
+    <meta name="author" content="Rebekah Kang, Zaeda Meherin, Lan Ahn Do">
     <link rel="stylesheet" href="static/dashboard.css"/>
     </head>
 <body>
